@@ -10,6 +10,7 @@ class Square extends React.Component{
   }
 
   render(){
+    console.log(this.props.id)
     return(
       <div className="box">
         <p>{this.props.value}</p>

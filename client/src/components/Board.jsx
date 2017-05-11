@@ -16,7 +16,8 @@ class Board extends React.Component{
       return(
         <Square 
         key = {index} 
-        value={this.props.squares[index]} 
+        value={this.props.squares[index]}
+        id =  {"cell" + this.props.squares[index]}
         />
         )
     })

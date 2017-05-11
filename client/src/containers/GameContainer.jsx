@@ -1,6 +1,6 @@
 import React from "react"
 import Board from "../components/Board"
-import Player from "../components/Player"
+import PlayerStats from "../components/PlayerStats"
 
 class GameContainer extends React.Component{
 
@@ -16,7 +16,7 @@ class GameContainer extends React.Component{
     return(
       <div className="container-div" >
         <h1>Monopoly!</h1>
-        <Player/>
+        <PlayerStats/>
         <Board squares={this.state.squares}/>
       </div>
     )
