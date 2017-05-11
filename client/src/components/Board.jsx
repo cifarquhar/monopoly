@@ -1,4 +1,5 @@
 import React from "react"
+import Square from "./Square"
 
 class Board extends React.Component{
 
@@ -9,11 +10,20 @@ class Board extends React.Component{
     }
   }
 
-
   render(){
+
+    const squareNodes = this.props.squares.map((array, index)=>{
+      return(
+        <Square 
+        key = {index} 
+        value={this.props.squares[index]} 
+        />
+        )
+    })
+
     return(
-      <div className="board-div">
-        <p>Board goes in here</p>
+      <div className="board">
+        {squareNodes}
       </div>
     )
   }

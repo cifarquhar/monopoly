@@ -1,0 +1,119 @@
+/*******************************
+Elements
+********************************/
+span{
+  display: block;
+  font: bold 10px "Arial", "Helvetica", sans-serif;
+  color: #000;
+  text-align: center;
+}
+/*******************************
+Board Structure
+********************************/
+.board {
+    background: #EBEBE0;
+    width: 808px;
+}
+.row{
+    background: #fff;  
+  float: left;
+  margin-bottom: 2px;
+}
+#row1, #row3 {
+  height: 82px;
+    width: 788px;
+}
+#row2 {
+  width: 788px;
+  
+}
+.col1{
+  float: left;
+  width: 75px;
+}
+.col3{
+  float: right;
+  margin-right: 2px;
+  width: 75px;
+}
+/*******************************
+Board positions - Box
+********************************/
+.box {
+    background: #fff;
+    border: 1px solid #000;
+  float: left;
+  height: 80px;
+  width: 75px;
+}
+div #box-x:last-child {
+    margin-right: 0;
+}
+#box-x{
+  margin-right: 2px;
+}
+#box-y{
+  margin-bottom: 2px;
+}
+div #box-y:last-child {
+    margin-bottom: 0;
+}
+/*******************************
+Board positions - Title
+********************************/
+.title{
+  background: black;
+  border-bottom: 1px solid #000;
+  line-height: 16px;
+}
+#blanktitle{
+  background: none;
+  border-color: #fff;
+}
+#pink{
+  background: #ff4f72;
+}
+/*******************************
+Board positions - Runway
+********************************/
+.runway{
+  background: aliceblue;
+  height: 12px;
+  margin: 2px 0 2px 0;
+}
+.piece{
+  background-image:url('../img/piece2.png');
+  float: left;
+  height:12px;
+  margin-left: 2px;
+  width: 12px;
+}
+/*******************************
+Board positions - Body
+********************************/
+.cardbody{
+  background: beige;
+  height:32px;
+}
+.icons{
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 0 auto;
+}
+#airport{
+  
+}
+#chest{
+  
+}
+
+/*******************************
+Board positions - Price
+********************************/
+.price{
+  line-height: 12px;
+  margin: 2px 0 2px 0;
+  text-align: center;
+  width: 100%;
+}
