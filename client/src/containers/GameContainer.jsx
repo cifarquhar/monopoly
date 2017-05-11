@@ -13,6 +13,10 @@ class GameContainer extends React.Component{
     }
   }
 
+  setMoveValue(newValue){
+    this.setState({moveValue: newValue})
+  }
+
 
   render(){
     return(
@@ -20,7 +24,7 @@ class GameContainer extends React.Component{
         <h1>Monopoly!</h1>
         <PlayerStats/>
         <Board squares={this.state.squares}/>
-        <Dice moveValue={this.state.moveValue}/>
+        <Dice moveValue={this.state.moveValue} setMoveValue={this.setMoveValue.bind(this)}/>
       </div>
     )
   }
