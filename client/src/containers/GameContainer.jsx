@@ -3,6 +3,7 @@ import Board from "../components/Board"
 import PlayerStats from "../components/PlayerStats"
 import Dice from "../components/Dice"
 import Start from "../components/Start"
+import End from "../components/End"
 
 class GameContainer extends React.Component{
 
@@ -12,7 +13,8 @@ class GameContainer extends React.Component{
       squares: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40],
       moveValue: null,
       players: this.props.players,
-      activePlayer: null
+      activePlayer: null,
+      activePlayerIndex: null
     }
   }
 
@@ -21,6 +23,12 @@ class GameContainer extends React.Component{
       player.state.position = 0
     })
     this.setState({activePlayer: this.state.players[0]})
+    this.setState({activePlayerIndex: 0})
+  }
+
+  updateActivePlayer(){
+    this.setState({activePlayer: this.state.players[(this.state.activePlayerIndex + 1) % (this.state.players.length)]})
+    this.setState({activePlayerIndex: (this.state.activePlayerIndex + 1) % (this.state.players.length)})
   }
 
   setMoveValue(newValue){
@@ -41,6 +49,7 @@ class GameContainer extends React.Component{
         <Dice moveValue={this.state.moveValue} 
               setMoveValue={this.setMoveValue.bind(this)}
               updatePlayerPosition={this.updatePlayerPosition.bind(this)}/>
+        <End updateActivePlayer={this.updateActivePlayer.bind(this)}/>
       </div>
     )
   }
