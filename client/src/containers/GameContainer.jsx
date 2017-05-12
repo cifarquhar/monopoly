@@ -14,7 +14,8 @@ class GameContainer extends React.Component{
       moveValue: null,
       players: this.props.players,
       activePlayer: null,
-      activePlayerIndex: null
+      activePlayerIndex: null,
+      rolled: false
     }
   }
 
@@ -27,8 +28,11 @@ class GameContainer extends React.Component{
   }
 
   updateActivePlayer(){
-    this.setState({activePlayer: this.state.players[(this.state.activePlayerIndex + 1) % (this.state.players.length)]})
-    this.setState({activePlayerIndex: (this.state.activePlayerIndex + 1) % (this.state.players.length)})
+    if (this.state.rolled){
+      this.setState({activePlayer: this.state.players[(this.state.activePlayerIndex + 1) % (this.state.players.length)]})
+      this.setState({activePlayerIndex: (this.state.activePlayerIndex + 1) % (this.state.players.length)})
+      this.setState({rolled: !this.state.rolled})
+    }
   }
 
   setMoveValue(newValue){
@@ -37,6 +41,10 @@ class GameContainer extends React.Component{
 
   updatePlayerPosition(moveValue){
     this.state.activePlayer.updatePosition(moveValue)
+  }
+
+  updateRolled(){
+    this.setState({rolled: !this.state.rolled})
   }
 
   render(){
@@ -48,7 +56,9 @@ class GameContainer extends React.Component{
         <Board squares={this.state.squares}/>
         <Dice moveValue={this.state.moveValue} 
               setMoveValue={this.setMoveValue.bind(this)}
-              updatePlayerPosition={this.updatePlayerPosition.bind(this)}/>
+              updatePlayerPosition={this.updatePlayerPosition.bind(this)}
+              rolled={this.state.rolled}
+              updateRolled={this.updateRolled.bind(this)}/>
         <End updateActivePlayer={this.updateActivePlayer.bind(this)}/>
       </div>
     )
