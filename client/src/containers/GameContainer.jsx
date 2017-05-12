@@ -18,15 +18,15 @@ class GameContainer extends React.Component{
 
   startGame(){
     this.setState({activePlayer: this.state.players[0]})
-    console.log(this.state.activePlayer)
   }
 
   setMoveValue(newValue){
     this.setState({moveValue: newValue})
   }
 
-  changePlayerPosition(player,moveValue){
-    player.setState({position: (player.position + moveValue)})
+  updatePlayerPosition(){
+    this.state.activePlayer.updatePosition(this.state.moveValue)
+    console.log(this.state.activePlayer)
   }
 
   render(){
@@ -36,7 +36,9 @@ class GameContainer extends React.Component{
         <Start startGame={this.startGame.bind(this)}/>
         <PlayerStats/>
         <Board squares={this.state.squares}/>
-        <Dice moveValue={this.state.moveValue} setMoveValue={this.setMoveValue.bind(this)}/>
+        <Dice moveValue={this.state.moveValue} 
+              setMoveValue={this.setMoveValue.bind(this)}
+              updatePlayerPosition={this.updatePlayerPosition.bind(this)}/>
       </div>
     )
   }

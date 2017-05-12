@@ -11,7 +11,6 @@ class Start extends React.Component{
   }
 
   handleClick(){
-    console.log("clicked")
     this.props.startGame()
   }
 
