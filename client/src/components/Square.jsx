@@ -13,6 +13,7 @@ class Square extends React.Component{
     return(
       <div className="box">
         <p>{this.props.value}</p>
+        <p>{this.props.player ? this.props.player.state.name : ""}</p>
       </div>
     )
   }
