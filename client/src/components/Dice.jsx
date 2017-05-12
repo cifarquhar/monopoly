@@ -17,7 +17,7 @@ class Dice extends React.Component{
   handleClick(){
     let newValue = this.getRandomInt(2,12)
     this.props.setMoveValue(newValue)
-    this.props.updatePlayerPosition()
+    this.props.updatePlayerPosition(newValue)
   }
 
   render(){

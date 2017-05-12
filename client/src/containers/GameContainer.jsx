@@ -27,8 +27,8 @@ class GameContainer extends React.Component{
     this.setState({moveValue: newValue})
   }
 
-  updatePlayerPosition(){
-    this.state.activePlayer.updatePosition(this.state.moveValue)
+  updatePlayerPosition(moveValue){
+    this.state.activePlayer.updatePosition(moveValue)
   }
 
   render(){
