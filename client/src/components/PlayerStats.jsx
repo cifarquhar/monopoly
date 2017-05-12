@@ -1,6 +1,6 @@
 import React from "react"
 
-class Player extends React.Component{
+class PlayerStats extends React.Component{
 
   constructor(props){
     super(props)
@@ -11,7 +11,7 @@ class Player extends React.Component{
 
   render(){
     return(
-      <div className="player-div">
+      <div className="player-stats-div">
         <p>Player details go in here</p>
       </div>
     )
@@ -19,4 +19,4 @@ class Player extends React.Component{
 
 }
 
-export default Player
+export default PlayerStats

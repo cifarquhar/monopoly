@@ -11,6 +11,10 @@ class Player {
     this.state.position =  (this.state.position + moveValue) % 40
   }
 
+  resetPosition(){
+    this.state.position = 0
+  }
+
 }
 
 export default Player

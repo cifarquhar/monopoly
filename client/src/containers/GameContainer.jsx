@@ -21,7 +21,7 @@ class GameContainer extends React.Component{
 
   startGame(){
     this.state.players.forEach(function(player){
-      player.state.position = 0
+      player.resetPosition()
     })
     this.setState({activePlayer: this.state.players[0]})
     this.setState({activePlayerIndex: 0})
@@ -53,7 +53,8 @@ class GameContainer extends React.Component{
         <h1>Monopoly!</h1>
         <Start startGame={this.startGame.bind(this)}/>
         <PlayerStats/>
-        <Board squares={this.state.squares}/>
+        <Board squares={this.state.squares}
+               players={this.state.players}/>
         <Dice moveValue={this.state.moveValue} 
               setMoveValue={this.setMoveValue.bind(this)}
               updatePlayerPosition={this.updatePlayerPosition.bind(this)}
