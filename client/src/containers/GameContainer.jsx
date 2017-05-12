@@ -17,6 +17,9 @@ class GameContainer extends React.Component{
   }
 
   startGame(){
+    this.state.players.forEach(function(player){
+      player.state.position = 0
+    })
     this.setState({activePlayer: this.state.players[0]})
   }
 
@@ -26,7 +29,6 @@ class GameContainer extends React.Component{
 
   updatePlayerPosition(){
     this.state.activePlayer.updatePosition(this.state.moveValue)
-    console.log(this.state.activePlayer)
   }
 
   render(){
