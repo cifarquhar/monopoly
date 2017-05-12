@@ -8,7 +8,7 @@ class Player {
   }
 
   updatePosition(moveValue){
-    this.state.position =  this.state.position + moveValue
+    this.state.position =  (this.state.position + moveValue) % 40
   }
 
 }
