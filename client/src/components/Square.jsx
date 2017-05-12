@@ -13,7 +13,9 @@ class Square extends React.Component{
     return(
       <div className="box">
         <p>{this.props.value}</p>
-        <p>{this.props.player ? this.props.player.state.name : ""}</p>
+        <p>{this.props.players ? this.props.players.map((player) => {
+                                                        return player.state.name
+                                                        }).toString() : null}</p>
       </div>
     )
   }

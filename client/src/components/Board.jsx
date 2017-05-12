@@ -10,34 +10,46 @@ class Board extends React.Component{
     }
   }
 
-  render(){
+  getPlayerPositions(){
+   return this.props.players.map(function(player){
+    return player.state.position
+  })
+ }
 
-    const playerPositions = this.props.players.map(function(player){
-      return player.state.position
-    })
+ filterPositions(playerPositions,index) {return this.props.players.filter((player,filterIndex)=>{
+  return this.props.players.indexOf(player) === playerPositions.map((position,positionIndex) => {
+    return positionIndex === filterIndex ? position : null
+  }).indexOf(index)
+})}
 
-    const squareNodes = this.props.squares.map((array, index)=>{
+ render(){
 
-      return(
-        <Square 
-        key = {index} 
-        value={this.props.squares[index]}
-        id =  {"cell" + this.props.squares[index]}
-        player={playerPositions.includes(index) ? this.props.players.find((player)=>{
-                                                    return this.props.players.indexOf(player) === playerPositions.indexOf(index)
-                                                   })
-                                                : null}
-        />
-        )
-    })
 
+  const squareNodes = this.props.squares.map((array, index)=>{
+
+
+    const playerPositions = this.getPlayerPositions()
+
+    const playersArray = playerPositions.includes(index) ? this.filterPositions(playerPositions,index) : null
+
+    console.log(playersArray)
+    console.log(this.props.players)
     return(
-      console.log(playerPositions),
-      <div className="board">
-        {squareNodes}
-      </div>
+      <Square 
+      key = {index} 
+      value={this.props.squares[index]}
+      id =  {"cell" + this.props.squares[index]}
+      players={playersArray}
+      />
+      )
+  })
+
+  return(
+    <div className="board">
+    {squareNodes}
+    </div>
     )
-  }
+}
 
 }
 
