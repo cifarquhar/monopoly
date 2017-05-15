@@ -37,11 +37,11 @@ class Player {
   }
 
   payRent(property){
-    this.state.money = (this.state.money) - (property.rent)
+    this.state.money = (this.state.money) - (property.rentValues[property.rentIndex])
   }
 
   receiveRent(property){
-    this.state.money = (this.state.money) + (property.rent)
+    this.state.money = (this.state.money) + (property.rentValues[property.rentIndex])
   }
 
   checkFunds(){
