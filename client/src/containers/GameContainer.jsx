@@ -16,8 +16,7 @@ class GameContainer extends React.Component{
       players: this.props.players,
       activePlayer: null,
       activePlayerIndex: null,
-      rolled: false,
-      purchasedProperties: []
+      rolled: false
     }
   }
 
@@ -59,12 +58,12 @@ class GameContainer extends React.Component{
     if (currentPlayer.state.money < currentSquare.value){
       return
     }
-    else if (this.state.purchasedProperties.includes(currentSquare)){
+    else if (currentSquare.owner || !currentSquare.value){
       return
     }
     else {
-      this.state.purchasedProperties.push(currentSquare)
       currentPlayer.state.properties.push(currentSquare)
+      currentSquare.owner = currentPlayer
       currentPlayer.payForProperty(currentSquare)
     }
   }
