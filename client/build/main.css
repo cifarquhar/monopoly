@@ -1,12 +1,12 @@
 /*******************************
 Elements
 ********************************/
-span{
+/*span{
   display: block;
   font: bold 10px "Arial", "Helvetica", sans-serif;
   color: #000;
   text-align: center;
-}
+}*/
 /*******************************
 Board Structure
 ********************************/
@@ -14,7 +14,7 @@ Board Structure
     background: #EBEBE0;
     width: 808px;
 }
-.row{
+/*.row{
     background: #fff;  
   float: left;
   margin-bottom: 2px;
@@ -35,7 +35,7 @@ Board Structure
   float: right;
   margin-right: 2px;
   width: 75px;
-}
+}*/
 /*******************************
 Board positions - Box
 ********************************/
@@ -46,7 +46,7 @@ Board positions - Box
   height: 100px;
   width: 80px;
 }
-div #box-x:last-child {
+/*div #box-x:last-child {
     margin-right: 0;
 }
 #box-x{
@@ -57,11 +57,11 @@ div #box-x:last-child {
 }
 div #box-y:last-child {
     margin-bottom: 0;
-}
+}*/
 /*******************************
 Board positions - Title
 ********************************/
-.title{
+/*.title{
   background: black;
   border-bottom: 1px solid #000;
   line-height: 16px;
@@ -72,11 +72,11 @@ Board positions - Title
 }
 #pink{
   background: #ff4f72;
-}
+}*/
 /*******************************
 Board positions - Runway
 ********************************/
-.runway{
+/*.runway{
   background: aliceblue;
   height: 12px;
   margin: 2px 0 2px 0;
@@ -87,11 +87,11 @@ Board positions - Runway
   height:12px;
   margin-left: 2px;
   width: 12px;
-}
+}*/
 /*******************************
 Board positions - Body
 ********************************/
-.cardbody{
+/*.cardbody{
   background: beige;
   height:32px;
 }
@@ -106,14 +106,14 @@ Board positions - Body
 }
 #chest{
   
-}
+}*/
 
 /*******************************
 Board positions - Price
 ********************************/
-.price{
+/*.price{
   line-height: 12px;
   margin: 2px 0 2px 0;
   text-align: center;
   width: 100%;
-}
+}*/
