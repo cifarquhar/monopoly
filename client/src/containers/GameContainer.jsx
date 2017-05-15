@@ -6,6 +6,7 @@ import Start from "../components/Start"
 import End from "../components/End"
 import Buy from "../components/Buy"
 import PropertyStats from "../components/PropertyStats"
+import Build from "../components/Build"
 
 class GameContainer extends React.Component{
 
@@ -161,6 +162,7 @@ class GameContainer extends React.Component{
               won={this.state.won}
               updateRolled={this.updateRolled.bind(this)}/>
         <Buy handleClick={this.purchaseProperty.bind(this)}/>
+        <Build/>
         <End updateActivePlayer={this.updateActivePlayer.bind(this)}/>
       </div>
     )
