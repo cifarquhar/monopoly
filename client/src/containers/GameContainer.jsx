@@ -16,7 +16,8 @@ class GameContainer extends React.Component{
       players: this.props.players,
       activePlayer: null,
       activePlayerIndex: null,
-      rolled: false
+      rolled: false,
+      won: false
     }
   }
 
@@ -26,6 +27,7 @@ class GameContainer extends React.Component{
     })
     this.setState({activePlayer: this.state.players[0]})
     this.setState({activePlayerIndex: 0})
+    this.setState({won: false})
   }
 
   updateActivePlayer(){
@@ -43,6 +45,7 @@ class GameContainer extends React.Component{
   updatePlayerPosition(moveValue){
     this.state.activePlayer.updatePosition(moveValue)
     this.payRentIfDue()
+    this.checkBankruptcy()
   }
 
   updateRolled(){
@@ -82,6 +85,18 @@ class GameContainer extends React.Component{
 
   }
 
+
+  checkBankruptcy(){
+    let currentPlayer = this.state.activePlayer
+
+    let funds = currentPlayer.checkFunds()
+
+    if (funds < 0){
+      alert(currentPlayer.state.name + " is bankrupt!")
+      this.setState({won: true})
+    }
+  }
+
   render(){
     return(
       <div className="container-div" >
@@ -94,6 +109,7 @@ class GameContainer extends React.Component{
               setMoveValue={this.setMoveValue.bind(this)}
               updatePlayerPosition={this.updatePlayerPosition.bind(this)}
               rolled={this.state.rolled}
+              won={this.state.won}
               updateRolled={this.updateRolled.bind(this)}/>
         <Buy handleClick={this.purchaseProperty.bind(this)}/>
         <End updateActivePlayer={this.updateActivePlayer.bind(this)}/>

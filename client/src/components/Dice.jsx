@@ -15,7 +15,7 @@ class Dice extends React.Component{
   }
 
   handleClick(){
-    if (!this.props.rolled){
+    if (!this.props.rolled && !this.props.won){
       let newValue = this.getRandomInt(2,12)
       this.props.setMoveValue(newValue)
       this.props.updatePlayerPosition(newValue)
