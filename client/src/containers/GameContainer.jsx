@@ -5,6 +5,7 @@ import Dice from "../components/Dice"
 import Start from "../components/Start"
 import End from "../components/End"
 import Buy from "../components/Buy"
+import PropertyStats from "../components/PropertyStats"
 
 class GameContainer extends React.Component{
 
@@ -125,12 +126,23 @@ class GameContainer extends React.Component{
   }
 
   render(){
+
+    let currentSquare = null
+
+    let currentPlayer = this.state.activePlayer
+
+    if (currentPlayer){
+      currentSquare = this.state.squares[currentPlayer.state.position]
+    }
+
+
     return(
       <div className="container-div" >
         <h1>Monopoly!</h1>
         <Start startGame={this.startGame.bind(this)}/>
         <span>
           <PlayerStats player={this.state.activePlayer}/>
+          <PropertyStats property={currentSquare}/>
         </span>
         <Board squares={this.state.squares}
                players={this.state.players}/>
