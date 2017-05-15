@@ -17,8 +17,8 @@ class Player {
     this.state.position = 0
   }
 
-  payForProperty(amount){
-    this.setState({money: this.state.money - amount})
+  payForProperty(property){
+    this.state.money = (this.state.money) - (property.value)
   }
 
 }

@@ -4,6 +4,7 @@ import PlayerStats from "../components/PlayerStats"
 import Dice from "../components/Dice"
 import Start from "../components/Start"
 import End from "../components/End"
+import Buy from "../components/Buy"
 
 class GameContainer extends React.Component{
 
@@ -48,6 +49,26 @@ class GameContainer extends React.Component{
     this.setState({rolled: !this.state.rolled})
   }
 
+  purchaseProperty(){
+    let currentPlayer = this.state.activePlayer
+    console.log(currentPlayer)
+
+    let currentSquare = this.state.squares[currentPlayer.state.position]
+    console.log(currentSquare)
+
+    if (currentPlayer.state.money < currentSquare.value){
+      return
+    }
+    else if (this.state.purchasedProperties.includes(currentSquare)){
+      return
+    }
+    else {
+      this.state.purchasedProperties.push(currentSquare)
+      currentPlayer.state.properties.push(currentSquare)
+      currentPlayer.payForProperty(currentSquare)
+    }
+  }
+
   render(){
     return(
       <div className="container-div" >
@@ -61,6 +82,7 @@ class GameContainer extends React.Component{
               updatePlayerPosition={this.updatePlayerPosition.bind(this)}
               rolled={this.state.rolled}
               updateRolled={this.updateRolled.bind(this)}/>
+        <Buy handleClick={this.purchaseProperty.bind(this)}/>
         <End updateActivePlayer={this.updateActivePlayer.bind(this)}/>
       </div>
     )

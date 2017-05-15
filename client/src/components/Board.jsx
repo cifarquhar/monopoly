@@ -32,8 +32,6 @@ class Board extends React.Component{
 
     const playersArray = playerPositions.includes(index) ? this.filterPositions(playerPositions,index) : null
 
-    console.log(playersArray)
-    console.log(this.props.players)
     return(
       <Square 
       key = {index} 
