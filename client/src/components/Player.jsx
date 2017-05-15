@@ -5,7 +5,9 @@ class Player {
       name: name,
       position: 0,
       money: 1500,
-      properties: []
+      properties: [],
+      inJail: false,
+      jailCounter: null
     }
   }
 
@@ -31,6 +33,11 @@ class Player {
 
   checkFunds(){
     return this.state.money
+  }
+
+  goToJail(){
+    this.state.inJail = true
+    this.state.jailCounter = 0
   }
 
 }
