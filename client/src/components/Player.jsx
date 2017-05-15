@@ -21,6 +21,9 @@ class Player {
       this.state.position =  (this.state.position + moveValue) % 40
     }
     else {
+      if (this.state.position + moveValue >= 40){
+        this.state.money = this.state.money + 200
+      }
     this.state.position =  (this.state.position + moveValue) % 40
   }
   }
