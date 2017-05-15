@@ -42,6 +42,7 @@ class GameContainer extends React.Component{
 
   updatePlayerPosition(moveValue){
     this.state.activePlayer.updatePosition(moveValue)
+    this.payRentIfDue()
   }
 
   updateRolled(){
@@ -64,6 +65,21 @@ class GameContainer extends React.Component{
       currentSquare.owner = currentPlayer
       currentPlayer.payForProperty(currentSquare)
     }
+  }
+
+  payRentIfDue(property){
+    let currentPlayer = this.state.activePlayer
+        
+    let currentSquare = this.state.squares[currentPlayer.state.position]
+
+    if (!currentSquare.owner || currentSquare.owner === currentPlayer){
+      return
+    }
+    else{
+      currentPlayer.payRent(currentSquare)
+      currentSquare.owner.receiveRent(currentSquare)
+    }
+
   }
 
   render(){
