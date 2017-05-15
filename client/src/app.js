@@ -14,7 +14,7 @@ const property1 ={
   group: "corner",
   value: null,
   rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: null
 }
 
@@ -24,7 +24,7 @@ const property2 ={
   group: "brown",
   value: 60,
   rentIndex: 0,
-  rentValues: [2,10,30,90,160,250]
+  rentValues: [2,4,10,30,90,160,250]
   // rent: rentValues[rentIndex]
 }
 
@@ -34,7 +34,7 @@ const property3 ={
   group: "bonus",
   value: null,
   rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: null
 }
 
@@ -44,7 +44,7 @@ const property4 ={
   group: "brown",
   value: 60,
   rentIndex: 0,
-  rentValues: [4,20,60,180,320,450]
+  rentValues: [4,8,20,60,180,320,450]
   // rent: rentValues[rentIndex]
 }
 
@@ -54,7 +54,7 @@ const property5 ={
   group: "tax",
   value: null,
   rentIndex: 0,
-  rentValues: [200,200,200,200,200,200]
+  rentValues: [200]
   // rent: 200
 }
 
@@ -64,7 +64,7 @@ const property6 ={
   group: "station",
   value: 200,
   rentIndex: 0,
-  rentValues: [25,50,100,200,200,200]
+  rentValues: [25,50,100,200]
   // rent: rentValues[rentIndex]
 }
 
@@ -74,7 +74,7 @@ const property7 ={
   group: "sky_blue",
   value: 100,
   rentIndex: 0,
-  rentValues: [6,30,90,270,400,550]
+  rentValues: [6,12,30,90,270,400,550]
   // rent: rentValues[rentIndex]
 }
 
@@ -84,7 +84,7 @@ const property8 ={
   group: "bonus",
   value: null,
   rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: null
 }
 
@@ -93,7 +93,7 @@ const property9 ={
   owner: null,
   group: "sky_blue",
   value: 100,  rentIndex: 0,
-  rentValues: [6,30,90,270,400,550]
+  rentValues: [6,12,30,90,270,400,550]
   // rent: rentValues[rentIndex]
 }
 
@@ -102,7 +102,7 @@ const property10 ={
   owner: null,
   group: "sky_blue",
   value: 120,  rentIndex: 0,
-  rentValues: [8,40,100,300,450,600]
+  rentValues: [8,16,40,100,300,450,600]
   // rent: rentValues[rentIndex]
 }
 
@@ -111,7 +111,7 @@ const property11 ={
   owner: null,
   group: "corner",
   value: null,  rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: null
 }
 
@@ -120,7 +120,7 @@ const property12 ={
   owner: null,
   group: "pink",
   value: 140,  rentIndex: 0,
-  rentValues: [10,50,150,450,625,750]
+  rentValues: [10,20,50,150,450,625,750]
   // rent: rentValues[rentIndex]
 }
 
@@ -129,7 +129,7 @@ const property13 ={
   owner: null,
   group: "utility",
   value: 150,  rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: rentValues[rentIndex]
 }
 
@@ -138,7 +138,7 @@ const property14 ={
   owner: null,
   group: "pink",
   value: 140,  rentIndex: 0,
-  rentValues: [10,50,150,450,625,750]
+  rentValues: [10,20,50,150,450,625,750]
   // rent: rentValues[rentIndex]
 }
 
@@ -147,7 +147,7 @@ const property15 ={
   owner: null,
   group: "pink",
   value: 160,  rentIndex: 0,
-  rentValues: [12,60,180,500,700,900]
+  rentValues: [12,24,60,180,500,700,900]
   // rent: rentValues[rentIndex]
 }
 
@@ -156,7 +156,7 @@ const property16 ={
   owner: null,
   group: "station",
   value: 200,  rentIndex: 0,
-  rentValues: [25,50,100,200,200,200]
+  rentValues: [25,50,100,200]
   // rent: rentValues[rentIndex]
 }
 
@@ -165,7 +165,7 @@ const property17 ={
   owner: null,
   group: "orange",
   value: 180,  rentIndex: 0,
-  rentValues: [14,70,200,550,750,950]
+  rentValues: [14,28,70,200,550,750,950]
   // rent: rentValues[rentIndex]
 }
 
@@ -174,7 +174,7 @@ const property18 ={
   owner: null,
   group: "bonus",
   value: null,  rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: null
 }
 
@@ -183,7 +183,7 @@ const property19 ={
   owner: null,
   group: "orange",
   value: 180,  rentIndex: 0,
-  rentValues: [14,70,200,550,750,950]
+  rentValues: [14,28,70,200,550,750,950]
   // rent: rentValues[rentIndex]
 }
 
@@ -192,7 +192,7 @@ const property20 ={
   owner: null,
   group: "orange",
   value: 200,  rentIndex: 0,
-  rentValues: [16,80,220,600,800,1000]
+  rentValues: [16,32,80,220,600,800,1000]
   // rent: rentValues[rentIndex]
 }
 
@@ -201,7 +201,7 @@ const property21 ={
   owner: null,
   group: "corner",
   value: null,  rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: null
 }
 
@@ -210,7 +210,7 @@ const property22 ={
   owner: null,
   group: "red",
   value: 220,  rentIndex: 0,
-  rentValues: [18,90,250,700,875,1050]
+  rentValues: [18,36,90,250,700,875,1050]
   // rent: rentValues[rentIndex]
 }
 
@@ -220,7 +220,7 @@ const property23 ={
   group: "bonus",
   value: null,
   rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: null
 }
 
@@ -230,7 +230,7 @@ const property24 ={
   group: "red",
   value: 220,
   rentIndex: 0,
-  rentValues: [18,90,250,700,875,1050]
+  rentValues: [18,36,90,250,700,875,1050]
   // rent: rentValues[rentIndex]
 }
 
@@ -240,7 +240,7 @@ const property25 ={
   group: "red",
   value: 240,
   rentIndex: 0,
-  rentValues: [20,100,300,750,925,1100]
+  rentValues: [20,40,100,300,750,925,1100]
   // rent: rentValues[rentIndex]
 }
 
@@ -250,7 +250,7 @@ const property26 ={
   group: "station",
   value: 200,
   rentIndex: 0,
-  rentValues: [25,50,100,200,200,200]
+  rentValues: [25,50,100,200]
   // rent: rentValues[rentIndex]
 }
 
@@ -260,7 +260,7 @@ const property27 ={
   group: "yellow",
   value: 260,
   rentIndex: 0,
-  rentValues: [22,110,330,800,975,1150]
+  rentValues: [22,44,110,330,800,975,1150]
   // rent: rentValues[rentIndex]
 }
 
@@ -270,7 +270,7 @@ const property28 ={
   group: "yellow",
   value: 260,
   rentIndex: 0,
-  rentValues: [22,110,330,800,975,1150]
+  rentValues: [22,44,110,330,800,975,1150]
   // rent: rentValues[rentIndex]
 }
 
@@ -280,7 +280,7 @@ const property29 ={
   group: "utility",
   value: 150,
   rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: rentValues[rentIndex]
 }
 
@@ -290,7 +290,7 @@ const property30 ={
   group: "yellow",
   value: 280,
   rentIndex: 0,
-  rentValues: [22,120,360,850,1025,1200]
+  rentValues: [22,44,120,360,850,1025,1200]
   // rent: rentValues[rentIndex]
 }
 
@@ -300,7 +300,7 @@ const property31 ={
   group: "corner",
   value: null,
   rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: null
 }
 
@@ -310,7 +310,7 @@ const property32 ={
   group: "green",
   value: 300,
   rentIndex: 0,
-  rentValues: [26,130,390,900,1100,1275]
+  rentValues: [26,52,130,390,900,1100,1275]
   // rent: rentValues[rentIndex]
 }
 
@@ -320,7 +320,7 @@ const property33 ={
   group: "green",
   value: 300,
   rentIndex: 0,
-  rentValues: [26,130,390,900,1100,1275]
+  rentValues: [26,52,130,390,900,1100,1275]
   // rent: rentValues[rentIndex]
 }
 
@@ -330,7 +330,7 @@ const property34 ={
   group: "bonus",
   value: null,
   rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: null
 }
 
@@ -340,7 +340,7 @@ const property35 ={
   group: "green",
   value: 320,
   rentIndex: 0,
-  rentValues: [28,150,450,1000,1200,1400]
+  rentValues: [28,56,150,450,1000,1200,1400]
   // rent: rentValues[rentIndex]
 }
 
@@ -350,7 +350,7 @@ const property36 ={
   group: "station",
   value: null,
   rentIndex: 0,
-  rentValues: [25,50,100,200,200,200]
+  rentValues: [25,50,100,200]
   // rent: rentValues[rentIndex]
 }
 
@@ -360,7 +360,7 @@ const property37 ={
   group: "bonus",
   value: null,
   rentIndex: 0,
-  rentValues: [null,null,null,null,null,null]
+  rentValues: [null]
   // rent: null
 }
 
@@ -370,7 +370,7 @@ const property38 ={
   group: "dark_blue",
   value: 350,
   rentIndex: 0,
-  rentValues: [35,175,500,1100,1300,1500]
+  rentValues: [35,70,175,500,1100,1300,1500]
   // rent: rentValues[rentIndex]
 }
 
@@ -380,7 +380,7 @@ const property39 ={
   group: "tax",
   value: null,
   rentIndex: 0,
-  rentValues: [100,100,100,100,100,100]
+  rentValues: [100]
   // rent: 100
 }
 
@@ -390,7 +390,7 @@ const property40 ={
   group: "dark_blue",
   value: 400,
   rentIndex: 0,
-  rentValues: [50,200,600,1400,1700,2000]
+  rentValues: [50,100,200,600,1400,1700,2000]
   // rent: rentValues[rentIndex]
 }
 

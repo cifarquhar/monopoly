@@ -37,6 +37,7 @@ class Player {
   }
 
   payRent(property){
+    console.log(property.rentValues[property.rentIndex])
     this.state.money = (this.state.money) - (property.rentValues[property.rentIndex])
   }
 
@@ -53,6 +54,27 @@ class Player {
     this.state.inJail = true
     this.state.jailCounter = 0
   }
+
+  checkCompleteGroupOwned(property){
+    console.log(property)
+    let groupToCheck = property.group
+
+    if (this.state.properties){
+    let groupPropertiesOwned = this.state.properties.filter((property) => {
+      return property.group === groupToCheck
+    })
+ 
+    if ((groupToCheck === "brown" || groupToCheck === "dark_blue") && groupPropertiesOwned.length === 2){
+      return true
+    }
+    else if (groupPropertiesOwned.length === 3){
+      return true
+    }
+    else {
+      return false
+    }
+  }
+}
 
 }
 

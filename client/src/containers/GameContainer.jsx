@@ -72,7 +72,7 @@ class GameContainer extends React.Component{
     }
   }
 
-  payRentIfDue(property){
+  payRentIfDue(){
     let currentPlayer = this.state.activePlayer
 
     let currentSquare = this.state.squares[currentPlayer.state.position]
@@ -85,6 +85,14 @@ class GameContainer extends React.Component{
         return
       }
       else{
+        // console.log(property)
+        let groupCheck = currentSquare.owner.checkCompleteGroupOwned(currentSquare)
+        console.log(groupCheck)
+
+        if (groupCheck && currentSquare.rentIndex === 0){
+          currentSquare.rentIndex = currentSquare.rentIndex + 1
+        }
+
         currentPlayer.payRent(currentSquare)
         currentSquare.owner.receiveRent(currentSquare)
       }
