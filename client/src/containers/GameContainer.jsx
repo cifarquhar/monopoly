@@ -102,7 +102,7 @@ class GameContainer extends React.Component{
       <div className="container-div" >
         <h1>Monopoly!</h1>
         <Start startGame={this.startGame.bind(this)}/>
-        <PlayerStats/>
+        <PlayerStats player={this.state.activePlayer}/>
         <Board squares={this.state.squares}
                players={this.state.players}/>
         <Dice moveValue={this.state.moveValue} 

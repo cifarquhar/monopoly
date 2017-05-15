@@ -10,9 +10,20 @@ class PlayerStats extends React.Component{
   }
 
   render(){
+
+    let name = ""
+
+    let funds = ""
+
+  if (this.props.player){
+    name = this.props.player.state.name
+
+    funds = this.props.player.state.money
+}
     return(
       <div className="player-stats-div">
-        <p>Player details go in here</p>
+        <h4>Current Player: {name}</h4>
+        <h4>Money: {funds}</h4>
       </div>
     )
   }
