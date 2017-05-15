@@ -17,6 +17,10 @@ class Player {
     this.state.position = 0
   }
 
+  payForProperty(amount){
+    this.setState({money: this.state.money - amount})
+  }
+
 }
 
 export default Player
