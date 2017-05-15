@@ -45,7 +45,7 @@ const property5 ={
   owner: null,
   group: "tax",
   value: null,
-  rent: null
+  rent: 200
 }
 
 const property6 ={
@@ -317,7 +317,7 @@ const property39 ={
   owner: null,
   group: "tax",
   value: null,
-  rent: null
+  rent: 100
 }
 
 const property40 ={

@@ -72,17 +72,21 @@ class GameContainer extends React.Component{
 
   payRentIfDue(property){
     let currentPlayer = this.state.activePlayer
-        
+    
     let currentSquare = this.state.squares[currentPlayer.state.position]
 
-    if (!currentSquare.owner || currentSquare.owner === currentPlayer){
-      return
+    if (currentSquare.group === "tax"){
+      currentPlayer.payRent(currentSquare)
     }
     else{
-      currentPlayer.payRent(currentSquare)
-      currentSquare.owner.receiveRent(currentSquare)
+      if (!currentSquare.owner || currentSquare.owner === currentPlayer){
+        return
+      }
+      else{
+        currentPlayer.payRent(currentSquare)
+        currentSquare.owner.receiveRent(currentSquare)
+      }
     }
-
   }
 
 
