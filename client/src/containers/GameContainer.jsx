@@ -44,7 +44,7 @@ class GameContainer extends React.Component{
 
   updatePlayerPosition(moveValue){
     this.state.activePlayer.updatePosition(moveValue)
-    this.checkCardSquare()
+    this.checkSpecialSquare()
     this.payRentIfDue()
     this.checkBankruptcy()
   }
@@ -99,6 +99,10 @@ class GameContainer extends React.Component{
     if (currentSquare.group === "bonus"){
       alert("Landed on " + currentSquare.name)
     }
+  }
+
+  checkSpecialSquare(){
+    this.checkCardSquare()
   }
 
 
