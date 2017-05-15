@@ -50,10 +50,8 @@ class GameContainer extends React.Component{
 
   purchaseProperty(){
     let currentPlayer = this.state.activePlayer
-    console.log(currentPlayer)
-
+    
     let currentSquare = this.state.squares[currentPlayer.state.position]
-    console.log(currentSquare)
 
     if (currentPlayer.state.money < currentSquare.value){
       return
