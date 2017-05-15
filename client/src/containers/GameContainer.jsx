@@ -15,7 +15,8 @@ class GameContainer extends React.Component{
       players: this.props.players,
       activePlayer: null,
       activePlayerIndex: null,
-      rolled: false
+      rolled: false,
+      purchasedProperties: []
     }
   }
 
