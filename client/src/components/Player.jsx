@@ -29,6 +29,10 @@ class Player {
     this.state.money = (this.state.money) + (property.rent)
   }
 
+  checkFunds(){
+    return this.state.money
+  }
+
 }
 
 export default Player
