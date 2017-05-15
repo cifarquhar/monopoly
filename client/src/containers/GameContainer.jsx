@@ -44,6 +44,7 @@ class GameContainer extends React.Component{
 
   updatePlayerPosition(moveValue){
     this.state.activePlayer.updatePosition(moveValue)
+    this.checkCardSquare()
     this.payRentIfDue()
     this.checkBankruptcy()
   }
@@ -72,7 +73,7 @@ class GameContainer extends React.Component{
 
   payRentIfDue(property){
     let currentPlayer = this.state.activePlayer
-    
+
     let currentSquare = this.state.squares[currentPlayer.state.position]
 
     if (currentSquare.group === "tax"){
@@ -86,6 +87,17 @@ class GameContainer extends React.Component{
         currentPlayer.payRent(currentSquare)
         currentSquare.owner.receiveRent(currentSquare)
       }
+    }
+  }
+
+
+  checkCardSquare(){
+    let currentPlayer = this.state.activePlayer
+
+    let currentSquare = this.state.squares[currentPlayer.state.position]
+
+    if (currentSquare.group === "bonus"){
+      alert("Landed on " + currentSquare.name)
     }
   }
 
