@@ -12,7 +12,17 @@ class Player {
   }
 
   updatePosition(moveValue){
+    if (this.state.inJail && this.state.jailCounter < 3){
+      this.state.jailCounter = this.state.jailCounter + 1
+    }
+    else if (this.state.inJail && this.state.jailCounter === 3){
+      this.state.jailCounter = null
+      this.state.inJail = false
+      this.state.position =  (this.state.position + moveValue) % 40
+    }
+    else {
     this.state.position =  (this.state.position + moveValue) % 40
+  }
   }
 
   resetPosition(){
@@ -36,6 +46,7 @@ class Player {
   }
 
   goToJail(){
+    this.state.position = 10
     this.state.inJail = true
     this.state.jailCounter = 0
   }

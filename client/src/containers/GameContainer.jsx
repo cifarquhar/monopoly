@@ -91,18 +91,25 @@ class GameContainer extends React.Component{
   }
 
 
-  checkCardSquare(){
-    let currentPlayer = this.state.activePlayer
-
-    let currentSquare = this.state.squares[currentPlayer.state.position]
-
-    if (currentSquare.group === "bonus"){
-      alert("Landed on " + currentSquare.name)
+  checkCardSquare(square){
+    if (square.group === "bonus"){
+      alert("Landed on " + square.name)
     }
   }
 
   checkSpecialSquare(){
-    this.checkCardSquare()
+
+    let currentPlayer = this.state.activePlayer
+
+    let currentSquare = this.state.squares[currentPlayer.state.position]
+
+    this.checkCardSquare(currentSquare)
+
+    if (currentSquare.name === "Go To Jail"){
+      alert("Go to jail!")
+      currentPlayer.goToJail()
+    }
+
   }
 
 
