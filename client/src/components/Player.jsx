@@ -25,6 +25,10 @@ class Player {
     this.state.money = (this.state.money) - (property.rent)
   }
 
+  receiveRent(property){
+    this.state.money = (this.state.money) + (property.rent)
+  }
+
 }
 
 export default Player
