@@ -43,8 +43,8 @@ Board positions - Box
     background: #fff;
     border: 1px solid #000;
   float: left;
-  height: 80px;
-  width: 75px;
+  height: 100px;
+  width: 80px;
 }
 div #box-x:last-child {
     margin-right: 0;
