@@ -90,6 +90,28 @@ class Player {
     return groupPropertiesOwned.length
   }
 
+  developProperty(property){
+
+    let ownershipCheck = this.checkCompleteGroupOwned(property)
+
+    if (!property.housePrice){
+      alert("Can't build houses on this type of property")
+    }
+    else if (!ownershipCheck){
+      alert("You must own all properties in a group before building houses")
+    }
+    else if (this.state.money < property.housePrice){
+      alert("Not enough money to develop this property")
+    }
+    else if (property.rentIndex === 6){
+      alert("Can't develop this property any further")
+    }
+    else{
+      property.rentIndex = property.rentIndex + 1
+      this.state.money = this.state.money - property.housePrice
+    }
+  }
+
 }
 
 export default Player

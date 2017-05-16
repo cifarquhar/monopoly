@@ -1,4 +1,5 @@
 import React from "react"
+import Build from "./Build"
 
 class PropertyInfo extends React.Component{
 
@@ -67,6 +68,8 @@ class PropertyInfo extends React.Component{
       price = this.props.property.housePrice
 
       currentHouses = this.parseDevelopmentLevel(this.props.property.rentIndex)
+
+      currentRent = this.props.property.rentValues[this.props.property.rentIndex]
     }
 
     else if (this.props.property){
@@ -79,6 +82,8 @@ class PropertyInfo extends React.Component{
 
       currentHouses = this.parseDevelopmentLevel(this.props.property.rentIndex)
 
+      currentRent = this.props.property.rentValues[this.props.property.rentIndex]
+
     }
 
     return(
@@ -88,6 +93,9 @@ class PropertyInfo extends React.Component{
         <p><b>Current development level:</b> {currentHouses}</p>
         <p><b>Current rent:</b> {currentRent}</p>
         <p><b>Development cost:</b> {price}</p>
+        <Build 
+        player={this.props.player}
+        property={this.props.property}/>
       </div>
     )
   }
