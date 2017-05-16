@@ -157,7 +157,7 @@ class GameContainer extends React.Component{
                players={this.state.players}/>
         <Dice moveValue={this.state.moveValue} 
               setMoveValue={this.setMoveValue.bind(this)}
-              updatePlayerPosition={this.updatePlayerPosition.bind(this)}
+               updatePlayerPosition={this.updatePlayerPosition.bind(this)}
               rolled={this.state.rolled}
               won={this.state.won}
               updateRolled={this.updateRolled.bind(this)}/>

@@ -7,6 +7,25 @@ Elements
   color: #000;
   text-align: center;
 }*/
+
+.player-stats-div {
+  border: 1px solid #000;
+  margin: 10px;
+  padding: 10px;
+}
+
+.property-stats-div {
+  border: 1px solid #000;
+  margin: 10px;
+  padding: 10px;
+}
+
+/*.controls-div {
+  border: 1px solid #000;
+  margin: 10px;
+  padding: 10px;
+}*/
+
 /*******************************
 Board Structure
 ********************************/
