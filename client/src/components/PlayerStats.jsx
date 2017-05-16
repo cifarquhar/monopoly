@@ -1,4 +1,5 @@
 import React from "react"
+import PropertyInfo from "./PropertyInfo"
 
 class PlayerStats extends React.Component{
 
@@ -63,13 +64,14 @@ class PlayerStats extends React.Component{
           <h4>Current Player: {name}</h4>
           <h4>Money: {funds}</h4>
         </div>
-        <div>
-          <p>Properties:</p>
+        <div style={{paddingRight: 50}}>
+          <p><b>Properties:</b></p>
           <select id="property-selector" onChange={this.handleChange}>
             {propertyList}
           </select>
         </div>
         <div>
+          <PropertyInfo property={this.state.selectedProperty}/>
         </div>
       </div>
     )
