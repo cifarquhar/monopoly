@@ -28,9 +28,15 @@ class Player {
   }
   }
 
-  resetPosition(){
+  reset(){
     this.state.position = 0
+    this.state.money = 1500
+    this.state.properties = []
+    this.state.inJail = false
+    this.state.jailCounter = null
   }
+
+
 
   payForProperty(property){
     this.state.money = (this.state.money) - (property.value)
