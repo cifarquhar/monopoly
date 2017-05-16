@@ -388,7 +388,7 @@ const property36 ={
   name: "Liverpool St Station",
   owner: null,
   group: "station",
-  value: null,
+  value: 200,
   rentIndex: 0,
   rentValues: [25,50,100,200],
   housePrice: null

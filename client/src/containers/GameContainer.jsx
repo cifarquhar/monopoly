@@ -73,6 +73,13 @@ class GameContainer extends React.Component{
       currentPlayer.state.properties.push(currentSquare)
       currentSquare.owner = currentPlayer
       currentPlayer.payForProperty(currentSquare)
+
+      if (currentSquare.group === "station"){
+        let stations = currentPlayer.checkCompleteGroupOwned(currentSquare).group
+        stations.forEach((station) => {
+          station.rentIndex = stations.length - 1
+        })
+      }
     }
   }
 
