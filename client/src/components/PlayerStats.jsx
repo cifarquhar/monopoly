@@ -4,35 +4,43 @@ class PlayerStats extends React.Component{
 
   constructor(props){
     super(props)
+    this.handleChange = this.handleChange.bind(this)
     this.state = {
-
+      selectedProperty: null,
+      selectedPropertyIndex: null
     }
   }
 
   getPropertyList(){
-    let ownedProperties
+    let ownedProperties = []
     if (this.props.player && this.props.player.state.properties){
       ownedProperties = this.props.player.state.properties.map((property,index) => {
-       return <option key={index} value={index}>{property.name}</option>
+       return <option key={index+1} value={index+1}>{property.name}</option>
       })
     }
+    ownedProperties.unshift(<option key={0} value={0}>Select a property</option>)
     return ownedProperties
   }
 
-  // createSelectItems() {
-  //      let items = [];         
-  //      for (let i = 0; i <= this.props.maxValue; i++) {             
-  //           items.push(<option key={i} value={i}>{i}</option>);   
-  //           //here I will be creating my options dynamically based on
-  //           //what props are currently passed to the parent component
-  //      }
-  //      return items;
-  //  }  
+  handleChange(){
+    let indexToSet = document.querySelector("#property-selector").value - 1
+    this.setSelectedIndex(indexToSet)
+  }
 
-  // onDropdownSelected(e) {
-  //     console.log("THE VAL", e.target.value);
-  //     //here you will see the current selected value of the select input
-  // }
+  setSelectedIndex(index){
+    this.setState({selectedPropertyIndex: index},this.setSelectedProperty)
+  }
+
+  setSelectedProperty(){
+
+    if (this.props.player && this.props.player.state.properties){
+
+     this.setState({selectedProperty: this.props.player.state.properties[this.state.selectedPropertyIndex]})
+
+   }
+ }
+
+
 
 
   render(){
@@ -42,7 +50,6 @@ class PlayerStats extends React.Component{
     let funds
 
     let propertyList = this.getPropertyList()
-    console.log(propertyList)
 
 
   if (this.props.player){
@@ -58,9 +65,11 @@ class PlayerStats extends React.Component{
         </div>
         <div>
           <p>Properties:</p>
-          <select>
+          <select id="property-selector" onChange={this.handleChange}>
             {propertyList}
           </select>
+        </div>
+        <div>
         </div>
       </div>
     )
