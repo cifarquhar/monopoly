@@ -94,7 +94,7 @@ class Player {
 
     let ownershipCheck = this.checkCompleteGroupOwned(property)
 
-    let ownershipCheckResult =ownershipCheck.check
+    let ownershipCheckResult = ownershipCheck.check
 
     if (!property.housePrice){
       alert("Can't build houses on this type of property")
@@ -109,9 +109,25 @@ class Player {
       alert("Can't develop this property any further")
     }
     else{
-      if(property.rentIndex === 0){
-        property.rentIndex = 1
+
+      ownershipCheck.group.forEach((groupProperty) => {
+        if(groupProperty.rentIndex === 0){
+          groupProperty.rentIndex = 1
+        }
+      })
+  
+      let propertyRentIndexes = ownershipCheck.group.map((checkedProperty) => {
+        return checkedProperty.rentIndex
+      })
+
+      propertyRentIndexes.sort((a, b) => {
+        return a - b;
+      })
+
+      if (property.rentIndex !== propertyRentIndexes[0]){
+        alert("Houses must be distributed evenly across properties in a group")
       }
+
       property.rentIndex = property.rentIndex + 1
       this.state.money = this.state.money - property.housePrice
     }
