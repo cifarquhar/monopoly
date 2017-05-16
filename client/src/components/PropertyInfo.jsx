@@ -18,6 +18,34 @@ class PropertyInfo extends React.Component{
   //   }
   // }
 
+  parseDevelopmentLevel(rank){
+    switch(rank){
+      case 0:
+        return "undeveloped"
+        break
+      case 1:
+        return "undeveloped"
+        break
+      case 2:
+        return "1 house"
+        break
+      case 3:
+        return "2 houses"
+        break
+      case 4:
+        return "3 houses"
+        break
+      case 5:
+        return "4 houses"
+        break
+      case 6:
+        return "Hotel"
+        break
+      default:
+        return ""
+    }
+  }
+
   render(){
 
     let name
@@ -37,6 +65,8 @@ class PropertyInfo extends React.Component{
       count = this.props.player.countPropertiesInGroup(this.props.property)
 
       price = this.props.property.housePrice
+
+      currentHouses = this.parseDevelopmentLevel(this.props.property.rentIndex)
     }
 
     else if (this.props.property){
@@ -46,6 +76,8 @@ class PropertyInfo extends React.Component{
       count = this.props.player.countPropertiesInGroup(this.props.property)
 
       price = "N/A"
+
+      currentHouses = this.parseDevelopmentLevel(this.props.property.rentIndex)
 
     }
 
