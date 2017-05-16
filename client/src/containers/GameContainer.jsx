@@ -86,7 +86,7 @@ class GameContainer extends React.Component{
       }
       else{
         // console.log(property)
-        let groupCheck = currentSquare.owner.checkCompleteGroupOwned(currentSquare)
+        let groupCheck = currentSquare.owner.checkCompleteGroupOwned(currentSquare).check
         console.log(groupCheck)
 
         if (groupCheck && currentSquare.rentIndex === 0){

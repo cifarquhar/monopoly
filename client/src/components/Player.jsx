@@ -65,13 +65,13 @@ class Player {
       })
 
       if ((groupToCheck === "brown" || groupToCheck === "dark_blue") && groupPropertiesOwned.length === 2){
-        return true
+        return {check: true, group: groupPropertiesOwned}
       }
       else if (groupPropertiesOwned.length === 3){
-        return true
+        return {check: true, group: groupPropertiesOwned}
       }
       else {
-        return false
+        return {check: false, group: groupPropertiesOwned}
       }
     }
   }
@@ -94,10 +94,12 @@ class Player {
 
     let ownershipCheck = this.checkCompleteGroupOwned(property)
 
+    let ownershipCheckResult =ownershipCheck.check
+
     if (!property.housePrice){
       alert("Can't build houses on this type of property")
     }
-    else if (!ownershipCheck){
+    else if (!ownershipCheck.check){
       alert("You must own all properties in a group before building houses")
     }
     else if (this.state.money < property.housePrice){
