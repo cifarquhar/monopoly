@@ -8,11 +8,15 @@ Elements
   text-align: center;
 }*/
 
+
 .player-stats-div {
+  display: flex;
+  flex-direction: row;
   border: 1px solid #000;
   margin: 10px;
   padding: 10px;
 }
+
 
 .property-stats-div {
   border: 1px solid #000;
