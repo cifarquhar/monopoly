@@ -26,6 +26,7 @@ class GameContainer extends React.Component{
     this.state.players.forEach(function(player){
       player.reset()
     })
+    this.setState({moveValue: null})
     this.setState({activePlayer: this.state.players[0]})
     this.setState({activePlayerIndex: 0})
     this.setState({won: false})
