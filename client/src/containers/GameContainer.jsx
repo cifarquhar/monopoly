@@ -62,8 +62,11 @@ class GameContainer extends React.Component{
     if (currentPlayer.state.money < currentSquare.value){
       alert("Not enough money to purchase that")
     }
-    else if (currentSquare.owner || !currentSquare.value){
-      return
+    else if (currentSquare.owner){
+      alert("Someone already owns this property")
+    }
+    else if (!currentSquare.value){
+      alert("You can't buy this type of property")
     }
     else {
       currentPlayer.state.properties.push(currentSquare)
