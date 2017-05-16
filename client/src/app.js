@@ -100,7 +100,8 @@ const property9 ={
   name: "Euston Road",
   owner: null,
   group: "sky_blue",
-  value: 100,  rentIndex: 0,
+  value: 100,  
+  rentIndex: 0,
   rentValues: [6,12,30,90,270,400,550],
   housePrice: 50
   // rent: rentValues[rentIndex]
@@ -110,7 +111,8 @@ const property10 ={
   name: "Pentonville Road",
   owner: null,
   group: "sky_blue",
-  value: 120,  rentIndex: 0,
+  value: 120,  
+  rentIndex: 0,
   rentValues: [8,16,40,100,300,450,600],
   housePrice: 50
   // rent: rentValues[rentIndex]
@@ -120,7 +122,8 @@ const property11 ={
   name: "Jail",
   owner: null,
   group: "corner",
-  value: null,  rentIndex: 0,
+  value: null,  
+  rentIndex: 0,
   rentValues: [null],
   housePrice: null
   // rent: null
@@ -130,7 +133,8 @@ const property12 ={
   name: "Pall Mall",
   owner: null,
   group: "pink",
-  value: 140,  rentIndex: 0,
+  value: 140,  
+  rentIndex: 0,
   rentValues: [10,20,50,150,450,625,750],
   housePrice: 100
   // rent: rentValues[rentIndex]
@@ -140,8 +144,9 @@ const property13 ={
   name: "Electric Company",
   owner: null,
   group: "utility",
-  value: 150,  rentIndex: 0,
-  rentValues: [null],
+  value: 150,  
+  rentIndex: 0,
+  rentValues: [0,4,10],
   housePrice: null
   // rent: rentValues[rentIndex]
 }
@@ -150,7 +155,8 @@ const property14 ={
   name: "Whitehall",
   owner: null,
   group: "pink",
-  value: 140,  rentIndex: 0,
+  value: 140,  
+  rentIndex: 0,
   rentValues: [10,20,50,150,450,625,750],
   housePrice: 100
   // rent: rentValues[rentIndex]
@@ -160,7 +166,8 @@ const property15 ={
   name: "Northumberland Avenue",
   owner: null,
   group: "pink",
-  value: 160,  rentIndex: 0,
+  value: 160,  
+  rentIndex: 0,
   rentValues: [12,24,60,180,500,700,900],
   housePrice: 100
   // rent: rentValues[rentIndex]
@@ -170,7 +177,8 @@ const property16 ={
   name: "Marylebone Station",
   owner: null,
   group: "station",
-  value: 200,  rentIndex: 0,
+  value: 200,  
+  rentIndex: 0,
   rentValues: [25,50,100,200],
   housePrice: null
   // rent: rentValues[rentIndex]
@@ -180,7 +188,8 @@ const property17 ={
   name: "Bow Street",
   owner: null,
   group: "orange",
-  value: 180,  rentIndex: 0,
+  value: 180,  
+  rentIndex: 0,
   rentValues: [14,28,70,200,550,750,950],
   housePrice: 100
   // rent: rentValues[rentIndex]
@@ -313,7 +322,7 @@ const property29 ={
   group: "utility",
   value: 150,
   rentIndex: 0,
-  rentValues: [null],
+  rentValues: [0,4,10],
   housePrice: null
   // rent: rentValues[rentIndex]
 }

@@ -80,6 +80,10 @@ class GameContainer extends React.Component{
           station.rentIndex = stations.length - 1
         })
       }
+      else if (currentSquare.group === "utility"){
+        let utilityCount = currentPlayer.countPropertiesInGroup(currentSquare)
+        currentSquare.rentIndex = utilityCount
+      }
     }
   }
 
@@ -90,6 +94,10 @@ class GameContainer extends React.Component{
 
     if (currentSquare.group === "tax"){
       currentPlayer.payRent(currentSquare)
+    }
+    else if (currentSquare.group === "utility" && currentSquare.owner){
+      currentPlayer.state.money = currentPlayer.state.money - (currentSquare.rentValues[currentSquare.rentIndex] * this.state.moveValue)
+      currentSquare.owner.state.money = currentSquare.owner.state.money + (currentSquare.rentValues[currentSquare.rentIndex] * this.state.moveValue)
     }
     else{
       if (!currentSquare.owner || currentSquare.owner === currentPlayer){
