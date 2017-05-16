@@ -71,7 +71,9 @@ class PlayerStats extends React.Component{
           </select>
         </div>
         <div>
-          <PropertyInfo property={this.state.selectedProperty}/>
+          <PropertyInfo 
+            property={this.state.selectedProperty}
+            player={this.props.player}/>
         </div>
       </div>
     )

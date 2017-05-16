@@ -60,21 +60,35 @@ class Player {
     let groupToCheck = property.group
 
     if (this.state.properties){
-    let groupPropertiesOwned = this.state.properties.filter((property) => {
-      return property.group === groupToCheck
-    })
- 
-    if ((groupToCheck === "brown" || groupToCheck === "dark_blue") && groupPropertiesOwned.length === 2){
-      return true
-    }
-    else if (groupPropertiesOwned.length === 3){
-      return true
-    }
-    else {
-      return false
+      let groupPropertiesOwned = this.state.properties.filter((property) => {
+        return property.group === groupToCheck
+      })
+
+      if ((groupToCheck === "brown" || groupToCheck === "dark_blue") && groupPropertiesOwned.length === 2){
+        return true
+      }
+      else if (groupPropertiesOwned.length === 3){
+        return true
+      }
+      else {
+        return false
+      }
     }
   }
-}
+
+  countPropertiesInGroup(property){
+    let groupToCheck = property.group
+
+    let groupPropertiesOwned = []
+
+    if (this.state.properties){
+      groupPropertiesOwned = this.state.properties.filter((property) => {
+        return property.group === groupToCheck
+      })
+    }
+
+    return groupPropertiesOwned.length
+  }
 
 }
 

@@ -22,11 +22,19 @@ class PropertyInfo extends React.Component{
 
     let name
 
+    let count
+
     let price
+
+    let currentRent
+
+    let currentHouses
 
     if (this.props.property && this.props.property.housePrice){
 
       name = this.props.property.name
+
+      count = this.props.player.countPropertiesInGroup(this.props.property)
 
       price = this.props.property.housePrice
     }
@@ -35,6 +43,8 @@ class PropertyInfo extends React.Component{
 
       name = this.props.property.name
 
+      count = this.props.player.countPropertiesInGroup(this.props.property)
+
       price = "N/A"
 
     }
@@ -42,7 +52,9 @@ class PropertyInfo extends React.Component{
     return(
       <div className="property-info-div">
         <p><b>Property Name:</b> {name}</p>
-        <p><b>No. properties in group owned:</b> </p>
+        <p><b>No. properties in group owned:</b> {count}</p>
+        <p><b>Current development level:</b> {currentHouses}</p>
+        <p><b>Current rent:</b> {currentRent}</p>
         <p><b>Development cost:</b> {price}</p>
       </div>
     )
