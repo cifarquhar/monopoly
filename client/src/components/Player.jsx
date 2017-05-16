@@ -107,6 +107,9 @@ class Player {
       alert("Can't develop this property any further")
     }
     else{
+      if(property.rentIndex === 0){
+        property.rentIndex = 1
+      }
       property.rentIndex = property.rentIndex + 1
       this.state.money = this.state.money - property.housePrice
     }
