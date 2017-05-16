@@ -60,7 +60,7 @@ class GameContainer extends React.Component{
     let currentSquare = this.state.squares[currentPlayer.state.position]
 
     if (currentPlayer.state.money < currentSquare.value){
-      return
+      alert("Not enough money to purchase that")
     }
     else if (currentSquare.owner || !currentSquare.value){
       return
