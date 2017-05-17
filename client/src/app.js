@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import GameContainer from "./containers/GameContainer"
 import Player from "./components/Player"
+import Card from "./models/Card"
 
 const player1 = new Player("P1")
 const player2 = new Player("P2")
