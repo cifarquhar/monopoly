@@ -466,7 +466,7 @@ const properties = [property1,property2,property3,property4,property5,property6,
   const chance11 = new Card("Advance to Pall Mall",1,11)
   const chance12 = new Card("Drunk in charge, fine £20",3,20)
 
-  const chanceCards = [chance1,chance2,chance3,chance4,chance5,chance6,chance7,chance8,cahnce9,chance10,chance11,chance12]
+  const chanceCards = [chance1,chance2,chance3,chance4,chance5,chance6,chance7,chance8,chance9,chance10,chance11,chance12]
 
 
 
