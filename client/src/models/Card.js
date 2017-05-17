@@ -32,11 +32,71 @@ class Card {
   }
 
   increaseMoney(player){
-    player.state.money = player.state.money + this.adjustor
+      player.state.money = player.state.money + this.adjustor
   }
 
   decreaseMoney(player) {
-    player.state.money = player.state.money - this.adjustor
+
+
+    let houseMultiplyer
+
+    let hotelMultiplyer
+
+    let dueForProperty
+
+    let totalDue
+
+    const chargeableRents = [2,3,4,5]
+
+    if(this.text === "You are assessed for street repairs: £40 per house, £115 per hotel"){
+      houseMultiplyer = 40
+      hotelMultiplyer = 115
+      totalDue = 0
+
+      if (player.properties){
+        player.properties.forEach((property) => {
+          dueForProperty = 0
+          if (property.rentIndex === 6){
+            dueForProperty = hotelMultiplyer
+          }
+          else {
+          chargeableRents.forEach((index) => {
+            if (property.rentIndex === index){
+              dueForProperty = index * houseMultiplyer
+            }
+          })
+          }
+          totalDue = totalDue + dueForProperty
+        })
+      }
+      player.state.money = player.state.money - totalDue
+    }
+    else if (this.text === "Make general repairs on all of your houses. For each house pay £25, for each hotel pay £100"){
+      houseMultiplyer = 25
+      hotelMultiplyer = 100
+      totalDue = 0
+
+      if (player.properties){
+        player.properties.forEach((property) => {
+          dueForProperty = 0
+          if (property.rentIndex === 6){
+            dueForProperty = hotelMultiplyer
+          }
+          else {
+          chargeableRents.forEach((index) => {
+            if (property.rentIndex === index){
+              dueForProperty = index * houseMultiplyer
+            }
+          })
+          }
+          totalDue = totalDue + dueForProperty
+        })
+      }
+      player.state.money = player.state.money - totalDue
+    }
+    else {
+      player.state.money = player.state.money - this.adjustor
+    }
   }
 
   addJailCard(player) {

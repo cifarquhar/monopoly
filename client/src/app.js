@@ -467,8 +467,10 @@ const properties = [property1,property2,property3,property4,property5,property6,
   const chance12 = new Card("Drunk in charge, fine £20",3,20)
   const chance13 = new Card("Go to Jail",1)
   const chance14 = new Card("Go back 3 spaces",1)
+  const chance15 = new Card("You are assessed for street repairs: £40 per house, £115 per hotel",3)
+  const chance16 = new Card("Make general repairs on all of your houses. For each house pay £25, for each hotel pay £100",3)
 
-  const chanceCards = [chance1,chance2,chance3,chance4,chance5,chance6,chance7,chance8,chance9,chance10,chance11,chance12,chance13,chance14]
+  const chanceCards = [chance1,chance2,chance3,chance4,chance5,chance6,chance7,chance8,chance9,chance10,chance11,chance12,chance13,chance14,chance15,chance16]
 
 
 
