@@ -28,19 +28,22 @@ class GameContainer extends React.Component{
     this.state.players.forEach(function(player){
       player.reset()
     })
-    this.setState({chanceCards: this.shuffle(this.state.chanceCards)})
-    this.setState({chestCards: this.shuffle(this.state.chestCards)})
-    this.setState({moveValue: null})
-    this.setState({activePlayer: this.state.players[0]})
-    this.setState({activePlayerIndex: 0})
-    this.setState({won: false})
-  }
+    console.log(this.state.chanceCards)
+    this.setState({chanceCards: this.shuffle(this.state.chanceCards),
+     chestCards: this.shuffle(this.state.chestCards),
+     moveValue: null,
+     activePlayer: this.state.players[0],
+     activePlayerIndex: 0,
+     won: false})
+   }
 
   shuffle(a){
-    for (let i = a.length; i; i--) {
+    const shuffledArray = [...a]
+    for (let i = shuffledArray.length; i; i--) {
       let j = Math.floor(Math.random() * i);
-      [a[i - 1], a[j]] = [a[j], a[i - 1]];
+      [shuffledArray[i - 1], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i - 1]];
     }
+    return shuffledArray
   }
 
   updateActivePlayer(){

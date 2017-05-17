@@ -470,7 +470,7 @@ const properties = [property1,property2,property3,property4,property5,property6,
 
 
 
-  const chest1 = new Card("Income tax refunc, collect £20",2,20)
+  const chest1 = new Card("Income tax refund, collect £20",2,20)
   const chest2 = new Card("From Sale of Stock you get £50",2,50)
   const chest3 = new Card("Receive interest on 7% preference shares, £25",2,25)
   const chest4 = new Card("Get out of Jail free",4)
