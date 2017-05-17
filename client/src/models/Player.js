@@ -12,7 +12,7 @@ class Player {
 
   updatePosition(moveValue){
     if (this.inJail && this.jailCounter < 3){
-      this.jailCounter = this.jailCounter + 1
+      this.jailCounter += 1
     }
     else if (this.inJail && this.jailCounter === 3){
       this.jailCounter = null
@@ -21,7 +21,7 @@ class Player {
     }
     else {
       if (this.position + moveValue >= 40){
-        this.money = this.money + 200
+        this.money += 200
       }
     this.position =  (this.position + moveValue) % 40
   }
@@ -39,16 +39,16 @@ class Player {
 
 
   payForProperty(property){
-    this.money = (this.money) - (property.value)
+    this.money -= (property.value)
   }
 
   payRent(property){
     console.log(property.rentValues[property.rentIndex])
-    this.money = (this.money) - (property.rentValues[property.rentIndex])
+    this.money -= (property.rentValues[property.rentIndex])
   }
 
   receiveRent(property){
-    this.money = (this.money) + (property.rentValues[property.rentIndex])
+    this.money += (property.rentValues[property.rentIndex])
   }
 
   checkFunds(){
@@ -151,8 +151,8 @@ class Player {
       }
 
       else {
-        property.rentIndex = property.rentIndex + 1
-        this.money = this.money - property.housePrice
+        property.rentIndex += 1
+        this.money -= property.housePrice
       }
     }
   }

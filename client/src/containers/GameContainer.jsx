@@ -111,8 +111,8 @@ class GameContainer extends React.Component{
       currentPlayer.payRent(currentSquare)
     }
     else if (currentSquare.group === "utility" && currentSquare.owner){
-      currentPlayer.money = currentPlayer.money - (currentSquare.rentValues[currentSquare.rentIndex] * this.state.moveValue)
-      currentSquare.owner.state.money = currentSquare.owner.state.money + (currentSquare.rentValues[currentSquare.rentIndex] * this.state.moveValue)
+      currentPlayer.money -= (currentSquare.rentValues[currentSquare.rentIndex] * this.state.moveValue)
+      currentSquare.owner.money += (currentSquare.rentValues[currentSquare.rentIndex] * this.state.moveValue)
     }
     else{
       if (!currentSquare.owner || currentSquare.owner === currentPlayer){
@@ -124,7 +124,7 @@ class GameContainer extends React.Component{
         console.log(groupCheck)
 
         if (groupCheck && currentSquare.rentIndex === 0){
-          currentSquare.rentIndex = currentSquare.rentIndex + 1
+          currentSquare.rentIndex += 1
         }
 
         currentPlayer.payRent(currentSquare)
@@ -150,10 +150,10 @@ class GameContainer extends React.Component{
       console.log(card)
       
       if (card.text === "It is your birthday, collect £10 from each player"){
-        this.state.activePlayer.money = this.state.activePlayer.money + 10
+        this.state.activePlayer.money += 10
         this.state.players.forEach((player) => {
           if (player !== this.state.activePlayer){
-            player.money = player.money - 10
+            player.money -= 10
           }
         })
         this.state.chestCards.push(card)
@@ -168,7 +168,7 @@ class GameContainer extends React.Component{
           alert(chanceCard.text)
         }
         else {
-          this.state.activePlayer.money = this.state.activePlayer.money - 10
+          this.state.activePlayer.money -= 10
         }
         this.state.chestCards.push(card)
       }

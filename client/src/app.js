@@ -17,7 +17,6 @@ const property1 ={
   rentIndex: 0,
   rentValues: [null],
   housePrice: null
-  // rent: null
 }
 
 const property2 ={
@@ -28,7 +27,6 @@ const property2 ={
   rentIndex: 0,
   rentValues: [2,4,10,30,90,160,250],
   housePrice: 50
-  // rent: rentValues[rentIndex]
 }
 
 const property3 ={
@@ -39,7 +37,6 @@ const property3 ={
   rentIndex: 0,
   rentValues: [null],
   housePrice: null
-  // rent: null
 }
 
 const property4 ={
@@ -50,7 +47,6 @@ const property4 ={
   rentIndex: 0,
   rentValues: [4,8,20,60,180,320,450],
   housePrice: 50
-  // rent: rentValues[rentIndex]
 }
 
 const property5 ={
@@ -61,7 +57,6 @@ const property5 ={
   rentIndex: 0,
   rentValues: [200],
   housePrice: null
-  // rent: 200
 }
 
 const property6 ={
@@ -72,7 +67,6 @@ const property6 ={
   rentIndex: 0,
   rentValues: [25,50,100,200],
   housePrice: null
-  // rent: rentValues[rentIndex]
 }
 
 const property7 ={
@@ -83,7 +77,6 @@ const property7 ={
   rentIndex: 0,
   rentValues: [6,12,30,90,270,400,550],
   housePrice: 50
-  // rent: rentValues[rentIndex]
 }
 
 const property8 ={
@@ -94,7 +87,6 @@ const property8 ={
   rentIndex: 0,
   rentValues: [null],
   housePrice: null
-  // rent: null
 }
 
 const property9 ={
@@ -105,7 +97,6 @@ const property9 ={
   rentIndex: 0,
   rentValues: [6,12,30,90,270,400,550],
   housePrice: 50
-  // rent: rentValues[rentIndex]
 }
 
 const property10 ={
@@ -116,7 +107,6 @@ const property10 ={
   rentIndex: 0,
   rentValues: [8,16,40,100,300,450,600],
   housePrice: 50
-  // rent: rentValues[rentIndex]
 }
 
 const property11 ={
@@ -127,7 +117,6 @@ const property11 ={
   rentIndex: 0,
   rentValues: [null],
   housePrice: null
-  // rent: null
 }
 
 const property12 ={
@@ -138,7 +127,6 @@ const property12 ={
   rentIndex: 0,
   rentValues: [10,20,50,150,450,625,750],
   housePrice: 100
-  // rent: rentValues[rentIndex]
 }
 
 const property13 ={
@@ -149,7 +137,6 @@ const property13 ={
   rentIndex: 0,
   rentValues: [0,4,10],
   housePrice: null
-  // rent: rentValues[rentIndex]
 }
 
 const property14 ={
@@ -160,7 +147,6 @@ const property14 ={
   rentIndex: 0,
   rentValues: [10,20,50,150,450,625,750],
   housePrice: 100
-  // rent: rentValues[rentIndex]
 }
 
 const property15 ={
@@ -171,7 +157,6 @@ const property15 ={
   rentIndex: 0,
   rentValues: [12,24,60,180,500,700,900],
   housePrice: 100
-  // rent: rentValues[rentIndex]
 }
 
 const property16 ={
@@ -182,7 +167,6 @@ const property16 ={
   rentIndex: 0,
   rentValues: [25,50,100,200],
   housePrice: null
-  // rent: rentValues[rentIndex]
 }
 
 const property17 ={
@@ -193,7 +177,6 @@ const property17 ={
   rentIndex: 0,
   rentValues: [14,28,70,200,550,750,950],
   housePrice: 100
-  // rent: rentValues[rentIndex]
 }
 
 const property18 ={
@@ -204,7 +187,6 @@ const property18 ={
   rentIndex: 0,
   rentValues: [null],
   housePrice: null
-  // rent: null
 }
 
 const property19 ={
@@ -215,7 +197,6 @@ const property19 ={
   rentIndex: 0,
   rentValues: [14,28,70,200,550,750,950],
   housePrice: 100
-  // rent: rentValues[rentIndex]
 }
 
 const property20 ={
@@ -226,7 +207,6 @@ const property20 ={
   rentIndex: 0,
   rentValues: [16,32,80,220,600,800,1000],
   housePrice: 100
-  // rent: rentValues[rentIndex]
 }
 
 const property21 ={
@@ -237,7 +217,6 @@ const property21 ={
   rentIndex: 0,
   rentValues: [null],
   housePrice: null
-  // rent: null
 }
 
 const property22 ={
@@ -248,7 +227,6 @@ const property22 ={
   rentIndex: 0,
   rentValues: [18,36,90,250,700,875,1050],
   housePrice: 150
-  // rent: rentValues[rentIndex]
 }
 
 const property23 ={
@@ -259,7 +237,6 @@ const property23 ={
   rentIndex: 0,
   rentValues: [null],
   housePrice: null
-  // rent: null
 }
 
 const property24 ={
@@ -270,7 +247,6 @@ const property24 ={
   rentIndex: 0,
   rentValues: [18,36,90,250,700,875,1050],
   housePrice: 150
-  // rent: rentValues[rentIndex]
 }
 
 const property25 ={
@@ -281,7 +257,6 @@ const property25 ={
   rentIndex: 0,
   rentValues: [20,40,100,300,750,925,1100],
   housePrice: 150
-  // rent: rentValues[rentIndex]
 }
 
 const property26 ={
@@ -292,7 +267,6 @@ const property26 ={
   rentIndex: 0,
   rentValues: [25,50,100,200],
   housePrice: null
-  // rent: rentValues[rentIndex]
 }
 
 const property27 ={
@@ -303,7 +277,6 @@ const property27 ={
   rentIndex: 0,
   rentValues: [22,44,110,330,800,975,1150],
   housePrice: 150
-  // rent: rentValues[rentIndex]
 }
 
 const property28 ={
@@ -314,7 +287,6 @@ const property28 ={
   rentIndex: 0,
   rentValues: [22,44,110,330,800,975,1150],
   housePrice: 150
-  // rent: rentValues[rentIndex]
 }
 
 const property29 ={
@@ -325,7 +297,6 @@ const property29 ={
   rentIndex: 0,
   rentValues: [0,4,10],
   housePrice: null
-  // rent: rentValues[rentIndex]
 }
 
 const property30 ={
@@ -336,7 +307,6 @@ const property30 ={
   rentIndex: 0,
   rentValues: [22,44,120,360,850,1025,1200],
   housePrice: 150
-  // rent: rentValues[rentIndex]
 }
 
 const property31 ={
@@ -347,7 +317,6 @@ const property31 ={
   rentIndex: 0,
   rentValues: [null],
   housePrice: null
-  // rent: null
 }
 
 const property32 ={
@@ -358,7 +327,6 @@ const property32 ={
   rentIndex: 0,
   rentValues: [26,52,130,390,900,1100,1275],
   housePrice: 200
-  // rent: rentValues[rentIndex]
 }
 
 const property33 ={
@@ -369,7 +337,6 @@ const property33 ={
   rentIndex: 0,
   rentValues: [26,52,130,390,900,1100,1275],
   housePrice: 200
-  // rent: rentValues[rentIndex]
 }
 
 const property34 ={
@@ -380,7 +347,6 @@ const property34 ={
   rentIndex: 0,
   rentValues: [null],
   housePrice: null
-  // rent: null
 }
 
 const property35 ={
@@ -391,7 +357,6 @@ const property35 ={
   rentIndex: 0,
   rentValues: [28,56,150,450,1000,1200,1400],
   housePrice: 200
-  // rent: rentValues[rentIndex]
 }
 
 const property36 ={
@@ -402,7 +367,6 @@ const property36 ={
   rentIndex: 0,
   rentValues: [25,50,100,200],
   housePrice: null
-  // rent: rentValues[rentIndex]
 }
 
 const property37 ={
@@ -413,7 +377,6 @@ const property37 ={
   rentIndex: 0,
   rentValues: [null],
   housePrice: null
-  // rent: null
 }
 
 const property38 ={
@@ -424,7 +387,6 @@ const property38 ={
   rentIndex: 0,
   rentValues: [35,70,175,500,1100,1300,1500],
   housePrice: 200
-  // rent: rentValues[rentIndex]
 }
 
 const property39 ={
@@ -435,7 +397,6 @@ const property39 ={
   rentIndex: 0,
   rentValues: [100],
   housePrice: null
-  // rent: 100
 }
 
 const property40 ={
@@ -446,7 +407,6 @@ const property40 ={
   rentIndex: 0,
   rentValues: [50,100,200,600,1400,1700,2000],
   housePrice: 200
-  // rent: rentValues[rentIndex]
 }
 
 const properties = [property1,property2,property3,property4,property5,property6,property7,property8,property9,property10,property11,property12,property13,property14,property15,property16,property17,property18,property19,property20,property21,property22,property23,property24,property25,property26,property27,property28,property29,property30,property31,property32,property33,property34,property35,property36,property37,property38,property39,property40]

@@ -18,21 +18,21 @@ class Card {
       player.goToJail()
     }
     else if (this.text === "Go back 3 spaces"){
-      player.position = player.position - 3
+      player.position -= 3
     }
     else {
       player.position = this.adjustor
     }
 
     if ((this.text !== "Go back to Old Kent Road") && (this.adjustor < oldPlayerPosition)){
-      player.money = player.money + 200
+      player.money += 200
     }
 
 
   }
 
   increaseMoney(player){
-      player.money = player.money + this.adjustor
+      player.money += this.adjustor
   }
 
   decreaseMoney(player) {
@@ -66,10 +66,10 @@ class Card {
             }
           })
           }
-          totalDue = totalDue + dueForProperty
+          totalDue += dueForProperty
         })
       }
-      player.money = player.money - totalDue
+      player.money -= totalDue
     }
     else if (this.text === "Make general repairs on all of your houses. For each house pay £25, for each hotel pay £100"){
       houseMultiplyer = 25
@@ -89,13 +89,13 @@ class Card {
             }
           })
           }
-          totalDue = totalDue + dueForProperty
+          totalDue += dueForProperty
         })
       }
-      player.money = player.money - totalDue
+      player.money -= totalDue
     }
     else {
-      player.money = player.money - this.adjustor
+      player.money -= this.adjustor
     }
   }
 
