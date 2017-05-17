@@ -1,29 +1,33 @@
-var Card = function(text,method,adjustor){
+
+
+class Card {
+
+  constructor(text,method,adjustor){
   this.text = text
   this.method = method
   this.adjustor = adjustor
-}
+  }
 
-Card.prototype = {
 
-  adjustPosition: (player) => {
+
+  adjustPosition(player){
     player.state.position = this.adjustor
-  },
+  }
 
-  increaseMoney: (player) => {
+  increaseMoney(player){
     player.state.money = player.state.money + this.adjustor
-  },
+  }
 
-  decreaseMoney: (player) => {
+  decreaseMoney(player) {
     player.state.money = player.state.money - this.adjustor
-  },
+  }
 
-  addJailCard: (player) => {
+  addJailCard(player) {
     player.state.jailCard = true
-  },
+  }
 
 
-  lookupMethod: (index,player) => {
+  lookupMethod(index,player){
     switch(index){
       case 1:
         this.adjustPosition(player)
@@ -40,12 +44,13 @@ Card.prototype = {
       default:
         return
     }
-  },
+  }
 
-  applyMethod: (player) => {
+  applyMethod(player){
+    console.log(this)
     this.lookupMethod(this.method,player)
   }
 
 }
 
-module.exports = Card
+export default Card

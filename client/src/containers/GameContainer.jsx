@@ -30,11 +30,11 @@ class GameContainer extends React.Component{
     })
     console.log(this.state.chanceCards)
     this.setState({chanceCards: this.shuffle(this.state.chanceCards),
-     chestCards: this.shuffle(this.state.chestCards),
-     moveValue: null,
-     activePlayer: this.state.players[0],
-     activePlayerIndex: 0,
-     won: false})
+                  chestCards: this.shuffle(this.state.chestCards),
+                  moveValue: null,
+                  activePlayer: this.state.players[0],
+                  activePlayerIndex: 0,
+                  won: false})
    }
 
   shuffle(a){
@@ -134,8 +134,20 @@ class GameContainer extends React.Component{
 
 
   checkCardSquare(square){
-    if (square.group === "bonus"){
-      alert("Landed on " + square.name)
+    if (square.group === "bonus" && square.name === "Chance"){
+      let card = this.state.chanceCards.shift()
+      console.log(card)
+      card.applyMethod(this.state.activePlayer)
+      this.state.chanceCards.push(card)
+      alert("Landed on " + square.name + "\n" + "\n" + card.text)
+    }
+    else if (square.group === "bonus" && square.name === "Community Chest"){
+      let card = this.state.chestCards.shift()
+
+
+      card.applyMethod(this.state.activePlayer)
+      this.state.chestCards.push(card)
+      alert("Landed on " + square.name + "\n" + "\n" + card.text)
     }
   }
 
