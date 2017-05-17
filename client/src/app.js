@@ -465,8 +465,8 @@ const properties = [property1,property2,property3,property4,property5,property6,
   const chance10 = new Card("Take a trip to Marylebone Station",1,15)
   const chance11 = new Card("Advance to Pall Mall",1,11)
   const chance12 = new Card("Drunk in charge, fine £20",3,20)
-  const chance13 = new Card("Go to Jail",1)
-  const chance14 = new Card("Go back 3 spaces",1)
+  const chance13 = new Card("Go to Jail",1,39)
+  const chance14 = new Card("Go back 3 spaces",1,39)
   const chance15 = new Card("You are assessed for street repairs: £40 per house, £115 per hotel",3)
   const chance16 = new Card("Make general repairs on all of your houses. For each house pay £25, for each hotel pay £100",3)
 
@@ -486,10 +486,12 @@ const properties = [property1,property2,property3,property4,property5,property6,
   const chest10 = new Card("Pay you insurance premium £50",3,50)
   const chest11 = new Card("Doctor's fee pay £50",3,50)
   const chest12 = new Card("Annuity matures, collect £100",2,100)
-  const chest13 = new Card("Go to Jail",1)
+  const chest13 = new Card("Go to Jail",1,39)
   const chest14 = new Card("Go back to Old Kent Road",1,1)
+  const chest15 = new Card("It is your birthday, collect £10 from each player")
+  const chest16 = new Card("Pay a £10 fine or take a Chance")
 
-  const chestCards = [chest1,chest2,chest3,chest4,chest5,chest6,chest7,chest8,chest9,chest10,chest11,chest12,chest13]
+  const chestCards = [chest1,chest2,chest3,chest4,chest5,chest6,chest7,chest8,chest9,chest10,chest11,chest12,chest13,chest14,chest15,chest16]
 
 window.onload = function(){
   ReactDOM.render(
