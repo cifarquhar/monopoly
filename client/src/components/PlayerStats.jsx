@@ -14,8 +14,8 @@ class PlayerStats extends React.Component{
 
   getPropertyList(){
     let ownedProperties = []
-    if (this.props.player && this.props.player.state.properties){
-      ownedProperties = this.props.player.state.properties.map((property,index) => {
+    if (this.props.player && this.props.player.properties){
+      ownedProperties = this.props.player.properties.map((property,index) => {
        return <option key={index+1} value={index+1}>{property.name}</option>
       })
     }
@@ -34,9 +34,9 @@ class PlayerStats extends React.Component{
 
   setSelectedProperty(){
 
-    if (this.props.player && this.props.player.state.properties){
+    if (this.props.player && this.props.player.properties){
 
-     this.setState({selectedProperty: this.props.player.state.properties[this.state.selectedPropertyIndex]})
+     this.setState({selectedProperty: this.props.player.properties[this.state.selectedPropertyIndex]})
 
    }
  }
@@ -54,9 +54,9 @@ class PlayerStats extends React.Component{
 
 
   if (this.props.player){
-    name = this.props.player.state.name
+    name = this.props.player.name
 
-    funds = this.props.player.state.money
+    funds = this.props.player.money
 }
     return(
       <div className="player-stats-div">

@@ -1,79 +1,77 @@
 class Player {
 
   constructor(name){
-    this.state = {
-      name: name,
-      position: 0,
-      money: 1500,
-      properties: [],
-      inJail: false,
-      jailCounter: null,
-      jailCard: false
-    }
+      this.name = name
+      this.position = 0
+      this.money = 1500
+      this.properties = []
+      this.inJail = false
+      this.jailCounter = null
+      this.jailCard = false
   }
 
   updatePosition(moveValue){
-    if (this.state.inJail && this.state.jailCounter < 3){
-      this.state.jailCounter = this.state.jailCounter + 1
+    if (this.inJail && this.jailCounter < 3){
+      this.jailCounter = this.jailCounter + 1
     }
-    else if (this.state.inJail && this.state.jailCounter === 3){
-      this.state.jailCounter = null
-      this.state.inJail = false
-      this.state.position =  (this.state.position + moveValue) % 40
+    else if (this.inJail && this.jailCounter === 3){
+      this.jailCounter = null
+      this.inJail = false
+      this.position =  (this.position + moveValue) % 40
     }
     else {
-      if (this.state.position + moveValue >= 40){
-        this.state.money = this.state.money + 200
+      if (this.position + moveValue >= 40){
+        this.money = this.money + 200
       }
-    this.state.position =  (this.state.position + moveValue) % 40
+    this.position =  (this.position + moveValue) % 40
   }
   }
 
   reset(){
-    this.state.position = 0
-    this.state.money = 1500
-    this.state.properties = []
-    this.state.inJail = false
-    this.state.jailCounter = null
-    this.state.jailCard = false
+    this.position = 0
+    this.money = 1500
+    this.properties = []
+    this.inJail = false
+    this.jailCounter = null
+    this.jailCard = false
   }
 
 
 
   payForProperty(property){
-    this.state.money = (this.state.money) - (property.value)
+    this.money = (this.money) - (property.value)
   }
 
   payRent(property){
     console.log(property.rentValues[property.rentIndex])
-    this.state.money = (this.state.money) - (property.rentValues[property.rentIndex])
+    this.money = (this.money) - (property.rentValues[property.rentIndex])
   }
 
   receiveRent(property){
-    this.state.money = (this.state.money) + (property.rentValues[property.rentIndex])
+    this.money = (this.money) + (property.rentValues[property.rentIndex])
   }
 
   checkFunds(){
-    return this.state.money
+    return this.money
   }
 
   goToJail(){
-    this.state.position = 10
-    this.state.inJail = true
-    this.state.jailCounter = 0
+    this.position = 10
+    this.inJail = true
+    this.jailCounter = 0
   }
 
   leaveJail(){
-    if (!this.state.jailCard){
+    if (!this.jailCard){
       alert("Don't have a Get Out of Jail Free card to use!")
     }
-    else if (!this.state.inJail){
+    else if (!this.inJail){
       alert("You're not in jail, no need to use that just now.")
     }
     else {
-      this.state.inJail = false
-      this.state.jailCounter = null
-      this.state.jailCard = false
+      this.inJail = false
+      this.jailCounter = null
+      this.jailCard = false
       alert("Used Get Out of Jail Free card.")
     }
   }
@@ -83,8 +81,8 @@ class Player {
     console.log(property)
     let groupToCheck = property.group
 
-    if (this.state.properties){
-      let groupPropertiesOwned = this.state.properties.filter((property) => {
+    if (this.properties){
+      let groupPropertiesOwned = this.properties.filter((property) => {
         return property.group === groupToCheck
       })
 
@@ -105,8 +103,8 @@ class Player {
 
     let groupPropertiesOwned = []
 
-    if (this.state.properties){
-      groupPropertiesOwned = this.state.properties.filter((property) => {
+    if (this.properties){
+      groupPropertiesOwned = this.properties.filter((property) => {
         return property.group === groupToCheck
       })
     }
@@ -126,7 +124,7 @@ class Player {
     else if (!ownershipCheck.check){
       alert("You must own all properties in a group before building houses")
     }
-    else if (this.state.money < property.housePrice){
+    else if (this.money < property.housePrice){
       alert("Not enough money to develop this property")
     }
     else if (property.rentIndex === 6){
@@ -154,7 +152,7 @@ class Player {
 
       else {
         property.rentIndex = property.rentIndex + 1
-        this.state.money = this.state.money - property.housePrice
+        this.money = this.money - property.housePrice
       }
     }
   }

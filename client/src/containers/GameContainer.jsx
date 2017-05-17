@@ -73,9 +73,9 @@ class GameContainer extends React.Component{
   purchaseProperty(){
     let currentPlayer = this.state.activePlayer
     
-    let currentSquare = this.state.squares[currentPlayer.state.position]
+    let currentSquare = this.state.squares[currentPlayer.position]
 
-    if (currentPlayer.state.money < currentSquare.value){
+    if (currentPlayer.money < currentSquare.value){
       alert("Not enough money to purchase that")
     }
     else if (currentSquare.owner){
@@ -85,7 +85,7 @@ class GameContainer extends React.Component{
       alert("You can't buy this type of property")
     }
     else {
-      currentPlayer.state.properties.push(currentSquare)
+      currentPlayer.properties.push(currentSquare)
       currentSquare.owner = currentPlayer
       currentPlayer.payForProperty(currentSquare)
 
@@ -105,13 +105,13 @@ class GameContainer extends React.Component{
   payRentIfDue(){
     let currentPlayer = this.state.activePlayer
 
-    let currentSquare = this.state.squares[currentPlayer.state.position]
+    let currentSquare = this.state.squares[currentPlayer.position]
 
     if (currentSquare.group === "tax"){
       currentPlayer.payRent(currentSquare)
     }
     else if (currentSquare.group === "utility" && currentSquare.owner){
-      currentPlayer.state.money = currentPlayer.state.money - (currentSquare.rentValues[currentSquare.rentIndex] * this.state.moveValue)
+      currentPlayer.money = currentPlayer.money - (currentSquare.rentValues[currentSquare.rentIndex] * this.state.moveValue)
       currentSquare.owner.state.money = currentSquare.owner.state.money + (currentSquare.rentValues[currentSquare.rentIndex] * this.state.moveValue)
     }
     else{
@@ -150,10 +150,10 @@ class GameContainer extends React.Component{
       console.log(card)
       
       if (card.text === "It is your birthday, collect £10 from each player"){
-        this.state.activePlayer.state.money = this.state.activePlayer.state.money + 10
+        this.state.activePlayer.money = this.state.activePlayer.money + 10
         this.state.players.forEach((player) => {
           if (player !== this.state.activePlayer){
-            player.state.money = player.state.money - 10
+            player.money = player.money - 10
           }
         })
         this.state.chestCards.push(card)
@@ -168,7 +168,7 @@ class GameContainer extends React.Component{
           alert(chanceCard.text)
         }
         else {
-          this.state.activePlayer.state.money = this.state.activePlayer.state.money - 10
+          this.state.activePlayer.money = this.state.activePlayer.money - 10
         }
         this.state.chestCards.push(card)
       }
@@ -186,7 +186,7 @@ class GameContainer extends React.Component{
 
     let currentPlayer = this.state.activePlayer
 
-    let currentSquare = this.state.squares[currentPlayer.state.position]
+    let currentSquare = this.state.squares[currentPlayer.position]
 
     this.checkCardSquare(currentSquare)
 
@@ -204,7 +204,7 @@ class GameContainer extends React.Component{
     let funds = currentPlayer.checkFunds()
 
     if (funds < 0){
-      alert(currentPlayer.state.name + " is bankrupt!")
+      alert(currentPlayer.name + " is bankrupt!")
       this.setState({won: true})
     }
   }
@@ -220,7 +220,7 @@ class GameContainer extends React.Component{
     let currentPlayer = this.state.activePlayer
 
     if (currentPlayer){
-      currentSquare = this.state.squares[currentPlayer.state.position]
+      currentSquare = this.state.squares[currentPlayer.position]
     }
 
 

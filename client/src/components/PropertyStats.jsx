@@ -24,7 +24,7 @@ class PropertyStats extends React.Component{
         value = this.props.property.value
 
         if (this.props.property.owner){
-         owner = this.props.property.owner.state.name
+         owner = this.props.property.owner.name
         }
     }
 

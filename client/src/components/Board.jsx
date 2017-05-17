@@ -12,7 +12,7 @@ class Board extends React.Component{
 
   getPlayerPositions(){
    return this.props.players.map(function(player){
-    return player.state.position
+    return player.position
   })
  }
 

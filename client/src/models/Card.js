@@ -12,27 +12,27 @@ class Card {
 
   adjustPosition(player){
 
-    let oldPlayerPosition = player.state.position
+    let oldPlayerPosition = player.position
 
     if (this.text === "Go to Jail"){
       player.goToJail()
     }
     else if (this.text === "Go back 3 spaces"){
-      player.state.position = player.state.position - 3
+      player.position = player.position - 3
     }
     else {
-      player.state.position = this.adjustor
+      player.position = this.adjustor
     }
 
     if ((this.text !== "Go back to Old Kent Road") && (this.adjustor < oldPlayerPosition)){
-      player.state.money = player.state.money + 200
+      player.money = player.money + 200
     }
 
 
   }
 
   increaseMoney(player){
-      player.state.money = player.state.money + this.adjustor
+      player.money = player.money + this.adjustor
   }
 
   decreaseMoney(player) {
@@ -69,7 +69,7 @@ class Card {
           totalDue = totalDue + dueForProperty
         })
       }
-      player.state.money = player.state.money - totalDue
+      player.money = player.money - totalDue
     }
     else if (this.text === "Make general repairs on all of your houses. For each house pay £25, for each hotel pay £100"){
       houseMultiplyer = 25
@@ -92,15 +92,15 @@ class Card {
           totalDue = totalDue + dueForProperty
         })
       }
-      player.state.money = player.state.money - totalDue
+      player.money = player.money - totalDue
     }
     else {
-      player.state.money = player.state.money - this.adjustor
+      player.money = player.money - this.adjustor
     }
   }
 
   addJailCard(player) {
-    player.state.jailCard = true
+    player.jailCard = true
   }
 
 
