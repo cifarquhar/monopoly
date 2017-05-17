@@ -7,7 +7,8 @@ class Player {
       money: 1500,
       properties: [],
       inJail: false,
-      jailCounter: null
+      jailCounter: null,
+      jailCard: true
     }
   }
 
