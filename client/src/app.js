@@ -489,7 +489,7 @@ const properties = [property1,property2,property3,property4,property5,property6,
   const chest13 = new Card("Go to Jail",1,39)
   const chest14 = new Card("Go back to Old Kent Road",1,1)
   const chest15 = new Card("It is your birthday, collect £10 from each player")
-  const chest16 = new Card("Pay a £10 fine or take a Chance")
+  const chest16 = new Card("Pay a £10 fine (OK) or take a Chance (cancel)")
 
   const chestCards = [chest1,chest2,chest3,chest4,chest5,chest6,chest7,chest8,chest9,chest10,chest11,chest12,chest13,chest14,chest15,chest16]
 

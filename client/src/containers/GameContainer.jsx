@@ -135,6 +135,9 @@ class GameContainer extends React.Component{
 
 
   checkCardSquare(square){
+
+    let chanceCard
+
     if (square.group === "bonus" && square.name === "Chance"){
       let card = this.state.chanceCards.shift()
       console.log(card)
@@ -146,12 +149,36 @@ class GameContainer extends React.Component{
       let card = this.state.chestCards.shift()
       console.log(card)
       
+      if (card.text === "It is your birthday, collect £10 from each player"){
+        this.state.activePlayer.state.money = this.state.activePlayer.state.money + 10
+        this.state.players.forEach((player) => {
+          if (player !== this.state.activePlayer){
+            player.state.money = player.state.money - 10
+          }
+        })
+        this.state.chestCards.push(card)
+        alert("Landed on " + square.name + "\n" + "\n" + card.text)
+      }
+
+      else if (card.text === "Pay a £10 fine (OK) or take a Chance (cancel)"){
+        if (confirm("Landed on " + square.name + "\n" + "\n" + card.text) == true){
+          chanceCard = this.state.chanceCards.shift()
+          chanceCard.applyMethod(this.state.activePlayer)
+          this.state.chanceCards.push(chanceCard)
+          alert(chanceCard.text)
+        }
+        else {
+          this.state.activePlayer.state.money = this.state.activePlayer.state.money - 10
+        }
+        this.state.chestCards.push(card)
+      }
 
 
-
-      card.applyMethod(this.state.activePlayer)
-      this.state.chestCards.push(card)
-      alert("Landed on " + square.name + "\n" + "\n" + card.text)
+      else {
+        card.applyMethod(this.state.activePlayer)
+        this.state.chestCards.push(card)
+        alert("Landed on " + square.name + "\n" + "\n" + card.text)
+      }
     }
   }
 
