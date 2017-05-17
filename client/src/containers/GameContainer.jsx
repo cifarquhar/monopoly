@@ -143,8 +143,7 @@ class GameContainer extends React.Component{
     }
     else if (square.group === "bonus" && square.name === "Community Chest"){
       let card = this.state.chestCards.shift()
-
-
+      console.log(card)
       card.applyMethod(this.state.activePlayer)
       this.state.chestCards.push(card)
       alert("Landed on " + square.name + "\n" + "\n" + card.text)

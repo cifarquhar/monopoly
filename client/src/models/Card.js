@@ -47,7 +47,6 @@ class Card {
   }
 
   applyMethod(player){
-    console.log(this)
     this.lookupMethod(this.method,player)
   }
 

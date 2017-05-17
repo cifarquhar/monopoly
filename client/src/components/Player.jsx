@@ -8,7 +8,7 @@ class Player {
       properties: [],
       inJail: false,
       jailCounter: null,
-      jailCard: true
+      jailCard: false
     }
   }
 
