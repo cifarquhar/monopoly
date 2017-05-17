@@ -152,8 +152,10 @@ class Player {
         alert("Houses must be distributed evenly across properties in a group")
       }
 
-      property.rentIndex = property.rentIndex + 1
-      this.state.money = this.state.money - property.housePrice
+      else {
+        property.rentIndex = property.rentIndex + 1
+        this.state.money = this.state.money - property.housePrice
+      }
     }
   }
 
