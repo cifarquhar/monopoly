@@ -465,8 +465,10 @@ const properties = [property1,property2,property3,property4,property5,property6,
   const chance10 = new Card("Take a trip to Marylebone Station",1,15)
   const chance11 = new Card("Advance to Pall Mall",1,11)
   const chance12 = new Card("Drunk in charge, fine £20",3,20)
+  const chance13 = new Card("Go to Jail",1)
+  const chance14 = new Card("Go back 3 spaces",1)
 
-  const chanceCards = [chance1,chance2,chance3,chance4,chance5,chance6,chance7,chance8,chance9,chance10,chance11,chance12]
+  const chanceCards = [chance1,chance2,chance3,chance4,chance5,chance6,chance7,chance8,chance9,chance10,chance11,chance12,chance13,chance14]
 
 
 
@@ -482,8 +484,10 @@ const properties = [property1,property2,property3,property4,property5,property6,
   const chest10 = new Card("Pay you insurance premium £50",3,50)
   const chest11 = new Card("Doctor's fee pay £50",3,50)
   const chest12 = new Card("Annuity matures, collect £100",2,100)
+  const chest13 = new Card("Go to Jail",1)
+  const chest14 = new Card("Go back to Old Kent Road",1,1)
 
-  const chestCards = [chest1,chest2,chest3,chest4,chest5,chest6,chest7,chest8,chest9,chest10,chest11,chest12]
+  const chestCards = [chest1,chest2,chest3,chest4,chest5,chest6,chest7,chest8,chest9,chest10,chest11,chest12,chest13]
 
 window.onload = function(){
   ReactDOM.render(

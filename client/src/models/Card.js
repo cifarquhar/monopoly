@@ -11,7 +11,24 @@ class Card {
 
 
   adjustPosition(player){
-    player.state.position = this.adjustor
+
+    let oldPlayerPosition = player.state.position
+
+    if (this.text === "Go to Jail"){
+      player.goToJail()
+    }
+    else if (this.text === "Go back 3 spaces"){
+      player.state.position = player.state.position - 3
+    }
+    else {
+      player.state.position = this.adjustor
+    }
+
+    if ((this.text !== "Go back to Old Kent Road") && (this.adjustor < oldPlayerPosition)){
+      player.state.money = player.state.money + 200
+    }
+
+
   }
 
   increaseMoney(player){
