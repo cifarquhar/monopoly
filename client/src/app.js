@@ -487,7 +487,7 @@ const properties = [property1,property2,property3,property4,property5,property6,
 
 window.onload = function(){
   ReactDOM.render(
-    <GameContainer players={players} properties={properties}/>,
+    <GameContainer players={players} properties={properties} chance={chanceCards} chest = {chestCards}/>,
     document.getElementById('app')
   );
 }

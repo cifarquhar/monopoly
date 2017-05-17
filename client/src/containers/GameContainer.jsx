@@ -13,6 +13,8 @@ class GameContainer extends React.Component{
     super(props)
     this.state = {
       squares: this.props.properties,
+      chanceCards: this.props.chance,
+      chestCards: this.props.chest,
       moveValue: null,
       players: this.props.players,
       activePlayer: null,
@@ -26,10 +28,19 @@ class GameContainer extends React.Component{
     this.state.players.forEach(function(player){
       player.reset()
     })
+    this.setState({chanceCards: this.shuffle(this.state.chanceCards)})
+    this.setState({chestCards: this.shuffle(this.state.chestCards)})
     this.setState({moveValue: null})
     this.setState({activePlayer: this.state.players[0]})
     this.setState({activePlayerIndex: 0})
     this.setState({won: false})
+  }
+
+  shuffle(a){
+    for (let i = a.length; i; i--) {
+      let j = Math.floor(Math.random() * i);
+      [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
   }
 
   updateActivePlayer(){
