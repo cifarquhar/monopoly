@@ -31,12 +31,12 @@ class GameContainer extends React.Component{
     })
     console.log(this.state.chanceCards)
     this.setState({chanceCards: this.shuffle(this.state.chanceCards),
-                  chestCards: this.shuffle(this.state.chestCards),
-                  moveValue: null,
-                  activePlayer: this.state.players[0],
-                  activePlayerIndex: 0,
-                  won: false})
-   }
+      chestCards: this.shuffle(this.state.chestCards),
+      moveValue: null,
+      activePlayer: this.state.players[0],
+      activePlayerIndex: 0,
+      won: false})
+  }
 
   shuffle(a){
     const shuffledArray = [...a]
@@ -226,25 +226,25 @@ class GameContainer extends React.Component{
 
     return(
       <div className="container-div" >
-        <h1>Monopoly!</h1>
-        <Start startGame={this.startGame.bind(this)}/>
-        <span>
-          <PlayerStats player={this.state.activePlayer}/>
-          <PropertyStats property={currentSquare}/>
-        </span>
-        <Board squares={this.state.squares}
-               players={this.state.players}/>
-        <Dice moveValue={this.state.moveValue} 
-              setMoveValue={this.setMoveValue.bind(this)}
-               updatePlayerPosition={this.updatePlayerPosition.bind(this)}
-              rolled={this.state.rolled}
-              won={this.state.won}
-              updateRolled={this.updateRolled.bind(this)}/>
-        <Buy handleClick={this.purchaseProperty.bind(this)}/>
-        <Escape handleClick={this.handleEscapeClick.bind(this)}/>
-        <End updateActivePlayer={this.updateActivePlayer.bind(this)}/>
+      <h1>Monopoly!</h1>
+      <Start startGame={this.startGame.bind(this)}/>
+      <span>
+      <PlayerStats player={this.state.activePlayer}/>
+      <PropertyStats property={currentSquare}/>
+      </span>
+      <Board squares={this.state.squares}
+      players={this.state.players}/>
+      <Dice moveValue={this.state.moveValue} 
+      setMoveValue={this.setMoveValue.bind(this)}
+      updatePlayerPosition={this.updatePlayerPosition.bind(this)}
+      rolled={this.state.rolled}
+      won={this.state.won}
+      updateRolled={this.updateRolled.bind(this)}/>
+      <Buy handleClick={this.purchaseProperty.bind(this)}/>
+      <Escape handleClick={this.handleEscapeClick.bind(this)}/>
+      <End updateActivePlayer={this.updateActivePlayer.bind(this)}/>
       </div>
-    )
+      )
   }
 
 }

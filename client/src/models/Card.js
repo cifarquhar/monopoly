@@ -3,9 +3,9 @@
 class Card {
 
   constructor(text,method,adjustor){
-  this.text = text
-  this.method = method
-  this.adjustor = adjustor
+    this.text = text
+    this.method = method
+    this.adjustor = adjustor
   }
 
 
@@ -32,7 +32,7 @@ class Card {
   }
 
   increaseMoney(player){
-      player.money += this.adjustor
+    player.money += this.adjustor
   }
 
   decreaseMoney(player) {
@@ -60,11 +60,11 @@ class Card {
             dueForProperty = hotelMultiplyer
           }
           else {
-          chargeableRents.forEach((index) => {
-            if (property.rentIndex === index){
-              dueForProperty = index * houseMultiplyer
-            }
-          })
+            chargeableRents.forEach((index) => {
+              if (property.rentIndex === index){
+                dueForProperty = index * houseMultiplyer
+              }
+            })
           }
           totalDue += dueForProperty
         })
@@ -83,11 +83,11 @@ class Card {
             dueForProperty = hotelMultiplyer
           }
           else {
-          chargeableRents.forEach((index) => {
-            if (property.rentIndex === index){
-              dueForProperty = index * houseMultiplyer
-            }
-          })
+            chargeableRents.forEach((index) => {
+              if (property.rentIndex === index){
+                dueForProperty = index * houseMultiplyer
+              }
+            })
           }
           totalDue += dueForProperty
         })
@@ -107,19 +107,19 @@ class Card {
   lookupMethod(index,player){
     switch(index){
       case 1:
-        this.adjustPosition(player)
-        break
+      this.adjustPosition(player)
+      break
       case 2:
-        this.increaseMoney(player)
-        break
+      this.increaseMoney(player)
+      break
       case 3:
-        this.decreaseMoney(player)
-        break
+      this.decreaseMoney(player)
+      break
       case 4:
-        this.addJailCard(player)
-        break
+      this.addJailCard(player)
+      break
       default:
-        return
+      return
     }
   }
 
