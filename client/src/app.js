@@ -452,6 +452,22 @@ const property40 ={
 const properties = [property1,property2,property3,property4,property5,property6,property7,property8,property9,property10,property11,property12,property13,property14,property15,property16,property17,property18,property19,property20,property21,property22,property23,property24,property25,property26,property27,property28,property29,property30,property31,property32,property33,property34,property35,property36,property37,property38,property39,property40]
 
 
+
+  const chance1 = new Card("Advance to Mayfair",1,39)
+  const chance2 = new Card("Advance to Go",1,0)
+  const chance3 = new Card("Bank pays you dividend of £50",2,50)
+  const chance4 = new Card("Pay school fees of £150",3,150)
+  const chance5 = new Card("Speeding fine £15",3,15)
+  const chance6 = new Card("You have won a crossword competition, collect £100",2,100)
+  const chance7 = new Card("Your building loan matures, collect £150",2,150)
+  const chance8 = new Card("Get out of Jail free",4)
+  const chance9 = new Card("Advance to Trafalgar Square",1,24)
+  const chance10 = new Card("Take a trip to Marylebone Station",1,15)
+  const chance11 = new Card("Advance to Pall Mall",1,11)
+  const chance12 = new Card("Drunk in charge, fine £20",3,20)
+
+  const chanceCards = [chance1,chance2,chance3,chance4,chance5,chance6,chance7,chance8,cahnce9,chance10,chance11,chance12]
+
 window.onload = function(){
   ReactDOM.render(
     <GameContainer players={players} properties={properties}/>,
