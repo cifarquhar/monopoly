@@ -35,6 +35,7 @@ class Player {
     this.state.properties = []
     this.state.inJail = false
     this.state.jailCounter = null
+    this.state.jailCard = false
   }
 
 
@@ -61,6 +62,22 @@ class Player {
     this.state.inJail = true
     this.state.jailCounter = 0
   }
+
+  leaveJail(){
+    if (!this.state.jailCard){
+      alert("Don't have a Get Out of Jail Free card to use!")
+    }
+    else if (!this.state.inJail){
+      alert("You're not in jail, no need to use that just now.")
+    }
+    else {
+      this.state.inJail = false
+      this.state.jailCounter = null
+      this.state.jailCard = false
+      alert("Used Get Out of Jail Free card.")
+    }
+  }
+
 
   checkCompleteGroupOwned(property){
     console.log(property)
