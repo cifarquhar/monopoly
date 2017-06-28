@@ -12,6 +12,7 @@ Also still to add are various bits of styling to make it actually look like a Mo
 In the terminal, navigate to the top level of this repository. From there install required dependencies before starting the web server using the commands:
 
   *npm install*
+  
   *npm start*
   
 Open a second terminal tab, navigate to the client folder, install dependencies and bundle the files using the same commands again. Open a web browser and navigate to localhost:3000, where you should see a game board.
