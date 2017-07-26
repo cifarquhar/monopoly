@@ -21,7 +21,12 @@ class Dice extends React.Component{
       let diceTwoValue = this.getRandomInt(1,6)
       let newValue = diceOneValue + diceTwoValue
       this.props.setMoveValue(newValue)
-      this.props.updatePlayerPosition(newValue)
+      if (diceOneValue === diceTwoValue){
+        this.props.updatePlayerPosition(newValue,true)
+      }
+      else{
+        this.props.updatePlayerPosition(newValue)
+      }
       if (diceOneValue !== diceTwoValue){
         this.props.updateRolled()
       }

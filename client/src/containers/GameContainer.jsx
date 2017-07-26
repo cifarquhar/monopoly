@@ -57,11 +57,16 @@ class GameContainer extends React.Component{
     this.setState({moveValue: newValue})
   }
 
-  updatePlayerPosition(moveValue){
-    this.state.activePlayer.updatePosition(moveValue)
-    this.checkSpecialSquare()
-    this.payRentIfDue()
-    this.checkBankruptcy()
+  updatePlayerPosition(moveValue,double){
+    if (double && this.state.activePlayer.inJail){
+      this.state.activePlayer.leaveJailWithDouble()
+    }
+    else{
+      this.state.activePlayer.updatePosition(moveValue)
+      this.checkSpecialSquare()
+      this.payRentIfDue()
+      this.checkBankruptcy()
+    }
   }
 
   updateRolled(){

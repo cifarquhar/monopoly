@@ -76,6 +76,11 @@ class Player {
     }
   }
 
+  leaveJailWithDouble(){
+    this.inJail = false
+    this.jailCounter = null
+  }
+
 
   checkCompleteGroupOwned(property){
     console.log(property)
