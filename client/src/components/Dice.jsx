@@ -6,7 +6,7 @@ class Dice extends React.Component{
     super(props)
     this.handleClick = this.handleClick.bind(this)
     this.state = {
-      
+      doubleMessage: ""
     }
   }
 
@@ -16,10 +16,18 @@ class Dice extends React.Component{
 
   handleClick(){
     if (!this.props.rolled && !this.props.won){
-      let newValue = this.getRandomInt(2,12)
+      this.setState({doubleMessage: ""})
+      let diceOneValue = this.getRandomInt(1,6)
+      let diceTwoValue = this.getRandomInt(1,6)
+      let newValue = diceOneValue + diceTwoValue
       this.props.setMoveValue(newValue)
       this.props.updatePlayerPosition(newValue)
-      this.props.updateRolled()
+      if (diceOneValue !== diceTwoValue){
+        this.props.updateRolled()
+      }
+      else{
+        this.setState({doubleMessage: "Rolled double " + diceOneValue + ", roll again"})
+      }
     }
 
   }
@@ -29,6 +37,7 @@ class Dice extends React.Component{
       <div className="dice-div">
         <button onClick={this.handleClick}>Roll Dice</button>
         <p>You rolled: {this.props.moveValue}</p>
+        <p>{this.state.doubleMessage}</p>
       </div>
     )
   }
