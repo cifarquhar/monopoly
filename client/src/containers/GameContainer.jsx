@@ -158,7 +158,7 @@ class GameContainer extends React.Component{
         alert("Landed on " + square.name + "\n" + "\n" + card.text)
       }
 
-      else if (card.text === "Pay a £10 fine (OK) or take a Chance (cancel)"){
+      else if (card.text === "Pay a £10 fine (cancel) or take a Chance (OK)"){
         if (confirm("Landed on " + square.name + "\n" + "\n" + card.text) == true){
           chanceCard = this.state.chanceCards.shift()
           chanceCard.applyMethod(this.state.activePlayer)
