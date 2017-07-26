@@ -37,66 +37,44 @@ class Card {
 
   decreaseMoney(player) {
 
-
-    let houseMultiplyer
-
-    let hotelMultiplyer
-
-    let dueForProperty
-
     let totalDue
 
     const chargeableRents = [2,3,4,5]
 
     if(this.text === "You are assessed for street repairs: £40 per house, £115 per hotel"){
-      houseMultiplyer = 40
-      hotelMultiplyer = 115
-      totalDue = 0
-
-      if (player.properties){
-        player.properties.forEach((property) => {
-          dueForProperty = 0
-          if (property.rentIndex === 6){
-            dueForProperty = hotelMultiplyer
-          }
-          else {
-            chargeableRents.forEach((index) => {
-              if (property.rentIndex === index){
-                dueForProperty = index * houseMultiplyer
-              }
-            })
-          }
-          totalDue += dueForProperty
-        })
-      }
+      totalDue = this.calculateRepairValue(player,chargeableRents,40,115,0)
       player.money -= totalDue
     }
     else if (this.text === "Make general repairs on all of your houses. For each house pay £25, for each hotel pay £100"){
-      houseMultiplyer = 25
-      hotelMultiplyer = 100
-      totalDue = 0
-
-      if (player.properties){
-        player.properties.forEach((property) => {
-          dueForProperty = 0
-          if (property.rentIndex === 6){
-            dueForProperty = hotelMultiplyer
-          }
-          else {
-            chargeableRents.forEach((index) => {
-              if (property.rentIndex === index){
-                dueForProperty = index * houseMultiplyer
-              }
-            })
-          }
-          totalDue += dueForProperty
-        })
-      }
+      totalDue = this.calculateRepairValue(player,chargeableRents,25,100,0)
       player.money -= totalDue
     }
     else {
       player.money -= this.adjustor
     }
+  }
+
+  calculateRepairValue(player,rents,houseValue,hotelValue,totalValue){
+
+    let dueForProperty
+
+    if (player.properties){
+      player.properties.forEach((property) => {
+        dueForProperty = 0
+        if (property.rentIndex === 6){
+          dueForProperty = hotelValue
+        }
+        else {
+          rents.forEach((index) => {
+            if (property.rentIndex === index){
+              dueForProperty = index * houseValue
+            }
+          })
+        }
+        totalValue += dueForProperty
+      })
+    }
+    return totalValue
   }
 
   addJailCard(player) {
