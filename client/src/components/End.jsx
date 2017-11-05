@@ -1,4 +1,5 @@
 import React from "react"
+import {Button} from "react-bootstrap"
 
 class End extends React.Component{
 
@@ -17,7 +18,7 @@ class End extends React.Component{
   render(){
     return(
       <div className="end-div">
-        <button onClick={this.handleClick}>End Turn</button>
+        <Button onClick={this.handleClick}>End Turn</Button>
       </div>
     )
   }

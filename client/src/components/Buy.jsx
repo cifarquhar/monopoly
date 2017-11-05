@@ -1,4 +1,5 @@
 import React from "react"
+import {Button} from "react-bootstrap"
 
 class Buy extends React.Component{
 
@@ -17,7 +18,7 @@ class Buy extends React.Component{
   render(){
     return(
       <div className="buy-button-div">
-        <button onClick={this.handleClick}>Buy Property</button>
+        <Button onClick={this.handleClick}>Buy Property</Button>
       </div>
     )
   }

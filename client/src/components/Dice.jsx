@@ -1,4 +1,5 @@
 import React from "react"
+import {Button} from "react-bootstrap"
 
 class Dice extends React.Component{
 
@@ -40,7 +41,7 @@ class Dice extends React.Component{
   render(){
     return(
       <div className="dice-div">
-        <button onClick={this.handleClick}>Roll Dice</button>
+        <Button onClick={this.handleClick}>Roll Dice</Button>
         <p>You rolled: {this.props.moveValue}</p>
         <p>{this.state.doubleMessage}</p>
       </div>

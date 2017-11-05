@@ -1,4 +1,5 @@
 import React from "react"
+import {Button} from "react-bootstrap"
 
 class Escape extends React.Component{
 
@@ -14,7 +15,7 @@ class Escape extends React.Component{
   render(){
     return(
       <div className="leave-jail-div">
-        <button onClick={this.handleClick}>Use GOOJF Card</button>
+        <Button onClick={this.handleClick}>Use GOOJF Card</Button>
       </div>
     )
   }
