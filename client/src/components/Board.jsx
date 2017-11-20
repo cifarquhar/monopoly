@@ -1,6 +1,6 @@
 import React from "react"
 import Square from "./Square"
-import FullRow from "./FullRow"
+import PlayerStats from "./PlayerStats"
 import {Grid, Row, Col} from "react-bootstrap"
 
 class Board extends React.Component{
@@ -71,7 +71,8 @@ class Board extends React.Component{
       </Row>      
       <Row>
         <Col md={1}>{squareNodes[38]}</Col>
-        <Col md={1} mdOffset={9}>{squareNodes[12]}</Col>
+        <Col md={5} mdOffset={1}><PlayerStats player={this.props.player}/></Col>
+        <Col md={1} mdOffset={3}>{squareNodes[12]}</Col>
       </Row>      
       <Row>
         <Col md={1}>{squareNodes[37]}</Col>

@@ -1,14 +1,17 @@
 import React from "react"
 import PropertyInfo from "./PropertyInfo"
+import { Modal, Button } from "react-bootstrap"
 
 class PlayerStats extends React.Component{
 
   constructor(props){
     super(props)
     this.handleChange = this.handleChange.bind(this)
+    this.flipModalState = this.flipModalState.bind(this)
     this.state = {
       selectedProperty: null,
-      selectedPropertyIndex: null
+      selectedPropertyIndex: null,
+      showModal: false
     }
   }
 
@@ -41,6 +44,10 @@ class PlayerStats extends React.Component{
    }
  }
 
+ flipModalState(){
+  this.setState({showModal: !this.state.showModal})
+ }
+
 
 
 
@@ -61,19 +68,37 @@ class PlayerStats extends React.Component{
     return(
       <div className="player-stats-div">
         <div style={{paddingRight: 50}}>
-          <h4>Current Player: {name}</h4>
-          <h4>Money: {funds}</h4>
-        </div>
-        <div style={{paddingRight: 50}}>
-          <p><b>Properties:</b></p>
-          <select id="property-selector" onChange={this.handleChange}>
-            {propertyList}
-          </select>
+          <h5>Current Player: {name}</h5>
+          <h5>Money: {funds}</h5>
         </div>
         <div>
-          <PropertyInfo 
-            property={this.state.selectedProperty}
-            player={this.props.player}/>
+          <Button onClick={this.flipModalState}>Manage Properties</Button>
+          <Modal
+            show={this.state.showModal}
+            onHide={this.flipModalState}>
+            <Modal.Header>
+              <Modal.Title>Property Management</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              <p><b>Properties:</b></p>
+              <select id="property-selector" onChange={this.handleChange}>
+                {propertyList}
+              </select>
+
+              <hr />
+
+              <PropertyInfo 
+                property={this.state.selectedProperty}
+                player={this.props.player}/>
+
+            </Modal.Body>
+
+            <Modal.Footer>
+              <Button onClick={this.flipModalState}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+          
         </div>
       </div>
     )

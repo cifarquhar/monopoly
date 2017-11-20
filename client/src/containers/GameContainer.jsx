@@ -232,11 +232,12 @@ class GameContainer extends React.Component{
       <h1>Monopoly!</h1>
       <Start startGame={this.startGame.bind(this)}/>
       <span>
-      <PlayerStats player={this.state.activePlayer}/>
       <PropertyStats property={currentSquare}/>
       </span>
-      <Board squares={this.state.squares}
-      players={this.state.players}/>
+      <Board 
+        squares={this.state.squares}
+        players={this.state.players}
+        player={this.state.activePlayer}/>
       <Dice moveValue={this.state.moveValue} 
       setMoveValue={this.setMoveValue.bind(this)}
       updatePlayerPosition={this.updatePlayerPosition.bind(this)}
