@@ -231,13 +231,11 @@ class GameContainer extends React.Component{
       <div className="container-div" >
       <h1>Monopoly!</h1>
       <Start startGame={this.startGame.bind(this)}/>
-      <span>
-      <PropertyStats property={currentSquare}/>
-      </span>
       <Board 
         squares={this.state.squares}
         players={this.state.players}
-        player={this.state.activePlayer}/>
+        player={this.state.activePlayer}
+        property={currentSquare}/>
       <Dice moveValue={this.state.moveValue} 
       setMoveValue={this.setMoveValue.bind(this)}
       updatePlayerPosition={this.updatePlayerPosition.bind(this)}

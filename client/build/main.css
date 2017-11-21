@@ -13,7 +13,6 @@ Elements
 
 .property-stats-div {
   border: 1px solid #000;
-  margin: 10px;
   padding: 10px;
 }
 
@@ -32,7 +31,19 @@ Board positions - Box
     background: #fff;
     border: 1px solid #000;
   float: left;
-  height: 100px;
-  width: 80px;
 }
 
+.box.top {
+  height: 110px;
+  width: 100px;
+}
+
+.box.corner {
+  height: 110px;
+  width: 110px;
+}
+
+.box.side {
+  height: 90px;
+  width: 110px;
+}

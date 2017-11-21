@@ -29,10 +29,10 @@ class PropertyStats extends React.Component{
     }
 
     return(
-      <div className="property-stats-div">
-        <h4>Current Property: {name}</h4>
-        <h4>Price: {value}</h4>
-        <h4>Owner: {owner}</h4>
+      <div>
+        <h5>Current Property: {name}</h5>
+        <div style={{float: "left"}}><h5>Price: {value}</h5></div>         
+        <div style={{float: "right"}}><h5>Owner: {owner}</h5></div>
       </div>
     )
   }

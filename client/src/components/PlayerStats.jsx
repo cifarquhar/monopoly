@@ -66,7 +66,7 @@ class PlayerStats extends React.Component{
     funds = this.props.player.money
 }
     return(
-      <div className="player-stats-div">
+      <div>
         <div style={{paddingRight: 50}}>
           <h5>Current Player: {name}</h5>
           <h5>Money: {funds}</h5>
@@ -75,7 +75,8 @@ class PlayerStats extends React.Component{
           <Button onClick={this.flipModalState}>Manage Properties</Button>
           <Modal
             show={this.state.showModal}
-            onHide={this.flipModalState}>
+            onHide={this.flipModalState}
+            container={this}>
             <Modal.Header>
               <Modal.Title>Property Management</Modal.Title>
             </Modal.Header>
