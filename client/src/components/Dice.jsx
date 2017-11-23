@@ -42,8 +42,8 @@ class Dice extends React.Component{
     return(
       <div className="dice-div">
         <Button onClick={this.handleClick}>Roll Dice</Button>
-        <p>You rolled: {this.props.moveValue}</p>
-        <p>{this.state.doubleMessage}</p>
+        <p style={{marginBottom: "5px"}}>You rolled: {this.props.moveValue}</p>
+        <p style={{marginTop: "5px", marginBottom: "5px"}}>{this.state.doubleMessage}</p>
       </div>
     )
   }

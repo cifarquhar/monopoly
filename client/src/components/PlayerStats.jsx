@@ -68,8 +68,8 @@ class PlayerStats extends React.Component{
     return(
       <div>
         <div style={{paddingRight: 50}}>
-          <h5>Current Player: {name}</h5>
-          <h5>Money: {funds}</h5>
+          <h5 style={{marginTop: "5px", marginBottom: "5px"}}>Current Player: {name}</h5>
+          <h5 style={{marginTop: "5px", marginBottom: "5px"}}>Money: {funds}</h5>
         </div>
         <div>
           <Button onClick={this.flipModalState}>Manage Properties</Button>

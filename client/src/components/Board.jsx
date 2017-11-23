@@ -77,7 +77,7 @@ class Board extends React.Component{
       </Row>      
       <Row>
         <Col md={1}>{squareNodes[38]}</Col>
-        <Col md={5} mdOffset={1}><PropertyStats property={p.property}/></Col>
+        <Col md={5} mdOffset={1} style={{overflow: "visible"}}><PropertyStats property={p.property}/></Col>
         <Col md={1} mdOffset={3}>{squareNodes[12]}</Col>
       </Row>      
       <Row>
