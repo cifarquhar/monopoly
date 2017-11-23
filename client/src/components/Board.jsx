@@ -2,6 +2,10 @@ import React from "react"
 import Square from "./Square"
 import PlayerStats from "./PlayerStats"
 import PropertyStats from "./PropertyStats"
+import Buy from "./Buy"
+import Escape from "./Escape"
+import Dice from "./Dice"
+import End from "./End"
 import {Grid, Row, Col} from "react-bootstrap"
 
 class Board extends React.Component{
@@ -26,9 +30,9 @@ class Board extends React.Component{
 })}
 
  render(){
+  const p = this.props
 
-
-  const squareNodes = this.props.squares.map((array, index)=>{
+  const squareNodes = p.squares.map((array, index)=>{
 
 
     const playerPositions = this.getPlayerPositions()
@@ -39,8 +43,8 @@ class Board extends React.Component{
       <Square 
       key = {index}
       index = {index} 
-      value={this.props.squares[index]}
-      id =  {"cell" + this.props.squares[index]}
+      value={p.squares[index]}
+      id =  {"cell" + p.squares[index]}
       players={playersArray}
       />
       )
@@ -73,17 +77,19 @@ class Board extends React.Component{
       </Row>      
       <Row>
         <Col md={1}>{squareNodes[38]}</Col>
-        <Col md={5} mdOffset={1}><PropertyStats property={this.props.property}/></Col>
+        <Col md={5} mdOffset={1}><PropertyStats property={p.property}/></Col>
         <Col md={1} mdOffset={3}>{squareNodes[12]}</Col>
       </Row>      
       <Row>
         <Col md={1}>{squareNodes[37]}</Col>
-        <Col md={5} mdOffset={1}><PlayerStats player={this.props.player}/></Col>
+        <Col md={1} mdOffset={1}><Buy handleClick={p.purchaseClick}/></Col>
+        <Col md={1} mdOffset={3}><Escape handleClick={p.escapeClick}/></Col>
         <Col md={1} mdOffset={3}>{squareNodes[13]}</Col>
       </Row>      
       <Row>
         <Col md={1}>{squareNodes[36]}</Col>
-        <Col md={1} mdOffset={9}>{squareNodes[14]}</Col>
+        <Col md={5} mdOffset={1}><PlayerStats player={p.player}/></Col>
+        <Col md={1} mdOffset={3}>{squareNodes[14]}</Col>
       </Row>      
       <Row>
         <Col md={1}>{squareNodes[35]}</Col>
@@ -91,7 +97,17 @@ class Board extends React.Component{
       </Row>      
       <Row>
         <Col md={1}>{squareNodes[34]}</Col>
-        <Col md={1} mdOffset={9}>{squareNodes[16]}</Col>
+        <Col md={2} mdOffset={1}>
+          <Dice 
+            moveValue={p.moveValue} 
+            setMoveValue={p.setMoveValue}
+            updatePlayerPosition={p.updatePlayerPosition}
+            rolled={p.rolled}
+            won={p.won}
+            updateRolled={p.updateRolled}/>
+        </Col>
+        <Col md={1} mdOffset={2}><End updateActivePlayer={p.updateActivePlayer}/></Col>
+        <Col md={1} mdOffset={3}>{squareNodes[16]}</Col>
       </Row>      
       <Row>
         <Col md={1}>{squareNodes[33]}</Col>
@@ -106,17 +122,17 @@ class Board extends React.Component{
         <Col md={1} mdOffset={9}>{squareNodes[19]}</Col>
       </Row>
       <Row>
-        <Col md={1}>{squareNodes[20]}</Col>
-        <Col md={1}>{squareNodes[21]}</Col>
-        <Col md={1}>{squareNodes[22]}</Col>
-        <Col md={1}>{squareNodes[23]}</Col>
-        <Col md={1}>{squareNodes[24]}</Col>
-        <Col md={1}>{squareNodes[25]}</Col>
-        <Col md={1}>{squareNodes[26]}</Col>
-        <Col md={1}>{squareNodes[27]}</Col>
-        <Col md={1}>{squareNodes[28]}</Col>
-        <Col md={1}>{squareNodes[29]}</Col>
         <Col md={1}>{squareNodes[30]}</Col>
+        <Col md={1}>{squareNodes[29]}</Col>
+        <Col md={1}>{squareNodes[28]}</Col>
+        <Col md={1}>{squareNodes[27]}</Col>
+        <Col md={1}>{squareNodes[26]}</Col>
+        <Col md={1}>{squareNodes[25]}</Col>
+        <Col md={1}>{squareNodes[24]}</Col>
+        <Col md={1}>{squareNodes[23]}</Col>
+        <Col md={1}>{squareNodes[22]}</Col>
+        <Col md={1}>{squareNodes[21]}</Col>
+        <Col md={1}>{squareNodes[20]}</Col>
       </Row>
     </Grid>
   )

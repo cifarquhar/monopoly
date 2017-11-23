@@ -235,16 +235,16 @@ class GameContainer extends React.Component{
         squares={this.state.squares}
         players={this.state.players}
         player={this.state.activePlayer}
-        property={currentSquare}/>
-      <Dice moveValue={this.state.moveValue} 
-      setMoveValue={this.setMoveValue.bind(this)}
-      updatePlayerPosition={this.updatePlayerPosition.bind(this)}
-      rolled={this.state.rolled}
-      won={this.state.won}
-      updateRolled={this.updateRolled.bind(this)}/>
-      <Buy handleClick={this.purchaseProperty.bind(this)}/>
-      <Escape handleClick={this.handleEscapeClick.bind(this)}/>
-      <End updateActivePlayer={this.updateActivePlayer.bind(this)}/>
+        property={currentSquare}
+        purchaseClick={this.purchaseProperty.bind(this)}
+        escapeClick={this.handleEscapeClick.bind(this)}
+        moveValue={this.state.moveValue} 
+        setMoveValue={this.setMoveValue.bind(this)}
+        updatePlayerPosition={this.updatePlayerPosition.bind(this)}
+        rolled={this.state.rolled}
+        won={this.state.won}
+        updateRolled={this.updateRolled.bind(this)}
+        updateActivePlayer={this.updateActivePlayer.bind(this)}/>
       </div>
       )
   }
