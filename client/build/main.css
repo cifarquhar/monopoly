@@ -28,14 +28,9 @@ Board Structure
 Board positions - Box
 ********************************/
 .box {
-    background: #fff;
-    border: 1px solid #000;
-  float: left;
-}
-
-.box.top {
-  height: 110px;
-  width: 100px;
+  background: #fff;
+  border: 1px solid #000;
+  text-align: center;
 }
 
 .box.corner {
@@ -43,7 +38,56 @@ Board positions - Box
   width: 110px;
 }
 
-.box.side {
+.box.left {
   height: 90px;
   width: 110px;
+  display: inline-flex;
+  flex-direction: row-reverse;
 }
+
+.box.right {
+  height: 90px;
+  width: 110px;
+  display: inline-flex;
+}
+
+.box.top {
+  height: 110px;
+  width: 100px;
+  display: inline-flex;
+  flex-direction: column-reverse;
+}
+
+.box.bottom {
+  height: 110px;
+  width: 100px;
+}
+
+.groupDiv {
+
+}
+
+.groupDiv.top {
+  height: 20px;
+  width: 100%;
+  border-top: 1px solid #000;
+}
+
+.groupDiv.bottom {
+  height: 20px;
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+
+.groupDiv.left {
+  height: 100%;
+  width: 20px;
+  border-left: 1px solid #000;
+}
+
+.groupDiv.right {
+  height: 100%;
+  width: 20px;
+  border-right: 1px solid #000;
+}
+
