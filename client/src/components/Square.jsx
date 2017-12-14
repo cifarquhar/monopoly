@@ -25,15 +25,51 @@ class Square extends React.Component{
     }
   }
 
+  getBackgroundColour(colour){
+    switch (colour){
+      case "brown":
+        return "#8B4513"
+        break
+      case "sky_blue":
+        return "#87CEEB"
+        break
+      case "pink":
+        return "#FF69B4"
+        break
+      case "orange":
+        return "#FFA500"
+        break
+      case "red":
+        return "#FF0000"
+        break
+      case "yellow":
+        return "#FFFF00"
+        break
+      case "green":
+        return "#008000"
+        break
+      case "dark_blue":
+        return "#0000FF"
+        break
+      default:
+        return "#FFFFFF"
+    }
+  }
+
   render(){
-    const boardSide = this.getClassName(this.props.index)
+    const p = this.props
+
+    const boardSide = this.getClassName(p.index)
+
+    const backgroundColor = this.getBackgroundColour(p.value.group)
+    console.log(backgroundColor)
 
     return(
       <div className={"box " + boardSide}>
-        <div className={"groupDiv " + boardSide} style={{backgroundColor: "red"}} />
+        <div className={"groupDiv " + boardSide} style={{backgroundColor}} />
         <div>
-          <p>{this.props.value.name}</p>
-          <p>{this.props.players ? this.props.players.map((player) => {
+          <p>{p.value.name}</p>
+          <p>{p.players ? p.players.map((player) => {
               return player.name
                 }).toString() : null}</p>
         </div>
