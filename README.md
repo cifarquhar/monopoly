@@ -10,7 +10,7 @@ There are two branches to this project. The *master* branch has a working versio
 
 Give the start script permission to run using 
 
-*chmod 755 stat.sh*
+*chmod 755 start.sh*
 
 Execute the script and navigate to the browser window it opens. You may have to refresh the page, depending on how quickly the server starts.
 
