@@ -7,21 +7,24 @@ class Square extends React.Component{
     this.getClassName = this.getClassName.bind(this)
   }
 
-  getClassName(index){
+  getClassName(index, group){
     if ([0,10,20,30].includes(index)) {
       return "corner"
     }
-    else if ([1,2,3,4,5,6,7,8,9].includes(index)) {
-      return "top"
+    else if ([1,2,3,4,5,6,7,8,9].includes(index) && !["bonus", "tax", "station", "utility"].includes(group)) {
+      return " top"
     }
-    else if ([21,22,23,24,25,26,27,28,29].includes(index)) {
-      return "bottom"
+    else if ([21,22,23,24,25,26,27,28,29].includes(index) && !["bonus", "tax", "station", "utility"].includes(group)) {
+      return " bottom"
     }
-    else if ([11,12,13,14,15,16,17,18,19].includes(index)) {
-      return "right"
+    else if ([11,12,13,14,15,16,17,18,19].includes(index) && !["bonus", "tax", "station", "utility"].includes(group)) {
+      return " right"
     }
-    else if ([31,32,33,34,35,36,37,38,39].includes(index)) {
-      return "left"
+    else if ([31,32,33,34,35,36,37,38,39].includes(index) && !["bonus", "tax", "station", "utility"].includes(group)) {
+      return " left"
+    }
+    else {
+      return ""
     }
   }
 
@@ -60,13 +63,13 @@ class Square extends React.Component{
     const p = this.props
 
     const boardSide = this.getClassName(p.index)
+    const markerSide = this.getClassName(p.index, p.value.group)
 
     const backgroundColor = this.getBackgroundColour(p.value.group)
-    console.log(backgroundColor)
 
     return(
       <div className={"box " + boardSide}>
-        <div className={"groupDiv " + boardSide} style={{backgroundColor}} />
+        <div className={"groupDiv" + markerSide} style={{backgroundColor}} />
         <div>
           <p>{p.value.name}</p>
           <p>{p.players ? p.players.map((player) => {
