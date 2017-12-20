@@ -1,4 +1,5 @@
 import React from "react"
+import { Button, Modal, FormGroup, FormControl } from "react-bootstrap"
 import Board from "../components/Board"
 import PlayerStats from "../components/PlayerStats"
 import Dice from "../components/Dice"
@@ -21,7 +22,8 @@ class GameContainer extends React.Component{
       activePlayer: null,
       activePlayerIndex: null,
       rolled: false,
-      won: false
+      won: false,
+      showNewGameModal: false
     }
   }
 
@@ -35,7 +37,8 @@ class GameContainer extends React.Component{
       moveValue: null,
       activePlayer: this.state.players[0],
       activePlayerIndex: 0,
-      won: false})
+      won: false,
+      showNewGameModal: false})
   }
 
   shuffle(a){
@@ -216,6 +219,12 @@ class GameContainer extends React.Component{
     this.state.activePlayer.leaveJail()
   }
 
+
+
+  flipModalState(){
+   this.setState({showNewGameModal: !this.state.showNewGameModal})
+  }
+
   render(){
 
     let currentSquare = null
@@ -230,7 +239,7 @@ class GameContainer extends React.Component{
     return(
       <div className="container-div" >
       <h1>Monopoly!</h1>
-      <Start startGame={this.startGame.bind(this)}/>
+      <Button onClick={this.flipModalState.bind(this)}>New Game</Button>
       <Board 
         squares={this.state.squares}
         players={this.state.players}
@@ -245,6 +254,42 @@ class GameContainer extends React.Component{
         won={this.state.won}
         updateRolled={this.updateRolled.bind(this)}
         updateActivePlayer={this.updateActivePlayer.bind(this)}/>
+
+        <Modal
+          show={this.state.showNewGameModal}
+          onHide={this.flipModalState}
+          container={this}>
+          <Modal.Header>
+            <Modal.Title>Player Setup</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <form>
+              <FormGroup>
+                <FormControl type="text" placeholder="Player 1"/>
+              </FormGroup>
+              <FormGroup>
+                <FormControl type="text" placeholder="Player 2"/>
+              </FormGroup>
+              <FormGroup>
+                <FormControl type="text" placeholder="Player 3"/>
+              </FormGroup>
+              <FormGroup>
+                <FormControl type="text" placeholder="Player 4"/>
+              </FormGroup>
+              <FormGroup>
+                <FormControl type="text" placeholder="Player 5"/>
+              </FormGroup>
+              <FormGroup>
+                <FormControl type="text" placeholder="Player 6"/>
+              </FormGroup>
+            </form> 
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button onClick={this.startGame.bind(this)}>Start Game</Button>
+          </Modal.Footer>
+        </Modal>
       </div>
       )
   }
