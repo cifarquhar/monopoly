@@ -3,7 +3,7 @@ import { Button, Modal, FormGroup, FormControl } from "react-bootstrap"
 import Board from "../components/Board"
 import PlayerStats from "../components/PlayerStats"
 import Dice from "../components/Dice"
-//import Start from "../components/Start"
+import Player from "../models/Player"
 import End from "../components/End"
 import Buy from "../components/Buy"
 import PropertyStats from "../components/PropertyStats"
@@ -18,24 +18,29 @@ class GameContainer extends React.Component{
       chanceCards: this.props.chance,
       chestCards: this.props.chest,
       moveValue: null,
-      players: this.props.players,
       activePlayer: null,
       activePlayerIndex: null,
       rolled: false,
       won: false,
       showNewGameModal: false
     }
+
+    this.playerNames = []
+    this.players = []
   }
 
   startGame(){
-    this.state.players.forEach(function(player){
-      player.reset()
+    this.playerNames.forEach(name => {
+      if (name){
+        let player = new Player(name)
+        this.players.push(player)
+      }
     })
-    console.log(this.state.chanceCards)
+   
     this.setState({chanceCards: this.shuffle(this.state.chanceCards),
       chestCards: this.shuffle(this.state.chestCards),
       moveValue: null,
-      activePlayer: this.state.players[0],
+      activePlayer: this.players[0],
       activePlayerIndex: 0,
       won: false,
       showNewGameModal: false})
@@ -52,8 +57,8 @@ class GameContainer extends React.Component{
 
   updateActivePlayer(){
     if (this.state.rolled){
-      this.setState({activePlayer: this.state.players[(this.state.activePlayerIndex + 1) % (this.state.players.length)], 
-                     activePlayerIndex: (this.state.activePlayerIndex + 1) % (this.state.players.length),  
+      this.setState({activePlayer: this.players[(this.state.activePlayerIndex + 1) % (this.players.length)], 
+                     activePlayerIndex: (this.state.activePlayerIndex + 1) % (this.players.length),  
                      rolled: !this.state.rolled})
     }
   }
@@ -227,6 +232,13 @@ class GameContainer extends React.Component{
    this.setState({showNewGameModal: !this.state.showNewGameModal})
   }
 
+
+  clearPlayerDetails(){
+    this.playerNames = []
+    this.players = []
+    this.flipModalState()
+  }
+
   render(){
 
     let currentSquare = null
@@ -241,10 +253,10 @@ class GameContainer extends React.Component{
     return(
       <div className="container-div" >
       <h1>Monopoly!</h1>
-      <Button onClick={this.flipModalState.bind(this)}>New Game</Button>
+      <Button onClick={this.clearPlayerDetails.bind(this)}>New Game</Button>
       <Board 
         squares={this.state.squares}
-        players={this.state.players}
+        players={this.players}
         player={this.state.activePlayer}
         property={currentSquare}
         purchaseClick={this.purchaseProperty.bind(this)}
@@ -268,22 +280,22 @@ class GameContainer extends React.Component{
           <Modal.Body>
             <form>
               <FormGroup>
-                <FormControl type="text" placeholder="Player 1"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[0] = e.target.value}} placeholder="Player 1"/>
               </FormGroup>
               <FormGroup>
-                <FormControl type="text" placeholder="Player 2"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[1] = e.target.value}} placeholder="Player 2"/>
               </FormGroup>
               <FormGroup>
-                <FormControl type="text" placeholder="Player 3"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[2] = e.target.value}} placeholder="Player 3"/>
               </FormGroup>
               <FormGroup>
-                <FormControl type="text" placeholder="Player 4"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[3] = e.target.value}} placeholder="Player 4"/>
               </FormGroup>
               <FormGroup>
-                <FormControl type="text" placeholder="Player 5"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[4] = e.target.value}} placeholder="Player 5"/>
               </FormGroup>
               <FormGroup>
-                <FormControl type="text" placeholder="Player 6"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[5] = e.target.value}} placeholder="Player 6"/>
               </FormGroup>
             </form> 
           </Modal.Body>

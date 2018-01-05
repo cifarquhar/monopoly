@@ -1,14 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import GameContainer from "./containers/GameContainer"
-import Player from "./models/Player"
 import Card from "./models/Card"
 import Property from "./models/Property"
-
-const player1 = new Player("P1")
-const player2 = new Player("P2")
-
-const players = [player1,player2]
 
 const property1 = new Property("Go","corner",null,[null],null)
 const property2 = new Property("Old Kent Road","brown",60,[2,4,10,30,90,160,250],50)
@@ -54,7 +48,6 @@ const property40 = new Property("Mayfair","dark_blue",400,[50,100,200,600,1400,1
 const properties = [property1,property2,property3,property4,property5,property6,property7,property8,property9,property10,property11,property12,property13,property14,property15,property16,property17,property18,property19,property20,property21,property22,property23,property24,property25,property26,property27,property28,property29,property30,property31,property32,property33,property34,property35,property36,property37,property38,property39,property40]
 
 
-
 const chance1 = new Card("Advance to Mayfair",1,39)
 const chance2 = new Card("Advance to Go",1,0)
 const chance3 = new Card("Bank pays you dividend of £50",2,50)
@@ -73,7 +66,6 @@ const chance15 = new Card("You are assessed for street repairs: £40 per house, 
 const chance16 = new Card("Make general repairs on all of your houses. For each house pay £25, for each hotel pay £100",3)
 
 const chanceCards = [chance1,chance2,chance3,chance4,chance5,chance6,chance7,chance8,chance9,chance10,chance11,chance12,chance13,chance14,chance15,chance16]
-
 
 
 const chest1 = new Card("Income tax refund, collect £20",2,20)
@@ -97,7 +89,7 @@ const chestCards = [chest1,chest2,chest3,chest4,chest5,chest6,chest7,chest8,ches
 
 window.onload = function(){
   ReactDOM.render(
-    <GameContainer players={players} properties={properties} chance={chanceCards} chest = {chestCards}/>,
+    <GameContainer properties={properties} chance={chanceCards} chest = {chestCards}/>,
     document.getElementById('app')
     );
 }
