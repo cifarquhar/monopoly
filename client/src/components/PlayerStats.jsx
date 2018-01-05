@@ -45,7 +45,8 @@ class PlayerStats extends React.Component{
  }
 
  flipModalState(){
-  this.setState({showModal: !this.state.showModal})
+  this.setState({showModal: !this.state.showModal,
+                 selectedProperty: null})
  }
 
 
