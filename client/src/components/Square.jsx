@@ -71,7 +71,7 @@ class Square extends React.Component{
       <div className={"box " + boardSide}>
         <div className={"groupDiv" + markerSide} style={{backgroundColor}} />
         <div>
-          <p>{p.value.name}</p>
+          <p><strong>{p.value.name}</strong></p>
           <p>{p.players ? p.players.map((player) => {
               return player.name
                 }).toString() : null}</p>
