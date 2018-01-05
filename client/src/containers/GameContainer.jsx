@@ -30,20 +30,25 @@ class GameContainer extends React.Component{
   }
 
   startGame(){
-    this.playerNames.forEach(name => {
-      if (name){
-        let player = new Player(name)
-        this.players.push(player)
-      }
-    })
+    if (this.playerNames.length < 2) {
+      alert("Please add at least two players")
+    }
+    else {
+      this.playerNames.forEach(name => {
+        if (name){
+          let player = new Player(name)
+          this.players.push(player)
+        }
+      })
    
-    this.setState({chanceCards: this.shuffle(this.state.chanceCards),
-      chestCards: this.shuffle(this.state.chestCards),
-      moveValue: null,
-      activePlayer: this.players[0],
-      activePlayerIndex: 0,
-      won: false,
-      showNewGameModal: false})
+      this.setState({chanceCards: this.shuffle(this.state.chanceCards),
+        chestCards: this.shuffle(this.state.chestCards),
+        moveValue: null,
+        activePlayer: this.players[0],
+        activePlayerIndex: 0,
+        won: false,
+        showNewGameModal: false})
+    }
   }
 
   shuffle(a){
