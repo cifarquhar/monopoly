@@ -6,13 +6,13 @@ class Build extends React.Component{
   constructor(props){
     super(props)
     this.handleClick = this.handleClick.bind(this)
-    this.state = {
-
-    }
   }
 
   handleClick(){
-    this.props.player.developProperty(this.props.property)
+    const p = this.props
+    if (p.property){
+      p.player.developProperty(p.property)
+    }
   }
 
 
