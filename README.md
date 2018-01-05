@@ -4,7 +4,7 @@ A web-app version of the board game Monopoly, built using React. This is an ongo
   - Mortgaging
   - Support for more players
   
-There are two branches to this project. The *master* branch has a working version of the game (minus the parts listed above) but with very basic styling. I am working on improving the styling using the React Bootstrap, and ongoing work on this is on the *bootstrap* branch. The game logic is the same, but the board on this branch looks more like the familiar Monopoly board. Buttons have been moved inside the board, and property maintenance functions have been placed in a modal. Note that this is work in progress, and will eventually look a lot better!
+There are two branches to this project. The *master* branch has a working version of the game (minus the parts listed above) but with very basic styling. I am working on improving the styling using React Bootstrap, and ongoing work on this is on the *bootstrap* branch. The game logic is the same, but the board on this branch looks more like the familiar Monopoly board. Buttons have been moved inside the board, and property maintenance functions have been placed in a modal. Note that this is work in progress, and will eventually look a lot better!
 
 ### Setup
 
