@@ -64,7 +64,8 @@ class GameContainer extends React.Component{
     if (this.state.rolled){
       this.setState({activePlayer: this.players[(this.state.activePlayerIndex + 1) % (this.players.length)], 
                      activePlayerIndex: (this.state.activePlayerIndex + 1) % (this.players.length),  
-                     rolled: !this.state.rolled})
+                     rolled: !this.state.rolled,
+                     moveValue: null})
     }
   }
 
