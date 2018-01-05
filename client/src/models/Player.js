@@ -43,7 +43,6 @@ class Player {
   }
 
   payRent(property){
-    console.log(property.rentValues[property.rentIndex])
     this.money -= (property.rentValues[property.rentIndex])
   }
 
@@ -83,7 +82,6 @@ class Player {
 
 
   checkCompleteGroupOwned(property){
-    console.log(property)
     let groupToCheck = property.group
 
     if (this.properties){
