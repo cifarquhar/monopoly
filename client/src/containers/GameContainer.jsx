@@ -3,7 +3,7 @@ import { Button, Modal, FormGroup, FormControl } from "react-bootstrap"
 import Board from "../components/Board"
 import PlayerStats from "../components/PlayerStats"
 import Dice from "../components/Dice"
-import Start from "../components/Start"
+//import Start from "../components/Start"
 import End from "../components/End"
 import Buy from "../components/Buy"
 import PropertyStats from "../components/PropertyStats"
@@ -52,7 +52,9 @@ class GameContainer extends React.Component{
 
   updateActivePlayer(){
     if (this.state.rolled){
-      this.setState({activePlayer: this.state.players[(this.state.activePlayerIndex + 1) % (this.state.players.length)], activePlayerIndex: (this.state.activePlayerIndex + 1) % (this.state.players.length),  rolled: !this.state.rolled})
+      this.setState({activePlayer: this.state.players[(this.state.activePlayerIndex + 1) % (this.state.players.length)], 
+                     activePlayerIndex: (this.state.activePlayerIndex + 1) % (this.state.players.length),  
+                     rolled: !this.state.rolled})
     }
   }
 
