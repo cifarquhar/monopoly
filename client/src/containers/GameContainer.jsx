@@ -170,7 +170,7 @@ class GameContainer extends React.Component{
       
       if (card.text === "It is your birthday, collect £10 from each player"){
         this.state.activePlayer.money += 10
-        this.state.players.forEach((player) => {
+        this.players.forEach((player) => {
           if (player !== this.state.activePlayer){
             player.money -= 10
           }
