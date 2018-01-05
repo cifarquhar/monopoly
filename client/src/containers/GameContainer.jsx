@@ -244,6 +244,18 @@ class GameContainer extends React.Component{
     this.flipModalState()
   }
 
+  confirmNewGame(){
+    if (!this.state.activePlayer){
+      this.flipModalState()
+    }
+    else {
+      const check = confirm("Are you sure you want to start a new game?")
+      if (check) {
+        this.clearPlayerDetails()
+      }
+    }
+  }
+
   render(){
 
     let currentSquare = null
@@ -258,7 +270,7 @@ class GameContainer extends React.Component{
     return(
       <div className="container-div" >
       <h1>Monopoly!</h1>
-      <Button onClick={this.clearPlayerDetails.bind(this)}>New Game</Button>
+      <Button onClick={this.confirmNewGame.bind(this)}>New Game</Button>
       <Board 
         squares={this.state.squares}
         players={this.players}
