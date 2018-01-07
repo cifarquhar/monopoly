@@ -68,26 +68,26 @@ Board positions - Box
 }
 
 .groupDiv.top {
-  height: 20px;
+  height: 15%;
   width: 100%;
   border-top: 1px solid #000;
 }
 
 .groupDiv.bottom {
-  height: 20px;
+  height: 15%;
   width: 100%;
   border-bottom: 1px solid #000;
 }
 
 .groupDiv.left {
   height: 100%;
-  width: 20px;
+  width: 15%;
   border-left: 1px solid #000;
 }
 
 .groupDiv.right {
   height: 100%;
-  width: 20px;
+  width: 15%;
   border-right: 1px solid #000;
 }
 
