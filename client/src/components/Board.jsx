@@ -6,7 +6,7 @@ import Buy from "./Buy"
 import Escape from "./Escape"
 import Dice from "./Dice"
 import End from "./End"
-import {Grid, Row, Col} from "react-bootstrap"
+// import {Grid, board-Row, div} from "react-bootstrap"
 
 class Board extends React.Component{
 
@@ -57,47 +57,57 @@ class Board extends React.Component{
   //   )
 
   return(
-    <Grid style={{margin: "auto", backgroundColor: "#EBEBE0"}}>
-      <Row>
-        <Col md={1}>{squareNodes[0]}</Col>
-        <Col md={1}>{squareNodes[1]}</Col>
-        <Col md={1}>{squareNodes[2]}</Col>
-        <Col md={1}>{squareNodes[3]}</Col>
-        <Col md={1}>{squareNodes[4]}</Col>
-        <Col md={1}>{squareNodes[5]}</Col>
-        <Col md={1}>{squareNodes[6]}</Col>
-        <Col md={1}>{squareNodes[7]}</Col>
-        <Col md={1}>{squareNodes[8]}</Col>
-        <Col md={1}>{squareNodes[9]}</Col> 
-        <Col md={1}>{squareNodes[10]}</Col>
-      </Row>
-      <Row>
-        <Col md={1}>{squareNodes[39]}</Col>
-        <Col md={1} mdOffset={9}>{squareNodes[11]}</Col>
-      </Row>      
-      <Row>
-        <Col md={1}>{squareNodes[38]}</Col>
-        <Col md={5} mdOffset={1} style={{overflow: "visible"}}><PropertyStats property={p.property}/></Col>
-        <Col md={1} mdOffset={3}>{squareNodes[12]}</Col>
-      </Row>      
-      <Row>
-        <Col md={1}>{squareNodes[37]}</Col>
-        <Col md={1} mdOffset={1}><Buy handleClick={p.purchaseClick}/></Col>
-        <Col md={1} mdOffset={3}><Escape handleClick={p.escapeClick}/></Col>
-        <Col md={1} mdOffset={3}>{squareNodes[13]}</Col>
-      </Row>      
-      <Row>
-        <Col md={1}>{squareNodes[36]}</Col>
-        <Col md={5} mdOffset={1}><PlayerStats player={p.player}/></Col>
-        <Col md={1} mdOffset={3}>{squareNodes[14]}</Col>
-      </Row>      
-      <Row>
-        <Col md={1}>{squareNodes[35]}</Col>
-        <Col md={1} mdOffset={9}>{squareNodes[15]}</Col>
-      </Row>      
-      <Row>
-        <Col md={1}>{squareNodes[34]}</Col>
-        <Col md={2} mdOffset={1}>
+    <div className="board">
+      <div className="board-row end">
+        <div >{squareNodes[0]}</div>
+        <div >{squareNodes[1]}</div>
+        <div >{squareNodes[2]}</div>
+        <div >{squareNodes[3]}</div>
+        <div >{squareNodes[4]}</div>
+        <div >{squareNodes[5]}</div>
+        <div >{squareNodes[6]}</div>
+        <div >{squareNodes[7]}</div>
+        <div >{squareNodes[8]}</div>
+        <div >{squareNodes[9]}</div> 
+        <div >{squareNodes[10]}</div>
+      </div>
+      <div className="board-row mid">
+        <div>{squareNodes[39]}</div>
+        <div className="box filler-large"></div>
+        <div>{squareNodes[11]}</div>
+      </div>      
+      <div className="board-row mid">
+        <div>{squareNodes[38]}</div>
+        <div className="box filler-small"></div>
+        <div className="box content-large"><PropertyStats property={p.property}/></div>
+        <div className="box filler-medium"></div>
+        <div>{squareNodes[12]}</div>
+      </div>      
+      <div className="board-row mid">
+        <div>{squareNodes[37]}</div>
+        <div className="box filler-small"></div>
+        <div className="box content-small"><Buy handleClick={p.purchaseClick}/></div>
+        <div className="box filler-medium"></div>
+        <div className="box content-small"><Escape handleClick={p.escapeClick}/></div>
+        <div className="box filler-medium"></div>
+        <div>{squareNodes[13]}</div>
+      </div>      
+      <div className="board-row mid">
+        <div>{squareNodes[36]}</div>
+        <div className="box filler-small"></div>
+        <div className="box content-large"><PlayerStats player={p.player}/></div>
+        <div className="box filler-medium"></div>
+        <div>{squareNodes[14]}</div>
+      </div>      
+      <div className="board-row mid">
+        <div>{squareNodes[35]}</div>
+        <div className="box filler-large"></div>
+        <div>{squareNodes[15]}</div>
+      </div>      
+      <div className="board-row mid">
+        <div>{squareNodes[34]}</div>
+        <div className="box filler-small"></div>
+        <div className="box content-medium">
           <Dice 
             moveValue={p.moveValue} 
             setMoveValue={p.setMoveValue}
@@ -105,36 +115,41 @@ class Board extends React.Component{
             rolled={p.rolled}
             won={p.won}
             updateRolled={p.updateRolled}/>
-        </Col>
-        <Col md={1} mdOffset={2}><End updateActivePlayer={p.updateActivePlayer}/></Col>
-        <Col md={1} mdOffset={3}>{squareNodes[16]}</Col>
-      </Row>      
-      <Row>
-        <Col md={1}>{squareNodes[33]}</Col>
-        <Col md={1} mdOffset={9}>{squareNodes[17]}</Col>
-      </Row>      
-      <Row>
-        <Col md={1}>{squareNodes[32]}</Col>
-        <Col md={1} mdOffset={9}>{squareNodes[18]}</Col>
-      </Row>      
-      <Row>
-        <Col md={1}>{squareNodes[31]}</Col>
-        <Col md={1} mdOffset={9}>{squareNodes[19]}</Col>
-      </Row>
-      <Row>
-        <Col md={1}>{squareNodes[30]}</Col>
-        <Col md={1}>{squareNodes[29]}</Col>
-        <Col md={1}>{squareNodes[28]}</Col>
-        <Col md={1}>{squareNodes[27]}</Col>
-        <Col md={1}>{squareNodes[26]}</Col>
-        <Col md={1}>{squareNodes[25]}</Col>
-        <Col md={1}>{squareNodes[24]}</Col>
-        <Col md={1}>{squareNodes[23]}</Col>
-        <Col md={1}>{squareNodes[22]}</Col>
-        <Col md={1}>{squareNodes[21]}</Col>
-        <Col md={1}>{squareNodes[20]}</Col>
-      </Row>
-    </Grid>
+        </div>
+        <div className="box filler-small"></div> 
+        <div className="box content-small"><End updateActivePlayer={p.updateActivePlayer}/></div>
+        <div className="box filler-medium"></div>
+        <div>{squareNodes[16]}</div>
+      </div>      
+      <div className="board-row mid">
+        <div>{squareNodes[33]}</div>
+        <div className="box filler-large"></div>
+        <div>{squareNodes[17]}</div>
+      </div>      
+      <div className="board-row mid">
+        <div>{squareNodes[32]}</div>
+        <div className="box filler-large"></div>
+        <div>{squareNodes[18]}</div>
+      </div>      
+      <div className="board-row mid">
+        <div>{squareNodes[31]}</div>
+        <div className="box filler-large"></div>
+        <div>{squareNodes[19]}</div>
+      </div>
+      <div className="board-row end">
+        <div>{squareNodes[30]}</div>
+        <div>{squareNodes[29]}</div>
+        <div>{squareNodes[28]}</div>
+        <div>{squareNodes[27]}</div>
+        <div>{squareNodes[26]}</div>
+        <div>{squareNodes[25]}</div>
+        <div>{squareNodes[24]}</div>
+        <div>{squareNodes[23]}</div>
+        <div>{squareNodes[22]}</div>
+        <div>{squareNodes[21]}</div>
+        <div>{squareNodes[20]}</div>
+      </div>
+    </div>
   )
 }
 

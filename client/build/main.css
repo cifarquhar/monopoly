@@ -21,21 +21,35 @@ Board Structure
 ********************************/
 .board {
     background: #EBEBE0;
-    width: 900px;
+    width: 1040px;
+    margin: auto;
+    padding: 5px;
 }
+
+.board-row {
+  display: inline-flex;
+}
+
+/* .board-row.end {
+  height: 110px;
+}
+
+.board-row.mid {
+  height: 90px;
+} */
 
 /*******************************
 Board positions - Box
 ********************************/
 .box {
-  background: #fff;
-  border: 1px solid #000;
-  text-align: center;
 }
 
 .box.corner {
   height: 110px;
   width: 110px;
+  background: #fff;
+  border: 1px solid #000;
+  text-align: center;
 }
 
 .box.left {
@@ -43,24 +57,75 @@ Board positions - Box
   width: 110px;
   display: inline-flex;
   flex-direction: row-reverse;
+  background: #fff;
+  border: 1px solid #000;
+  text-align: center;
 }
 
 .box.right {
   height: 90px;
   width: 110px;
   display: inline-flex;
+  background: #fff;
+  border: 1px solid #000;
+  text-align: center;
 }
 
 .box.top {
   height: 110px;
-  width: 100px;
+  width: 90px;
   display: inline-flex;
   flex-direction: column-reverse;
+  background: #fff;
+  border: 1px solid #000;
+  text-align: center;
 }
 
 .box.bottom {
   height: 110px;
-  width: 100px;
+  width: 90px;
+  background: #fff;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.box.filler-large {
+  height: 90px;
+  width: 810px;
+  background: #EBEBE0;
+}
+
+.box.filler-medium {
+  height: 90px;
+  width: 270px;
+  background: #EBEBE0;
+}
+
+.box.filler-small {
+  height: 90px;
+  width: 90px;
+  background: #EBEBE0;
+}
+
+.box.content-large {
+  height: 90px;
+  width: 450px;
+  background: #EBEBE0;
+  overflow: visible;
+}
+
+.box.content-medium {
+  height: 90px;
+  width: 270px;
+  background: #EBEBE0;
+  overflow: visible;
+}
+
+.box.content-small {
+  height: 90px;
+  width: 90px;
+  background: #EBEBE0;
+  overflow: visible;
 }
 
 .groupDiv {
