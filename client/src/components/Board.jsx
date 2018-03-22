@@ -58,7 +58,7 @@ class Board extends React.Component{
 
   return(
     <div className="board">
-      <div className="board-row end">
+      <div className="board-row">
         <div >{squareNodes[0]}</div>
         <div >{squareNodes[1]}</div>
         <div >{squareNodes[2]}</div>
@@ -71,19 +71,19 @@ class Board extends React.Component{
         <div >{squareNodes[9]}</div> 
         <div >{squareNodes[10]}</div>
       </div>
-      <div className="board-row mid">
+      <div className="board-row">
         <div>{squareNodes[39]}</div>
         <div className="box filler-large"></div>
         <div>{squareNodes[11]}</div>
       </div>      
-      <div className="board-row mid">
+      <div className="board-row">
         <div>{squareNodes[38]}</div>
         <div className="box filler-small"></div>
         <div className="box content-large"><PropertyStats property={p.property}/></div>
         <div className="box filler-medium"></div>
         <div>{squareNodes[12]}</div>
       </div>      
-      <div className="board-row mid">
+      <div className="board-row">
         <div>{squareNodes[37]}</div>
         <div className="box filler-small"></div>
         <div className="box content-small"><Buy handleClick={p.purchaseClick}/></div>
@@ -92,19 +92,19 @@ class Board extends React.Component{
         <div className="box filler-medium"></div>
         <div>{squareNodes[13]}</div>
       </div>      
-      <div className="board-row mid">
+      <div className="board-row">
         <div>{squareNodes[36]}</div>
         <div className="box filler-small"></div>
         <div className="box content-large"><PlayerStats player={p.player}/></div>
         <div className="box filler-medium"></div>
         <div>{squareNodes[14]}</div>
       </div>      
-      <div className="board-row mid">
+      <div className="board-row">
         <div>{squareNodes[35]}</div>
         <div className="box filler-large"></div>
         <div>{squareNodes[15]}</div>
       </div>      
-      <div className="board-row mid">
+      <div className="board-row">
         <div>{squareNodes[34]}</div>
         <div className="box filler-small"></div>
         <div className="box content-medium">
@@ -121,22 +121,22 @@ class Board extends React.Component{
         <div className="box filler-medium"></div>
         <div>{squareNodes[16]}</div>
       </div>      
-      <div className="board-row mid">
+      <div className="board-row">
         <div>{squareNodes[33]}</div>
         <div className="box filler-large"></div>
         <div>{squareNodes[17]}</div>
       </div>      
-      <div className="board-row mid">
+      <div className="board-row">
         <div>{squareNodes[32]}</div>
         <div className="box filler-large"></div>
         <div>{squareNodes[18]}</div>
       </div>      
-      <div className="board-row mid">
+      <div className="board-row">
         <div>{squareNodes[31]}</div>
         <div className="box filler-large"></div>
         <div>{squareNodes[19]}</div>
       </div>
-      <div className="board-row end">
+      <div className="board-row">
         <div>{squareNodes[30]}</div>
         <div>{squareNodes[29]}</div>
         <div>{squareNodes[28]}</div>
