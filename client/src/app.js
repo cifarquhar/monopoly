@@ -4,6 +4,8 @@ import GameContainer from "./containers/GameContainer"
 import Card from "./models/Card"
 import Property from "./models/Property"
 
+import "../build/stylesheets/main.scss"
+
 const property1 = new Property("Go","corner",null,[null],null)
 const property2 = new Property("Old Kent Rd","brown",60,[2,4,10,30,90,160,250],50)
 const property3 = new Property("Community Chest","bonus",null,[null],null)
