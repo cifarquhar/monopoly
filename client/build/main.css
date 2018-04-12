@@ -41,7 +41,7 @@ Board Structure
 /*******************************
 Board positions - Box
 ********************************/
-.box {
+/* .box {
 }
 
 .box.corner {
@@ -126,11 +126,11 @@ Board positions - Box
   width: 90px;
   background: #EBEBE0;
   overflow: visible;
-}
+} */
 
-.groupDiv {
+/* .groupDiv {
 
-}
+} */
 
 .groupDiv.top {
   height: 15%;

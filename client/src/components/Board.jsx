@@ -73,41 +73,41 @@ class Board extends React.Component{
       </div>
       <div className="board-row">
         <div>{squareNodes[39]}</div>
-        <div className="box filler-large"></div>
+        <div className="box inner filler-large"></div>
         <div>{squareNodes[11]}</div>
       </div>      
       <div className="board-row">
         <div>{squareNodes[38]}</div>
-        <div className="box filler-small"></div>
-        <div className="box content-large"><PropertyStats property={p.property}/></div>
-        <div className="box filler-medium"></div>
+        <div className="box inner filler-small"></div>
+        <div className="box inner content-large"><PropertyStats property={p.property}/></div>
+        <div className="box inner filler-medium"></div>
         <div>{squareNodes[12]}</div>
       </div>      
       <div className="board-row">
         <div>{squareNodes[37]}</div>
-        <div className="box filler-small"></div>
-        <div className="box content-small"><Buy handleClick={p.purchaseClick}/></div>
-        <div className="box filler-medium"></div>
-        <div className="box content-small"><Escape handleClick={p.escapeClick}/></div>
-        <div className="box filler-medium"></div>
+        <div className="box inner filler-small"></div>
+        <div className="box inner content-small"><Buy handleClick={p.purchaseClick}/></div>
+        <div className="box inner filler-medium"></div>
+        <div className="box inner content-small"><Escape handleClick={p.escapeClick}/></div>
+        <div className="box inner filler-medium"></div>
         <div>{squareNodes[13]}</div>
       </div>      
       <div className="board-row">
         <div>{squareNodes[36]}</div>
-        <div className="box filler-small"></div>
-        <div className="box content-large"><PlayerStats player={p.player}/></div>
-        <div className="box filler-medium"></div>
+        <div className="box inner filler-small"></div>
+        <div className="box inner content-large"><PlayerStats player={p.player}/></div>
+        <div className="box inner filler-medium"></div>
         <div>{squareNodes[14]}</div>
       </div>      
       <div className="board-row">
         <div>{squareNodes[35]}</div>
-        <div className="box filler-large"></div>
+        <div className="box inner filler-large"></div>
         <div>{squareNodes[15]}</div>
       </div>      
       <div className="board-row">
         <div>{squareNodes[34]}</div>
-        <div className="box filler-small"></div>
-        <div className="box content-medium">
+        <div className="box inner filler-small"></div>
+        <div className="box inner content-medium">
           <Dice 
             moveValue={p.moveValue} 
             setMoveValue={p.setMoveValue}
@@ -116,24 +116,24 @@ class Board extends React.Component{
             won={p.won}
             updateRolled={p.updateRolled}/>
         </div>
-        <div className="box filler-small"></div> 
-        <div className="box content-small"><End updateActivePlayer={p.updateActivePlayer}/></div>
-        <div className="box filler-medium"></div>
+        <div className="box inner filler-small"></div> 
+        <div className="box inner content-small"><End updateActivePlayer={p.updateActivePlayer}/></div>
+        <div className="box inner filler-medium"></div>
         <div>{squareNodes[16]}</div>
       </div>      
       <div className="board-row">
         <div>{squareNodes[33]}</div>
-        <div className="box filler-large"></div>
+        <div className="box inner filler-large"></div>
         <div>{squareNodes[17]}</div>
       </div>      
       <div className="board-row">
         <div>{squareNodes[32]}</div>
-        <div className="box filler-large"></div>
+        <div className="box inner filler-large"></div>
         <div>{squareNodes[18]}</div>
       </div>      
       <div className="board-row">
         <div>{squareNodes[31]}</div>
-        <div className="box filler-large"></div>
+        <div className="box inner filler-large"></div>
         <div>{squareNodes[19]}</div>
       </div>
       <div className="board-row">

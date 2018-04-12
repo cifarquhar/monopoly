@@ -68,7 +68,7 @@ class Square extends React.Component{
     const backgroundColor = this.getBackgroundColour(p.value.group)
 
     return(
-      <div className={"box " + boardSide}>
+      <div className={"box outer " + boardSide}>
         <div className={"groupDiv" + markerSide} style={{backgroundColor}} />
         <div>
           <p><strong>{p.value.name}</strong></p>

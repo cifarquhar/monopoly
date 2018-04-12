@@ -17,88 +17,73 @@
 
 .box {
     text-align: center;
+
+  &.outer {
+    border: $border;
+    background: $c-background-square;
+
+    &.corner {
+      height: $edge-long;
+      width: $edge-long;
+    }
+
+    &.left {
+      height: $edge-short;
+      width: $edge-long;
+      display: inline-flex;
+      flex-direction: row-reverse;
+    }
+
+    &.right {
+      height: $edge-short;
+      width: $edge-long;
+      display: inline-flex;
+    }
+
+    &.top {
+      height: $edge-long;
+      width: $edge-short;
+      display: inline-flex;
+      flex-direction: column-reverse;
+    }
+
+    &.bottom {
+      height: $edge-long;
+      width: $edge-short;
+    }
+  }
+
+  &.inner{
+    height: $edge-short;
+    background: #EBEBE0;
+
+    &.filler-large {
+      width: $edge-short * 9;
+    }
+
+    &.filler-medium {
+      width: $edge-short * 3;
+    }
+
+    &.filler-small {
+      width: $edge-short;
+    }
+
+    &.content-large {
+      width: $edge-short * 5;
+      overflow: visible;
+    }
+
+    &.content-medium {
+      width: $edge-short * 3;
+      overflow: visible;
+    }
+
+    &.content-small {
+      width: $edge-short;
+      overflow: visible;
+    }
+  }
+
 }
 
-.box.corner {
-  border: $border;
-  height: $edge-long;
-  width: $edge-long;
-  background: #fff;
-  
-}
-
-.box.left {
-  border: $border;
-  height: $edge-short;
-  width: $edge-long;
-  display: inline-flex;
-  flex-direction: row-reverse;
-  background: #fff;
-  
-}
-
-.box.right {
-  border: $border;
-  height: $edge-short;
-  width: $edge-long;
-  display: inline-flex;
-  background: #fff;
-  
-}
-
-.box.top {
-  border: $border;
-  height: $edge-long;
-  width: $edge-short;
-  display: inline-flex;
-  flex-direction: column-reverse;
-  background: #fff;
-  
-}
-
-.box.bottom {
-  border: $border;
-  height: $edge-long;
-  width: $edge-short;
-  background: #fff;
-
-}
-
-.box.filler-large {
-  height: $edge-short;
-  width: $edge-short * 9;
-  background: #EBEBE0;
-}
-
-.box.filler-medium {
-  height: $edge-short;
-  width: $edge-short * 3;
-  background: #EBEBE0;
-}
-
-.box.filler-small {
-  height: $edge-short;
-  width: $edge-short;
-  background: #EBEBE0;
-}
-
-.box.content-large {
-  height: $edge-short;
-  width: $edge-short * 5;
-  background: #EBEBE0;
-  overflow: visible;
-}
-
-.box.content-medium {
-  height: $edge-short;
-  width: $edge-short * 3;
-  background: #EBEBE0;
-  overflow: visible;
-}
-
-.box.content-small {
-  height: $edge-short;
-  width: $edge-short;
-  background: #EBEBE0;
-  overflow: visible;
-}
