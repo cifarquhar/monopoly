@@ -13,11 +13,12 @@
 }
 
 
-// Location styling
+// Grid styling
 
 .box {
     text-align: center;
 
+  // Squares
   &.outer {
     border: $border;
     background: $c-background-square;
@@ -53,6 +54,7 @@
     }
   }
 
+  // Board internals
   &.inner{
     height: $edge-short;
     background: #EBEBE0;
@@ -86,4 +88,68 @@
   }
 
 }
+
+// Colour markers
+
+.groupDiv{
+
+  &.top {
+    height: 15%;
+    width: 100%;
+    border-top: $border;
+  }
+
+  &.bottom {
+    height: 15%;
+    width: 100%;
+    border-bottom: $border;
+  }
+
+  &.left {
+    height: 100%;
+    width: 15%;
+    border-left: $border;
+  }
+
+  &.right {
+    height: 100%;
+    width: 15%;
+    border-right: $border;
+  }
+
+  &.brown{
+    background-color: $c-prop-brown;
+  }
+
+  &.sky_blue{
+    background-color: $c-prop-skyblue;
+  }
+
+  &.pink{
+    background-color: $c-prop-pink;
+  }
+
+  &.orange{
+    background-color: $c-prop-orange;
+  }
+
+  &.red{
+    background-color: $c-prop-red;
+  }
+
+  &.yellow{
+    background-color: $c-prop-yellow;
+  }
+
+  &.green{
+    background-color: $c-prop-green;
+  }
+
+  &.dark_blue{
+    background-color: $c-prop-darkblue;
+  }
+
+}
+
+
 
