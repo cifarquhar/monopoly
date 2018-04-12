@@ -6,7 +6,6 @@ import Buy from "./Buy"
 import Escape from "./Escape"
 import Dice from "./Dice"
 import End from "./End"
-// import {Grid, board-Row, div} from "react-bootstrap"
 
 class Board extends React.Component{
 
@@ -49,12 +48,6 @@ class Board extends React.Component{
       />
       )
   })
-
-  // return(
-  //   <div className="board">
-  //   {squareNodes}
-  //   </div>
-  //   )
 
   return(
     <div className="board">

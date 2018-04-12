@@ -10,15 +10,6 @@ class PropertyInfo extends React.Component{
     }
   }
 
-  // getDevelopmentCost(property){
-  //   if (property.housePrice){
-  //     return property.housePrice
-  //   }
-  //   else{
-  //     return "N/A"
-  //   }
-  // }
-
   parseDevelopmentLevel(rank){
     switch(rank){
       case 0:
