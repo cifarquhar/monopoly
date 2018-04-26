@@ -11,7 +11,7 @@ import Escape from "../components/Escape"
 
 class GameContainer extends React.Component{
 
-  constructor(props){
+    constructor(props){
     super(props)
     this.state = {
       squares: this.props.properties,

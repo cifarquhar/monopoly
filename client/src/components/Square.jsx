@@ -34,14 +34,36 @@ class Square extends React.Component{
     const boardSide = this.getClassName(p.index)
     const markerSide = this.getClassName(p.index, p.value.group)
 
+    const pieces = p.players ? p.players.map((player) => { return "../../public/images/" + player.piece + ".jpeg"}) : []
+
+    const playerCount = p.players ? p.players.length : 0
+
     return(
       <div className={"box outer " + boardSide}>
         <div className={"groupDiv " + markerSide + " " + p.value.group} />
         <div>
           <p><strong>{p.value.shortName}</strong></p>
-          <p>{p.players ? p.players.map((player) => {
+          {/* <p>{p.players ? p.players.map((player) => {
               return player.name
-                }).toString() : null}</p>
+                }).toString() : null}</p> */}
+          <img src={playerCount >= 1 ? require("../../public/images/" + p.players[0].piece + ".jpeg") : null } 
+            alt={playerCount >= 1 ? p.players[0].name : null }
+            style={{height: "20px"}}/>
+          <img src={playerCount >= 2 ? require("../../public/images/" + p.players[1].piece + ".jpeg") : null}
+            alt={playerCount >= 2 ? p.players[1] : null}
+            style={{ height: "20px" }} />
+          <img src={playerCount >= 3 ? require("../../public/images/" + p.players[2].piece + ".jpeg") : null}
+            alt={playerCount >= 3 ? p.players[2] : null}
+            style={{ height: "20px" }} />
+          <img src={playerCount >= 4 ? require("../../public/images/" + p.players[3].piece + ".jpeg") : null}
+            alt={playerCount >= 4 ? p.players[3] : null}
+            style={{ height: "20px" }} />
+          <img src={playerCount >= 5 ? require("../../public/images/" + p.players[4].piece + ".jpeg") : null}
+            alt={playerCount >= 5 ? p.players[4] : null}
+            style={{ height: "20px" }} />
+          <img src={playerCount >= 6 ? require("../../public/images/" + p.players[5].piece + ".jpeg") : null}
+            alt={playerCount >= 6 ? p.players[5] : null}
+            style={{ height: "20px" }} />
         </div>
       </div>
       )
