@@ -1,7 +1,8 @@
 class Player {
 
-  constructor(name){
+  constructor(name, piece){
       this.name = name
+      this.piece = piece
       this.position = 0
       this.money = 1500
       this.properties = []

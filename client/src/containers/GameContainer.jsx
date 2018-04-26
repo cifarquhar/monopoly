@@ -36,7 +36,7 @@ class GameContainer extends React.Component{
     else {
       this.playerNames.forEach(name => {
         if (name){
-          let player = new Player(name)
+          let player = new Player(name.name, name.piece)
           this.players.push(player)
         }
       })
@@ -299,27 +299,27 @@ class GameContainer extends React.Component{
             <form>
               <FormGroup>
                 <Image src={require("../../public/images/battleship.jpeg")} alt="battleship" style={{height: "50px"}} rounded />
-                <FormControl type="text" onChange={(e) => {this.playerNames[0] = e.target.value}} placeholder="Player 1"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[0] = {name: e.target.value, piece: "battleship"}}} placeholder="Player 1"/>
               </FormGroup>
               <FormGroup>
                 <Image src={require("../../public/images/car.jpeg")} alt="car" style={{ height: "50px" }} rounded />
-                <FormControl type="text" onChange={(e) => {this.playerNames[1] = e.target.value}} placeholder="Player 2"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[1] = {name: e.target.value, piece: "car"}}} placeholder="Player 2"/>
               </FormGroup>
               <FormGroup>
                 <Image src={require("../../public/images/iron.jpeg")} alt="iron" style={{ height: "50px" }} rounded />
-                <FormControl type="text" onChange={(e) => {this.playerNames[2] = e.target.value}} placeholder="Player 3"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[2] = {name: e.target.value, piece: "iron"}}} placeholder="Player 3"/>
               </FormGroup>
               <FormGroup>
                 <Image src={require("../../public/images/barrow.jpeg")} alt="barrow" style={{ height: "50px" }} rounded />
-                <FormControl type="text" onChange={(e) => {this.playerNames[3] = e.target.value}} placeholder="Player 4"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[3] = {name: e.target.value, piece: "barrow"}}} placeholder="Player 4"/>
               </FormGroup>
               <FormGroup>
                 <Image src={require("../../public/images/dog.jpeg")} alt="dog" style={{ height: "50px" }} rounded />
-                <FormControl type="text" onChange={(e) => {this.playerNames[4] = e.target.value}} placeholder="Player 5"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[4] = {name: e.target.value, piece: "dog"}}} placeholder="Player 5"/>
               </FormGroup>
               <FormGroup>
                 <Image src={require("../../public/images/thimble.jpeg")} alt="thimble" style={{ height: "50px" }} rounded />
-                <FormControl type="text" onChange={(e) => {this.playerNames[5] = e.target.value}} placeholder="Player 6"/>
+                <FormControl type="text" onChange={(e) => {this.playerNames[5] = {name: e.target.value, piece: "thimble"}}} placeholder="Player 6"/>
               </FormGroup>
             </form> 
           </Modal.Body>
