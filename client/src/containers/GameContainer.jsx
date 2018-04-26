@@ -234,7 +234,7 @@ class GameContainer extends React.Component{
 
 
 
-  flipModalState(){
+  flipNewGameModalState(){
    this.setState({showNewGameModal: !this.state.showNewGameModal})
   }
 
@@ -247,7 +247,7 @@ class GameContainer extends React.Component{
 
   confirmNewGame(){
     if (!this.state.activePlayer){
-      this.flipModalState()
+      this.flipNewGameModalState()
     }
     else {
       const check = confirm("Are you sure you want to start a new game?")
@@ -289,7 +289,7 @@ class GameContainer extends React.Component{
 
         <Modal
           show={this.state.showNewGameModal}
-          onHide={this.flipModalState}
+          onHide={this.flipNewGameModalState}
           container={this}>
           <Modal.Header>
             <Modal.Title>Player Setup</Modal.Title>
