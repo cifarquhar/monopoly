@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, Modal, FormGroup, FormControl } from "react-bootstrap"
+import { Button, Modal, FormGroup, FormControl, Image } from "react-bootstrap"
 import Board from "../components/Board"
 import PlayerStats from "../components/PlayerStats"
 import Dice from "../components/Dice"
@@ -298,21 +298,27 @@ class GameContainer extends React.Component{
           <Modal.Body>
             <form>
               <FormGroup>
+                <Image src={require("../../public/images/battleship.jpeg")} alt="battleship" style={{height: "50px"}} rounded />
                 <FormControl type="text" onChange={(e) => {this.playerNames[0] = e.target.value}} placeholder="Player 1"/>
               </FormGroup>
               <FormGroup>
+                <Image src={require("../../public/images/car.jpeg")} alt="car" style={{ height: "50px" }} rounded />
                 <FormControl type="text" onChange={(e) => {this.playerNames[1] = e.target.value}} placeholder="Player 2"/>
               </FormGroup>
               <FormGroup>
+                <Image src={require("../../public/images/iron.jpeg")} alt="iron" style={{ height: "50px" }} rounded />
                 <FormControl type="text" onChange={(e) => {this.playerNames[2] = e.target.value}} placeholder="Player 3"/>
               </FormGroup>
               <FormGroup>
+                <Image src={require("../../public/images/barrow.jpeg")} alt="barrow" style={{ height: "50px" }} rounded />
                 <FormControl type="text" onChange={(e) => {this.playerNames[3] = e.target.value}} placeholder="Player 4"/>
               </FormGroup>
               <FormGroup>
+                <Image src={require("../../public/images/dog.jpeg")} alt="dog" style={{ height: "50px" }} rounded />
                 <FormControl type="text" onChange={(e) => {this.playerNames[4] = e.target.value}} placeholder="Player 5"/>
               </FormGroup>
               <FormGroup>
+                <Image src={require("../../public/images/thimble.jpeg")} alt="thimble" style={{ height: "50px" }} rounded />
                 <FormControl type="text" onChange={(e) => {this.playerNames[5] = e.target.value}} placeholder="Player 6"/>
               </FormGroup>
             </form> 
