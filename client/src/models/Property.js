@@ -1,7 +1,8 @@
 class Property {
 
-  constructor(name,group,value,rents,housePrice){
+  constructor(name,shortName,group,value,rents,housePrice){
     this.name = name
+    this.shortName = shortName
     this.owner = null
     this.group = group
     this.value = value

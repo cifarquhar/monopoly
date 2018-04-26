@@ -38,7 +38,7 @@ class Square extends React.Component{
       <div className={"box outer " + boardSide}>
         <div className={"groupDiv " + markerSide + " " + p.value.group} />
         <div>
-          <p><strong>{p.value.name}</strong></p>
+          <p><strong>{p.value.shortName}</strong></p>
           <p>{p.players ? p.players.map((player) => {
               return player.name
                 }).toString() : null}</p>
