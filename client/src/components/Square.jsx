@@ -48,22 +48,22 @@ class Square extends React.Component{
                 }).toString() : null}</p> */}
           <img src={playerCount >= 1 ? require("../../public/images/" + p.players[0].piece + ".jpeg") : null } 
             alt={playerCount >= 1 ? p.players[0].name : null }
-            style={{height: "20px"}}/>
+            style={{height: "30px"}}/>
           <img src={playerCount >= 2 ? require("../../public/images/" + p.players[1].piece + ".jpeg") : null}
             alt={playerCount >= 2 ? p.players[1] : null}
-            style={{ height: "20px" }} />
+            style={{ height: "30px" }} />
           <img src={playerCount >= 3 ? require("../../public/images/" + p.players[2].piece + ".jpeg") : null}
             alt={playerCount >= 3 ? p.players[2] : null}
-            style={{ height: "20px" }} />
+            style={{ height: "30px" }} />
           <img src={playerCount >= 4 ? require("../../public/images/" + p.players[3].piece + ".jpeg") : null}
             alt={playerCount >= 4 ? p.players[3] : null}
-            style={{ height: "20px" }} />
+            style={{ height: "30px" }} />
           <img src={playerCount >= 5 ? require("../../public/images/" + p.players[4].piece + ".jpeg") : null}
             alt={playerCount >= 5 ? p.players[4] : null}
-            style={{ height: "20px" }} />
+            style={{ height: "30px" }} />
           <img src={playerCount >= 6 ? require("../../public/images/" + p.players[5].piece + ".jpeg") : null}
             alt={playerCount >= 6 ? p.players[5] : null}
-            style={{ height: "20px" }} />
+            style={{ height: "30px" }} />
         </div>
       </div>
       )
