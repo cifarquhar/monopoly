@@ -22,11 +22,16 @@ class GameContainer extends React.Component{
       activePlayerIndex: null,
       rolled: false,
       won: false,
-      showNewGameModal: false
+      showNewGameModal: false,
+      showCardModal: false
     }
 
     this.playerNames = []
     this.players = []
+
+    this.cardType = ""
+    this.cardText = ""
+    this.cardBackground = ""
   }
 
   startGame(){
@@ -158,13 +163,17 @@ class GameContainer extends React.Component{
     let chanceCard
 
     if (square.group === "bonus" && square.name === "Chance"){
+      this.cardType = "Chance"
       let card = this.state.chanceCards.shift()
       console.log(card)
       card.applyMethod(this.state.activePlayer)
       this.state.chanceCards.push(card)
-      alert("Landed on " + square.name + "\n" + "\n" + card.text)
+      this.cardText = card.text
+      this.cardBackground = "#FF6600"
+      this.flipCardModalState()
     }
     else if (square.group === "bonus" && square.name === "Community Chest"){
+      this.cardType = "Community Chest"
       let card = this.state.chestCards.shift()
       console.log(card)
       
@@ -176,10 +185,13 @@ class GameContainer extends React.Component{
           }
         })
         this.state.chestCards.push(card)
-        alert("Landed on " + square.name + "\n" + "\n" + card.text)
+        this.cardText = card.text
+        this.cardBackground = "#ECA3B3"
+        this.flipCardModalState()
       }
 
       else if (card.text === "Pay a £10 fine (cancel) or take a Chance (OK)"){
+        // Need to refactor this one to use modal in the same way as the others
         if (confirm("Landed on " + square.name + "\n" + "\n" + card.text) == true){
           chanceCard = this.state.chanceCards.shift()
           chanceCard.applyMethod(this.state.activePlayer)
@@ -196,7 +208,9 @@ class GameContainer extends React.Component{
       else {
         card.applyMethod(this.state.activePlayer)
         this.state.chestCards.push(card)
-        alert("Landed on " + square.name + "\n" + "\n" + card.text)
+        this.cardText = card.text
+        this.cardBackground = "#ECA3B3"
+        this.flipCardModalState()
       }
     }
   }
@@ -236,6 +250,10 @@ class GameContainer extends React.Component{
 
   flipNewGameModalState(){
    this.setState({showNewGameModal: !this.state.showNewGameModal})
+  }
+
+  flipCardModalState() {
+    this.setState({ showCardModal: !this.state.showCardModal })
   }
 
 
@@ -326,6 +344,24 @@ class GameContainer extends React.Component{
 
           <Modal.Footer>
             <Button onClick={this.startGame.bind(this)}>Start Game</Button>
+          </Modal.Footer>
+        </Modal>
+
+        <Modal
+          show={this.state.showCardModal}
+          onHide={this.flipCardModalState}
+          container={this}
+        >
+          <Modal.Header style={{ background: this.cardBackground }}>
+            <Modal.Title>{this.cardType}</Modal.Title>
+          </Modal.Header>
+          
+          <Modal.Body style={{ background: this.cardBackground }}>
+            {this.cardText}
+          </Modal.Body>
+          
+          <Modal.Footer style={{ background: this.cardBackground }}>
+            <Button onClick={this.flipCardModalState.bind(this)}>OK</Button>
           </Modal.Footer>
         </Modal>
       </div>
