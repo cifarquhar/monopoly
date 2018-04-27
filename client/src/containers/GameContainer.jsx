@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, Modal, FormGroup, FormControl, Image } from "react-bootstrap"
+import { Button, ButtonToolbar, Modal, FormGroup, FormControl, Image } from "react-bootstrap"
 import Board from "../components/Board"
 import PlayerStats from "../components/PlayerStats"
 import Dice from "../components/Dice"
@@ -32,6 +32,7 @@ class GameContainer extends React.Component{
     this.cardType = ""
     this.cardText = ""
     this.cardBackground = ""
+    this.modalType = ""
   }
 
   startGame(){
@@ -158,60 +159,67 @@ class GameContainer extends React.Component{
   }
 
 
-  checkCardSquare(square){
+  applyChanceCard(){
+    this.modalType = "confirm"
+    this.cardType = "Chance"
+    let card = this.state.chanceCards.shift()
+    console.log(card)
+    card.applyMethod(this.state.activePlayer)
+    this.state.chanceCards.push(card)
+    this.cardText = card.text
+    this.cardBackground = "#FF6600"
+    this.flipCardModalState()
+  }
 
-    let chanceCard
+  applyChestCard(){
+    this.modalType = "confirm"
+    this.cardType = "Community Chest"
+    let card = this.state.chestCards.shift()
+    console.log(card)
 
-    if (square.group === "bonus" && square.name === "Chance"){
-      this.cardType = "Chance"
-      let card = this.state.chanceCards.shift()
-      console.log(card)
-      card.applyMethod(this.state.activePlayer)
-      this.state.chanceCards.push(card)
+    if (card.text === "Pay a £10 fine or take a Chance"){
+      this.modalType = "choice"
+      this.state.chestCards.push(card)
       this.cardText = card.text
-      this.cardBackground = "#FF6600"
+      this.cardBackground = "#ECA3B3"
       this.flipCardModalState()
     }
-    else if (square.group === "bonus" && square.name === "Community Chest"){
-      this.cardType = "Community Chest"
-      let card = this.state.chestCards.shift()
-      console.log(card)
-      
+
+    else {
       if (card.text === "It is your birthday, collect £10 from each player"){
         this.state.activePlayer.money += 10
         this.players.forEach((player) => {
-          if (player !== this.state.activePlayer){
+          if (player !== this.state.activePlayer) {
             player.money -= 10
           }
         })
-        this.state.chestCards.push(card)
-        this.cardText = card.text
-        this.cardBackground = "#ECA3B3"
-        this.flipCardModalState()
       }
-
-      else if (card.text === "Pay a £10 fine (cancel) or take a Chance (OK)"){
-        // Need to refactor this one to use modal in the same way as the others
-        if (confirm("Landed on " + square.name + "\n" + "\n" + card.text) == true){
-          chanceCard = this.state.chanceCards.shift()
-          chanceCard.applyMethod(this.state.activePlayer)
-          this.state.chanceCards.push(chanceCard)
-          alert(chanceCard.text)
-        }
-        else {
-          this.state.activePlayer.money -= 10
-        }
-        this.state.chestCards.push(card)
-      }
-
-
       else {
         card.applyMethod(this.state.activePlayer)
-        this.state.chestCards.push(card)
-        this.cardText = card.text
-        this.cardBackground = "#ECA3B3"
-        this.flipCardModalState()
       }
+
+      this.state.chestCards.push(card)
+      this.cardText = card.text
+      this.cardBackground = "#ECA3B3"
+      this.flipCardModalState()
+    }
+  }
+
+  payChestCardFine() {
+    this.state.activePlayer.money -= 10
+    this.setState({ showCardModal: !this.state.showCardModal })
+  }
+
+  takeChestCardChance(){
+    this.setState({showCardModal: false}, () => this.applyChanceCard())
+  }
+
+  checkCardSquare(square){
+    if (square.group === "bonus" && square.name === "Chance"){
+      this.applyChanceCard()
+    }
+    else if (square.group === "bonus" && square.name === "Community Chest"){
+      this.applyChestCard()
     }
   }
 
@@ -260,7 +268,7 @@ class GameContainer extends React.Component{
   clearPlayerDetails(){
     this.playerNames = []
     this.players = []
-    this.flipModalState()
+    this.flipNewGameModalState()
   }
 
   confirmNewGame(){
@@ -361,7 +369,14 @@ class GameContainer extends React.Component{
           </Modal.Body>
           
           <Modal.Footer style={{ background: this.cardBackground }}>
+            {this.modalType === "confirm" ?
             <Button onClick={this.flipCardModalState.bind(this)}>OK</Button>
+            : 
+            <ButtonToolbar>
+              <Button onClick={this.payChestCardFine.bind(this)}>Pay fine</Button>
+              <Button onClick={this.takeChestCardChance.bind(this)}>Take Chance</Button>
+            </ButtonToolbar>
+            }
           </Modal.Footer>
         </Modal>
       </div>
