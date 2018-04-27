@@ -163,7 +163,25 @@
     background-color: $c-prop-darkblue;
   }
 
+  &.bonus, &.tax, &.station, &.utility{
+    background-color: $c-background-square;
+  }
+
 }
 
+// Square content containers
 
+.contentDiv{
+
+  &.top, &.bottom{
+    height: 85%;
+    width: 100%;
+  }
+
+  &.left, &.right{
+    height: 100%;
+    width: 85%;
+  }
+
+}
 
