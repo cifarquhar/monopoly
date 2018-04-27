@@ -110,57 +110,61 @@
   &.top {
     height: 15%;
     width: 100%;
-    border-top: $border;
   }
 
   &.bottom {
     height: 15%;
     width: 100%;
-    border-bottom: $border;
   }
 
   &.left {
     height: 100%;
     width: 15%;
-    border-left: $border;
   }
 
   &.right {
     height: 100%;
     width: 15%;
-    border-right: $border;
   }
 
   &.brown{
     background-color: $c-prop-brown;
+    border-top: $border;
   }
 
   &.sky_blue{
     background-color: $c-prop-skyblue;
+    border-top: $border;
   }
 
   &.pink{
     background-color: $c-prop-pink;
+    border-right: $border;
   }
 
   &.orange{
     background-color: $c-prop-orange;
+    border-right: $border;
   }
 
   &.red{
     background-color: $c-prop-red;
+    border-bottom: $border;
   }
 
   &.yellow{
     background-color: $c-prop-yellow;
+    border-bottom: $border;
   }
 
   &.green{
     background-color: $c-prop-green;
+    border-left: $border;
   }
 
   &.dark_blue{
     background-color: $c-prop-darkblue;
+    border-left: $border;
   }
 
   &.bonus, &.tax, &.station, &.utility{
