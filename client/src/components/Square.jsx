@@ -37,24 +37,10 @@ class Square extends React.Component{
 
     const playerCount = p.players ? p.players.length : 0
 
-    const splitClassName = p.value.group.split(" ")
-
-    let contentType
-
-    if (splitClassName[0] === "corner" || splitClassName[0] === "utility" || splitClassName[0] === "bonus"){
-      contentType = splitClassName[1]
-    }
-
-    else if (splitClassName[0] === "tax" || splitClassName[0] === "station"){
-      contentType = splitClassName[0]
-    }
-
-    //const contentType = (splitClassName[0] === "corner" || splitClassName[0] === "utility" || splitClassName[0] === "bonus") ? splitClassName[1] : ""
-
     return(
       <div className={"box outer " + boardSide}>
         <div className={"groupDiv " + boardSide + " " + p.value.group} />
-        <div className={"contentDiv " + boardSide + " " + contentType}>
+        <div className={"contentDiv " + boardSide + " " + p.value.subgroup}>
           <p><strong>{p.value.shortName}</strong></p>
           <img src={playerCount >= 1 ? require("../../public/images/" + p.players[0].piece + ".jpeg") : null } 
             alt={playerCount >= 1 ? p.players[0].name : null }
