@@ -108,23 +108,23 @@
 .groupDiv{
 
   &.top {
-    height: 15%;
+    height: 20%;
     width: 100%;
   }
 
   &.bottom {
-    height: 15%;
+    height: 20%;
     width: 100%;
   }
 
   &.left {
     height: 100%;
-    width: 15%;
+    width: 20%;
   }
 
   &.right {
     height: 100%;
-    width: 15%;
+    width: 20%;
   }
 
   &.brown{
@@ -188,13 +188,13 @@
 .contentDiv{
 
   &.top, &.bottom{
-    height: 85%;
+    height: 80%;
     width: 100%;
   }
 
   &.left, &.right{
     height: 100%;
-    width: 85%;
+    width: 80%;
   }
 
   &.corner{
