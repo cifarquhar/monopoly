@@ -6,7 +6,7 @@ import Property from "./models/Property"
 
 import "../build/stylesheets/main.scss"
 
-const property1 = new Property("Go","Go","corner",null,[null],null)
+const property1 = new Property("Go","Go","corner go",null,[null],null)
 const property2 = new Property("Old Kent Road","Old Kent Rd","brown",60,[2,4,10,30,90,160,250],50)
 const property3 = new Property("Community Chest","Community Chest","bonus",null,[null],null)
 const property4 = new Property("Whitechapel Road", "Whitechapel Rd", "brown",60,[4,8,20,60,180,320,450],50)
@@ -16,7 +16,7 @@ const property7 = new Property("The Angel, Islington","The Angel, Islington","sk
 const property8 = new Property("Chance","Chance","bonus",null,[null],null)
 const property9 = new Property("Euston Road", "Euston Rd","sky_blue",100,[6,12,30,90,270,400,550],50)
 const property10 = new Property("Pentonville Road", "Pentonville Rd","sky_blue",120,[8,16,40,100,300,450,600],50)
-const property11 = new Property("Jail","Jail","corner",null,[null],null)
+const property11 = new Property("Jail","Jail","corner jail",null,[null],null)
 const property12 = new Property("Pall Mall","Pall Mall","pink",140,[10,20,50,150,450,625,750],100)
 const property13 = new Property("Electric Company","Electric Company","utility",150,[0,4,10],null)
 const property14 = new Property("Whitehall","Whitehall","pink",140,[10,20,50,150,450,625,750],100)
@@ -26,7 +26,7 @@ const property17 = new Property("Bow Street", "Bow St","orange",180,[14,28,70,20
 const property18 = new Property("Community Chest","Community Chest","bonus",null,[null],null)
 const property19 = new Property("Marlborough Street","M'b'r'gh St","orange",180,[14,28,70,200,550,750,950],100)
 const property20 = new Property("Vine Street", "Vine St","orange",200,[16,32,80,220,600,800,1000],100)
-const property21 = new Property("Free Parking", "Free Parking","corner",null,[null],null)
+const property21 = new Property("Free Parking", "Free Parking","corner parking",null,[null],null)
 const property22 = new Property("Strand","Strand","red",220,[18,36,90,250,700,875,1050],150)
 const property23 = new Property("Chance","Chance","bonus",null,[null],null)
 const property24 = new Property("Fleet Street", "Fleet St","red",220,[18,36,90,250,700,875,1050],150)
@@ -36,7 +36,7 @@ const property27 = new Property("Leicester Square", "Leicester Sq","yellow",260,
 const property28 = new Property("Coventry Street", "Coventry St","yellow",260,[22,44,110,330,800,975,1150],150)
 const property29 = new Property("Water Works","Water Works","utility",150,[0,4,10],null)
 const property30 = new Property("Picadilly","Picadilly","yellow",280,[22,44,120,360,850,1025,1200],150)
-const property31 = new Property("Go To Jail","Go To Jail","corner",null,[null],null)
+const property31 = new Property("Go To Jail","Go To Jail","corner go_to_jail",null,[null],null)
 const property32 = new Property("Regent Street", "Regent St","green",300,[26,52,130,390,900,1100,1275],200)
 const property33 = new Property("Oxford Street", "Oxford St","green",300,[26,52,130,390,900,1100,1275],200)
 const property34 = new Property("Community Chest","Community Chest","bonus",null,[null],null)

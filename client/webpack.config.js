@@ -11,6 +11,15 @@ var config = {
   module: {
     rules: [
       {
+        test: /\.(png|jpg|gif|jpeg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
+        ]
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
@@ -30,15 +39,6 @@ var config = {
           loader: "sass-loader"
         },
       ]
-      },
-      {
-        test: /\.(png|jpg|gif|jpeg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {}
-          }
-        ]
       }
     ]
   }

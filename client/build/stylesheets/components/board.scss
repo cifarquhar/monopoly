@@ -175,6 +175,15 @@
 
 // Square content containers
 
+@mixin background($imgpath) {
+    background: {
+        image: url($imgpath);
+        size: $edge-long;
+        repeat: no-repeat;
+    }
+}
+
+
 .contentDiv{
 
   &.top, &.bottom{
@@ -185,6 +194,27 @@
   &.left, &.right{
     height: 100%;
     width: 85%;
+  }
+
+  &.corner{
+    height: 100%;
+    width: 100%;
+
+    &.go{
+      @include background("../../public/images/go.png");
+    }
+
+    &.jail{
+      @include background("../../public/images/jail.png");
+    }
+
+    &.parking{
+      @include background("../../public/images/freeparking.jpeg");
+    }
+
+    &.go_to_jail{
+      @include background("../../public/images/gotojail.jpeg");
+    }
   }
 
 }
