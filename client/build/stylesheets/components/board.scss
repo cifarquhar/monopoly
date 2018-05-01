@@ -180,6 +180,7 @@
         image: url($imgpath);
         size: $edge-long;
         repeat: no-repeat;
+        position-y: center; 
     }
 }
 
@@ -205,7 +206,7 @@
     }
 
     &.jail{
-      @include background("../../public/images/jail.png");
+      @include background("../../public/images/jail.jpeg");
     }
 
     &.parking{
