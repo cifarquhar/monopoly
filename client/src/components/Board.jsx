@@ -7,6 +7,8 @@ import Escape from "./Escape"
 import Dice from "./Dice"
 import End from "./End"
 
+import {Button} from "react-bootstrap"
+
 class Board extends React.Component{
 
   constructor(props){
@@ -126,7 +128,11 @@ class Board extends React.Component{
       </div>      
       <div className="board-row">
         <div>{squareNodes[31]}</div>
-        <div className="box inner filler-large"></div>
+        <div className="box inner filler-small"></div>
+        <div className="box inner content-medium"><h1>Monopoly!</h1></div>
+        <div className="box inner filler-small"></div>
+        <div className="box inner content-medium"><Button onClick={p.newGame}>New Game</Button></div>
+        <div className="box inner filler-small"></div>
         <div>{squareNodes[19]}</div>
       </div>
       <div className="board-row">

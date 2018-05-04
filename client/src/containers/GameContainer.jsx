@@ -296,8 +296,6 @@ class GameContainer extends React.Component{
 
     return(
       <div className="container-div" >
-      <h1>Monopoly!</h1>
-      <Button onClick={this.confirmNewGame.bind(this)}>New Game</Button>
       <Board 
         squares={this.state.squares}
         players={this.players}
@@ -311,7 +309,8 @@ class GameContainer extends React.Component{
         rolled={this.state.rolled}
         won={this.state.won}
         updateRolled={this.updateRolled.bind(this)}
-        updateActivePlayer={this.updateActivePlayer.bind(this)}/>
+        updateActivePlayer={this.updateActivePlayer.bind(this)}
+        newGame={this.confirmNewGame.bind(this)}/>
 
         <Modal
           show={this.state.showNewGameModal}
