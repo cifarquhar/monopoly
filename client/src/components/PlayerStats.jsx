@@ -77,7 +77,8 @@ class PlayerStats extends React.Component{
           <Modal
             show={this.state.showModal}
             onHide={this.flipModalState}
-            container={this}>
+            container={this}
+            animation={false}>
             <Modal.Header>
               <Modal.Title>Property Management</Modal.Title>
             </Modal.Header>

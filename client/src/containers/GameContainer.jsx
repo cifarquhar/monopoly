@@ -315,7 +315,8 @@ class GameContainer extends React.Component{
         <Modal
           show={this.state.showNewGameModal}
           onHide={this.flipNewGameModalState}
-          container={this}>
+          container={this}
+          animation={false}>
           <Modal.Header>
             <Modal.Title>Player Setup</Modal.Title>
           </Modal.Header>
@@ -358,6 +359,7 @@ class GameContainer extends React.Component{
           show={this.state.showCardModal}
           onHide={this.flipCardModalState}
           container={this}
+          animation={false}
         >
           <Modal.Header style={{ background: this.cardBackground }}>
             <Modal.Title>{this.cardType}</Modal.Title>
